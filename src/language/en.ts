@@ -17,7 +17,7 @@ const en = {
   heroTitle: "Lead the Hair Care Revolution in Nigeria with AMARI",
   heroDescription:
     "Discover Premium, Plant-Based Products Made in Africa Oil Free, 100% Plant-Based Formulas Clinically Proven Active Ingredients 500+ Positive Reviews",
-  becomingStockist: "Becoming a Stockist",
+  becomeAStockist: "Become a Stockist",
   customerSatisfaction: "Customer Satisfaction",
   employeeSatisfaction: "Employee Satisfaction",
   environmentalSustainability: "Environmental Sustainability",
@@ -40,6 +40,10 @@ const en = {
   mobile: "+1-202-555-0133",
   address: "1234 Street Name, City Name, United States",
   openFrom: "Open from 9:00 AM to 5:00 PM (Monday to Friday)",
+  pageNotFound: "Page Not Found",
+  notFound: "Not Found",
+  notFoundDescription:
+    "The page you are looking for doesn't exist. Looks like you are in the wrong place. Let us guide you back!",
 };
 
 export default en;

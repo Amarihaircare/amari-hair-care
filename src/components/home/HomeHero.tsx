@@ -7,6 +7,8 @@ import en from "@/language/en";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import productGroup from "../../assets/images/produc-group.webp";
+import { Button, buttonVariants } from "../ui/button";
+import Link from "next/link";
 
 export default function HomeHero() {
   const ourValues = [
@@ -34,14 +36,19 @@ export default function HomeHero() {
           <h1 className="hero_content-header_title text-6xl font-black">
             {en.heroTitle}
           </h1>
-          <p className="hero_content-header_text">en.heroDescription</p>
+          <p className="hero_content-header_text">{en.heroDescription}</p>
         </div>
-        <a
-          className="hero_content-btn px-6 rounded-full self-start bg-secondary py-4 mb-14 font-semibold"
-          href="/stockist"
-        >
-          {en.becomingStockist}
-        </a>
+        <Button asChild>
+          <Link
+            href="/stockist"
+            className={`${buttonVariants({
+              variant: "secondary",
+            })} mt-6 px-6 self-start font-semibold py-4 mb-14`}
+          >
+            {en.becomeAStockist}
+          </Link>
+        </Button>
+
         <div
           className="features-list_item aos-init aos-animate flex flex-wrap gap-y-8 gap-x-20"
           data-order="1"
