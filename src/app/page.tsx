@@ -5,7 +5,6 @@ import PopularSection from "@/components/home/PopularSection";
 import PromoSection from "@/components/home/PromoSection";
 import TestimonialsSection from "@/components/home/TestimonialSection";
 import FaqSection from "@/components/home/FaqSection";
-import Image from "next/image";
 
 export default function Home() {
   return (

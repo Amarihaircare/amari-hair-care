@@ -6,7 +6,7 @@ import {
 import en from "@/language/en";
 import { Heart } from "lucide-react";
 import Image from "next/image";
-import productGroup from "../../assets/images/produc-group.png";
+import productGroup from "../../assets/images/produc-group.webp";
 
 export default function HomeHero() {
   const ourValues = [
@@ -28,7 +28,7 @@ export default function HomeHero() {
     },
   ];
   return (
-    <section className="hero section min-h-[800px] flex justify-center lg:justify-normal items-center w-full">
+    <section className="overflow-hidden hero section min-h-[800px] flex justify-center lg:justify-normal items-center w-full">
       <div className="hero_content col-xl-6 max-w-[50%] lg:ml-20 flex flex-col gap-4">
         <div className="hero_content-header flex flex-col gap-4">
           <h1 className="hero_content-header_title text-6xl font-black">

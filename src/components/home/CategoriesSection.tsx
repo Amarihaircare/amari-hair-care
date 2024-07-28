@@ -1,10 +1,11 @@
 import Image from "next/image";
-import moisturizers from "../../assets/images/mosturizer.png";
-import cleansers from "../../assets/images/cleanser.jpeg";
-import serum from "../../assets/images/growth-serum.jpeg";
-import oil from "../../assets/images/oil.jpeg";
-import treatments from "../../assets/images/treatment.jpg";
-import shampoo from "../../assets/images/shampoo.jpg";
+import moisturizers from "../../assets/images/mosturizer.webp";
+import cleansers from "../../assets/images/cleanser.webp";
+import serum from "../../assets/images/growth-serum.webp";
+import oil from "../../assets/images/oil.webp";
+import treatments from "../../assets/images/treatment.webp";
+import shampoo from "../../assets/images/shampoo.webp";
+import en from "@/language/en";
 
 export default function CategoriesSection() {
   return (
@@ -37,27 +38,27 @@ export default function CategoriesSection() {
 
 const categories = [
   {
-    name: "Moisturizers",
+    name: en.moisturizers,
     image: moisturizers,
   },
   {
-    name: "Cleansers",
+    name: en.cleansers,
     image: cleansers,
   },
   {
-    name: "Oil",
+    name: en.oil,
     image: oil,
   },
   {
-    name: "Serums",
+    name: en.serums,
     image: serum,
   },
   {
-    name: "Treatments",
+    name: en.treatments,
     image: treatments,
   },
   {
-    name: "Shampoo",
+    name: en.shampoo,
     image: shampoo,
   },
 ];

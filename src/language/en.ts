@@ -25,6 +25,21 @@ const en = {
   wishlists: "Wishlist",
   cart: "Cart",
   contact: "Contact",
+  moisturizers: "Moisturizers",
+  cleansers: "Cleansers",
+  oil: "Oil",
+  serums: "Serums",
+  treatments: "Treatments",
+  shampoo: "Shampoo",
+  testimonials: "Testimonials",
+  metaDescription:
+    "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
+  cotactInformation: "Contact Information",
+  instagram: "Instagram",
+  telephone: "+1-202-555-0133",
+  mobile: "+1-202-555-0133",
+  address: "1234 Street Name, City Name, United States",
+  openFrom: "Open from 9:00 AM to 5:00 PM (Monday to Friday)",
 };
 
 export default en;
