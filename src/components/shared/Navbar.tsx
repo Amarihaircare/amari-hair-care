@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import en from "@/language/en";
 import Image from "next/image";
+import BurgerButton from "../ui/BurgerButton";
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
@@ -57,7 +58,20 @@ export default function Navbar() {
     >
       <div className="flex flex-wrap md:flex-nowrap items-center justify-between px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl w-full">
         <Link href="/">
-          <Image src="/logo-black.svg" width={82} height={50} alt="logo" />
+          <Image
+            src="/logo-black.svg"
+            width={82}
+            height={50}
+            alt="logo"
+            className="hidden md:block"
+          />
+          <Image
+            src="/logo-icon-black.svg"
+            width={24}
+            height={50}
+            alt="logo"
+            className="md:hidden"
+          />
         </Link>
         <nav
           className={cn(
@@ -100,7 +114,7 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <div className="header_user flex gap-8 lg:gap-36 items-center">
+        <div className="header_user md:flex gap-8 lg:gap-36 items-center hidden">
           <form
             action="#"
             data-type="searchForm"
@@ -131,6 +145,10 @@ export default function Navbar() {
             ))}
           </div>
         </div>
+        <BurgerButton
+          handleClick={() => setShowNav(!showNav)}
+          showNav={showNav}
+        />
       </div>
     </header>
   );
