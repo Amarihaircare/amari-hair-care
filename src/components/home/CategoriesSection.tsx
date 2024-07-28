@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CategoriesSection() {
   return (
-    <div className="categories section--nopb">
+    <div className="categories section--nopb bg-white w-full pt-40">
       <div className="container">
         <ul className="categories_list d-flex flex-wrap">
           <li
