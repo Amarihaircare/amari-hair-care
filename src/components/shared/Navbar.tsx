@@ -1,8 +1,8 @@
 "use client";
 
-import { CaretDown } from "@/assets/icons";
+import { CaretDown, HeartIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
-import { Search, Heart, ShoppingBasket } from "lucide-react";
+import { Search, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
@@ -38,7 +38,7 @@ export default function Navbar() {
   const userAction = [
     {
       name: en.wishlists,
-      icon: <Heart />,
+      icon: <HeartIcon />,
     },
     {
       name: en.cart,

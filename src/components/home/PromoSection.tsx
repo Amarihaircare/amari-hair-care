@@ -1,52 +1,65 @@
+import en from "@/language/en";
 import Image from "next/image";
 import Link from "next/link";
+import { Button, buttonVariants } from "../ui/button";
+import promoProduct from "../../assets/images/collection.webp";
 
 export default function PromoSection() {
+  const timeCards = [en.days, en.hours, en.mins, en.secs];
   return (
-    <div className="promo">
-      <div className="promo_fluid d-lg-flex align-items-center align-items-xxl-end">
-        <div className="wrapper section--nopb col-lg-6 col-xxl-auto">
-          <div className="promo_header">
+    <section className="promo_section py-40 w-full flex-col flex items-center justify-center bg-background">
+      <div className="promo_container flex items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
+        <div className="wrapper max-w-[500px]">
+          <div className="promo_header mb-6">
             <Link
-              className="promo_header-title"
+              className="promo_header-title font-bold text-4xl block mb-6"
               href="product.html"
               target="_blank"
               rel="noopener norefferer"
             >
-              CBD Facial Serum: Anti-Aging + Daily Moisturizer
+              {en.promoTitle}
             </Link>
-            <p className="promo_header-text">
-              Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus
-              mauris a diam maecenas sed enim ut sem. Turpis egestas maecenas
-              pharetra convallis posuere
+            <p className="promo_header-text">{en.promoDescription}</p>
+          </div>
+          <div className="promo_price flex items-center gap-6 mb-6">
+            <p className="price price--old text-3xl font-semibold text-gray-400">
+              $48.97
+            </p>
+            <p className="price price--new text-3xl font-semibold text-green-800">
+              $27.97
             </p>
           </div>
-          <div className="promo_price">
-            <span className="price price--old">$48.97</span>
-            <span className="price price--new">$27.97</span>
+          <div className="promo_timer flex gap-4 mb-6">
+            {timeCards.map((time, index) => (
+              <div
+                className="timer_block w-20 h-20 flex flex-col justify-center items-center border border-primary rounded "
+                key={index}
+              >
+                <p
+                  className="timer_block-number text-green-800 font-semibold text-2xl"
+                  id="seconds"
+                >
+                  00
+                </p>{" "}
+                <p>{time}</p>
+              </div>
+            ))}
           </div>
-          <div className="promo_timer timer d-flex justify-content-center justify-content-md-start">
-            <div className="timer_block d-flex flex-column justify-content-center">
-              <span className="timer_block-number" id="seconds">
-                00
-              </span>{" "}
-              secs
-            </div>
-          </div>
-          <a className="promo_btn btn" href="shop.html">
-            Shop Now
-          </a>
+          <Button asChild>
+            <Link
+              href="/stockist"
+              className={`${buttonVariants({
+                variant: "secondary",
+              })} mt-6 px-6 self-start font-semibold py-6 mb-14 hover:bg-[#C6E749]/80`}
+            >
+              {en.shopNow}
+            </Link>
+          </Button>
         </div>
         <div className="media">
-          <Image
-            className="lazy entered loaded"
-            data-src=""
-            src=""
-            alt="media"
-            data-ll-status="loaded"
-          />
+          <Image src={promoProduct} alt="media" width={800} height={600} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -43,7 +43,7 @@ export default function HomeHero() {
             href="/stockist"
             className={`${buttonVariants({
               variant: "secondary",
-            })} mt-6 px-6 self-start font-semibold py-4 mb-14`}
+            })} mt-6 px-6 self-start font-semibold py-6 mb-14 hover:bg-[#C6E749]/80`}
           >
             {en.becomeAStockist}
           </Link>

@@ -44,6 +44,19 @@ const en = {
   notFound: "Not Found",
   notFoundDescription:
     "The page you are looking for doesn't exist. Looks like you are in the wrong place. Let us guide you back!",
+  popularProducts: "Popular Products",
+  popularProductsDescription:
+    "Our products are crafted with care to meet the highest standards, ensuring that your customers can achieve and maintain healthy, beautiful hair.",
+  promoTitle: "Vitamin E Serum: Hair Growth + Aloe Vera Extract Oil",
+  promoDescription:
+    "Enhance your hair care routine with our special promotion! For the next 20 days, enjoy a 15% discount on two of our top products.  Stock up now and give your hair the care it deserves!",
+  days: "Days",
+  hours: "Hours",
+  minutes: "Minutes",
+  seconds: "Seconds",
+  mins: "Mins",
+  secs: "Secs",
+  shopNow: "Shop Now",
 };
 
 export default en;

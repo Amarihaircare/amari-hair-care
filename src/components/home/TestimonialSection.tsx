@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function TestimonialsSection() {
   return (
-    <section className="reviews section--nopb">
-      <div className="reviews_header">
+    <section className="review_section py-40 w-full flex-col flex items-center justify-center bg-white">
+      <div className="review_container flex items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <h2 className="reviews_header-title">Your Trust is Our Top Concern</h2>
         <p className="reviews_header-text">
           Feugiat sed lectus vestibulum mattis ullamcorper velit. Sed pulvinar
