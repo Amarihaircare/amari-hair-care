@@ -110,6 +110,44 @@ const en = {
   questionFourteen: "Who do I contact for stockist support?",
   answerFourteen:
     "For any questions or support related to being an Amari stockist, please contact us at support@amarihaircare.com. Our team is here to assist you with any inquiries you may have.",
+  aboutProduct: "About Product",
+  aloeBarbadensis: "Aloe Barbadensis (Aloe Vera)",
+  camelliaSinensis: "Camellia Sinensis (Green Tea)",
+  vegetableGlycerin: "Vegetable Glycerin",
+  caffeineScalpSerumShortDescription:
+    "The Caffeine Scalp Serum, addresses hair loss by stimulating follicle growth",
+  moisturizersShortDescription:
+    "The fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured",
+  vitaminESerumShortDescription:
+    "carefully crafted with wax ester that closely resembles the sebum produced by the scalp,",
+  simmondsiaChinensis: "Simmondsia Chinensis (Jojoba) Seed Extract",
+  tocopherylAcetate: "Tocopheryl Acetate",
+  rosmarinusOfficinalis: "Rosmarinus Officinalis Leaf Oil",
+  astaxanthinOil: "Astaxanthin oil.",
+  sodiumLactate: "Sodium Lactate",
+  butyrospermumParkii: "Butyrospermum Parkii (Shea) Butter",
+  behentrimoniumMethosulphate: "Behentrimonium Methosulphate",
+  butyleneGlycol: "Butylene Glycol",
+  hydrogenatedOliveOil: "Hydrogenated Olive Oil",
+  cetylAlcohol: "Cetyl Alcohol",
+  polyquaternium10: "Polyquaternium-10",
+  tocopherolAcetate: "Tocopherol Acetate",
+  propyleneGlycol: "Propylene Glycol",
+  diazolidinyUrea: "Diazolidiny Urea (and) iodopropynyl Butylcarbamate",
+  aloeVeraExtractOilShortDescription:
+    "Aloe vera extract oil helps to create a smoother and shiny hair texture.",
+  phBalancingMistAndCleanserShortDescription:
+    "This product is designed to help you achieve the perfect pH balance for the hair.",
+  aqua: "Aqua",
+  lavenderExtract: "Lavender extract",
+  salicylicAcid: "Salicylic Acid",
+  angelicaExtract: "Angelica extract",
+  ginsengExtract: "Ginseng extract",
+  polygonumMultiflorumExtract: "Polygonum multiflorum extract",
+  safflowerExtract: "Safflower Extract",
+  vitexExtract: "Vitex extract",
+  benzylAlcohol: "Benzyl Alcohol",
+  glycerin: "Glycerin (and) Sorbic Acid",
 };
 
 export default en;

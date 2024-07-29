@@ -81,3 +81,8 @@
     @apply text-secondary-foreground;
   }
 }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}

@@ -1,3 +1,4 @@
+"use client";
 import en from "@/language/en";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,12 +10,18 @@ import productFive from "../../assets/images/instagram-six.webp";
 import productSix from "../../assets/images/moisturizer.webp";
 import productSeven from "../../assets/images/cleanser.webp";
 import productEight from "../../assets/images/vitamin-e-serum.webp";
-import { formatCurrency } from "@/lib/utils";
+import { cn, formatCurrency } from "@/lib/utils";
 import Rating from "../ui/Rating";
 import { EyeIcon, ShoppingBasket } from "lucide-react";
 import { HeartIcon } from "@/assets/icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
+
+import { Autoplay } from "swiper/modules";
 
 export default function PopularSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   return (
     <section className="popular_section bg-white pb-20 lg:pb-40 w-full flex-col flex items-center justify-center">
       <div className=" w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
@@ -26,65 +33,73 @@ export default function PopularSection() {
             {en.popularProductsDescription}
           </p>
         </div>
-        <div className="popular_slider swiper">
-          <div className="swiper-wrapper">
-            <div className="popular_slider-slide flex my-8 flex-col lg:flex-row gap-8">
-              {popularProducts.map((product, index) => (
-                <div
-                  className=" wrapper flex flex-col lg:min-w-[320px] justify-between"
-                  key={index}
-                >
-                  <div className="media w-full mb-4 relative rounded overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt="media"
-                      width={320}
-                      height={220}
-                      className="w-full h-[220px] rounded object-cover"
-                    />
+        <Swiper
+          onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+          slidesPerView={
+            window.innerWidth > 1024 ? 4 : window.innerWidth > 768 ? 3 : 1
+          }
+          spaceBetween={30}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Autoplay]}
+          className="mySwiper my-8"
+        >
+          {popularProducts.map((product, index) => (
+            <SwiperSlide key={index}>
+              <div className="media w-full mb-4 relative rounded overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt="media"
+                  width={320}
+                  height={220}
+                  className="w-full h-[220px] rounded object-cover"
+                />
 
-                    <div className="overlay flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
-                      <ul className="action flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
-                        {productMenu.map((menu, index) => (
-                          <li key={index} className="list-item">
-                            <button className="w-10 h-10 rounded-full bg-white hover:bg-secondary flex items-center justify-center text-secondary hover:text-white">
-                              {menu.icon}
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="main flex flex-col gap-2">
-                    <div className="main_rating">
-                      <Rating value={product.star} />
-                    </div>
-                    <Link
-                      className="main_title max-w-[300px] font-semibold text-black"
-                      href="/catalog/caffeine-scalp-serum"
-                      target="_blank"
-                      rel="noopener norefferer"
-                    >
-                      {product.name}
-                    </Link>
-                    <div className="main_price">
-                      <p className="price font-bold text-green-800">
-                        {formatCurrency(product.price, "NGN")}
-                      </p>
-                    </div>
-                  </div>
+                <div className="overlay flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
+                  <ul className="action flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
+                    {productMenu.map((menu, index) => (
+                      <li key={index} className="list-item">
+                        <button className="w-10 h-10 rounded-full bg-white hover:bg-secondary flex items-center justify-center text-secondary hover:text-white">
+                          {menu.icon}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="swiper-pagination flex items-center justify-center gap-2">
-            {Array.from({ length: popularProducts.length }, (_, index) => (
-              <div
-                key={index}
-                className="swiper-pagination-bullet w-3 h-3 rounded-full bg-primary"
-              />
-            ))}
-          </div>
+              </div>
+              <div className="main flex flex-col gap-2">
+                <div className="main_rating">
+                  <Rating value={product.star} />
+                </div>
+                <Link
+                  className="main_title max-w-[300px] font-semibold text-black"
+                  href="/catalog/caffeine-scalp-serum"
+                  target="_blank"
+                  rel="noopener norefferer"
+                >
+                  {product.name}
+                </Link>
+                <div className="main_price">
+                  <p className="price font-bold text-green-800">
+                    {formatCurrency(product.price, "NGN")}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: popularProducts.length }, (_, index) => (
+            <div
+              key={index}
+              className={cn(" w-3 h-3 rounded-full bg-secondary", {
+                "bg-primary": index === activeSlide,
+              })}
+            />
+          ))}
         </div>
       </div>
     </section>

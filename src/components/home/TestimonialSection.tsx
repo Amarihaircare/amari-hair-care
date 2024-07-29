@@ -1,10 +1,18 @@
+"use client";
+
 import en from "@/language/en";
 import Image from "next/image";
 import avatarOne from "../../assets/images/avatar-one.png";
 import avatarTwo from "../../assets/images/avatar-two.png";
 import Rating from "../ui/Rating";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
+
+import { Autoplay } from "swiper/modules";
+import { cn } from "@/lib/utils";
 
 export default function TestimonialsSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
   return (
     <section className="review_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-white">
       <div className="review_container flex flex-col items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
@@ -17,36 +25,49 @@ export default function TestimonialsSection() {
             {en.reviewDescription}
           </p>
         </div>
-        <div className="reviews_slider swiper swiper-initialized swiper-horizontal swiper-pointer-events">
-          <div className="swiper-wrapper flex flex-col lg:flex-row gap-8 my-12">
-            {reviews.map((review, index) => (
-              <div
-                key={index}
-                className="reviews_slider-slide w-full lg:min-w-[420px] p-4 lg:p-10 rounded border shadow border-gray-200"
-              >
-                <div className="reviews_slider-slide_wrapper flex flex-col h-full items-center gap-4 justify-between">
-                  <Image
-                    src={review.avatar}
-                    alt="avatar"
-                    width={100}
-                    height={100}
-                    className="w-20 h-20 rounded-full object-cover mb-4"
-                  />
-                  <Rating value={review.rating} />
-                  <p className="text-center">{review.review}</p>
-                  <h5 className="font-semibold">{review.name}</h5>
-                </div>
+        <Swiper
+          onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+          slidesPerView={
+            window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1
+          }
+          spaceBetween={30}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          className="mySwiper w-full my-12"
+        >
+          {reviews.map((review, index) => (
+            <SwiperSlide
+              key={index}
+              className="reviews_slider-slide w-full lg:min-w-[420px] p-4 lg:p-10 rounded border shadow border-gray-200"
+            >
+              <div className="reviews_slider-slide_wrapper flex flex-col h-full items-center gap-4 justify-between">
+                <Image
+                  src={review.avatar}
+                  alt="avatar"
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 rounded-full object-cover mb-4"
+                />
+                <Rating value={review.rating} />
+                <p className="text-center">{review.review}</p>
+                <h5 className="font-semibold">{review.name}</h5>
               </div>
-            ))}
-          </div>
-          <div className="swiper-pagination flex items-center justify-center gap-2">
-            {Array.from({ length: reviews.length }, (_, index) => (
-              <div
-                key={index}
-                className="swiper-pagination-bullet w-3 h-3 rounded-full bg-primary"
-              />
-            ))}
-          </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: reviews.length }, (_, index) => (
+            <div
+              key={index}
+              className={cn(" w-3 h-3 rounded-full bg-secondary", {
+                "bg-primary": index === activeSlide,
+              })}
+            />
+          ))}
         </div>
       </div>
     </section>
