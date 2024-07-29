@@ -1,57 +1,88 @@
+"use client";
+
 import Image from "next/image";
+import faqMedia from "../../assets/images/instagram-four.webp";
+import en from "@/language/en";
+import { CaretDown } from "@/assets/icons";
+import { useState } from "react";
 
 export default function FaqSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(1);
+
   return (
-    <section className="container d-flex flex-column-reverse flex-xl-row">
-      <div className="faq_media">
-        <Image
-          className="lazy entered loaded"
-          data-src=""
-          src=""
-          alt="media"
-          data-ll-status="loaded"
-        />
-      </div>
-      <div className="faq_main col-xl-6">
-        <div className="faq_main-header">
-          <h2 className="faq_main-header_title">
-            The Effects of Cannabis on Your Body
-          </h2>
-          <p className="faq_main-header_text">
-            Elementum eu facilisis sed odio morbi quis commodo odio. Mauris
-            rhoncus aenean vel elit scelerisque mauris pellentesque. Accumsan
-            sit amet nulla facilisi morbi tempus
-          </p>
+    <section className="faq_section pb-20 lg:pb-40 w-full flex-col flex items-center justify-center bg-white">
+      <div className="faq_container justify-between flex flex-col lg:flex-row items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
+        <div className="faq_media lg:w-[50%] rounded overflow-hidden h-[300px] xl:h-[700px]">
+          <Image
+            src={faqMedia}
+            alt="media"
+            width={800}
+            height={600}
+            className="w-full h-full"
+          />
         </div>
-        <div className="accordion">
-          <div className="accordion_component" id="accordionComponent">
-            <div className="accordion_component-item">
-              <h4
-                className="accordion_component-item_header d-flex justify-content-between align-items-center collapsed"
-                data-bs-toggle="collapse"
-                data-bs-target="#item-1"
-              >
-                Reduce Inflammation and Relieve Pain
-                <span className="wrapper">
-                  <i className="icon-caret_down icon"></i>
-                </span>
-              </h4>
+        <div className="faq_main col-xl-6 lg:w-[48%]">
+          <div className="faq_main-header">
+            <h2 className="faq_main-header_title text-center lg:text-left text-2xl lg:text-4xl font-bold mb-4">
+              {en.effectivenessFaq}
+            </h2>
+            <p className="faq_main-header_text text-center lg:text-left">
+              {en.effectivenessFaqDescription}
+            </p>
+          </div>
+          <div className="accordion mt-8 flex flex-col gap-4">
+            {productQuestions.map((question, index) => (
               <div
-                id="item-1"
-                className="accordion-collapse collapse"
-                data-bs-parent="#accordionComponent"
+                className="accordion_component shadow rounded-3xl border-gray-200"
+                id="accordionComponent"
+                key={index}
               >
-                <div className="accordion_component-item_body">
-                  Placerat orci nulla pellentesque dignissim enim sit amet
-                  venenatis urna. Tempus urna et pharetra pharetra massa massa
-                  ultricies mi. Elementum sagittis vitae et leo duis ut diam
-                  quam
+                <div className="accordion_component-item">
+                  <button
+                    onClick={() => setActiveIndex(index)}
+                    className="w-full text-left flex items-center justify-between p-4 rounded-full border border-primary"
+                  >
+                    <h4 className="accordion_component-item_header font-bold">
+                      {question.question}
+                    </h4>
+                    <CaretDown />
+                  </button>
+                  {activeIndex === index && (
+                    <div className="accordion-collapse p-4">
+                      <p className="accordion_component-item_body">
+                        {question.answer}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+const productQuestions = [
+  {
+    question: en.questionTwo,
+    answer: en.answerTwo,
+  },
+  {
+    question: en.questionThree,
+    answer: en.answerThree,
+  },
+  {
+    question: en.questionNine,
+    answer: en.answerNine,
+  },
+  {
+    question: en.questionTen,
+    answer: en.answerTen,
+  },
+  {
+    question: en.questionEleven,
+    answer: en.answerEleven,
+  },
+];

@@ -1,46 +1,106 @@
+import en from "@/language/en";
 import Image from "next/image";
+import avatarOne from "../../assets/images/avatar-one.png";
+import avatarTwo from "../../assets/images/avatar-two.png";
+import Rating from "../ui/Rating";
 
 export default function TestimonialsSection() {
   return (
-    <section className="review_section py-40 w-full flex-col flex items-center justify-center bg-white">
-      <div className="review_container flex items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
-        <h2 className="reviews_header-title">Your Trust is Our Top Concern</h2>
-        <p className="reviews_header-text">
-          Feugiat sed lectus vestibulum mattis ullamcorper velit. Sed pulvinar
-          proin gravida hendrerit lectus
-        </p>
-      </div>
-      <div className="reviews_slider swiper swiper-initialized swiper-horizontal swiper-pointer-events">
-        <div className="swiper-wrapper">
-          <div
-            className="reviews_slider-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-            data-swiper-slide-index="3"
-          >
-            <div className="reviews_slider-slide_wrapper d-flex flex-column align-items-center">
-              <Image
-                className="lazy avatar entered loaded"
-                data-src=""
-                src=""
-                alt="avatar"
-                data-ll-status="loaded"
-              />
-              <ul className="rating d-flex align-items-center accent">
-                <li className="rating_star">
-                  <i className="icon-star_fill"></i>
-                </li>
-              </ul>
-              <p className="text">
-                Amet facilisis magna etiam tempor orci eu lobortis elementum
-                nibh. Tellus elementum sagittis vitae et leo.
-              </p>
-              <h5 className="name">John Doe</h5>
-            </div>
-          </div>
+    <section className="review_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-white">
+      <div className="review_container flex flex-col items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
+        <div className="reviews_header lg:max-w-[600px] flex flex-col items-center">
+          <h2 className="reviews_header-title text-2xl w-[220px] lg:w-auto lg:text-4xl text-center mb-6 font-bold">
+            {en.reviewHeader}
+          </h2>
+
+          <p className="reviews_header-text text-center">
+            {en.reviewDescription}
+          </p>
         </div>
-        <div className="swiper-pagination swiper-pagination--dots swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-          <span className="swiper-pagination-bullet"></span>
+        <div className="reviews_slider swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+          <div className="swiper-wrapper flex flex-col lg:flex-row gap-8 my-12">
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className="reviews_slider-slide w-full lg:min-w-[420px] p-4 lg:p-10 rounded border shadow border-gray-200"
+              >
+                <div className="reviews_slider-slide_wrapper flex flex-col h-full items-center gap-4 justify-between">
+                  <Image
+                    src={review.avatar}
+                    alt="avatar"
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 rounded-full object-cover mb-4"
+                  />
+                  <Rating value={review.rating} />
+                  <p className="text-center">{review.review}</p>
+                  <h5 className="font-semibold">{review.name}</h5>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="swiper-pagination flex items-center justify-center gap-2">
+            {Array.from({ length: reviews.length }, (_, index) => (
+              <div
+                key={index}
+                className="swiper-pagination-bullet w-3 h-3 rounded-full bg-primary"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+const reviews = [
+  {
+    name: "Sarah E",
+    review:
+      "The Vitamin E Serum has transformed my hair! It’s now so much smoother and healthier. I couldn’t be happier with the results!",
+    rating: 5,
+    avatar: avatarOne,
+  },
+  {
+    name: "Ngozi Uche",
+    review:
+      "Amari Hair Care products are a game changer. The Natural Hair Moisturizer is perfect for my curls, keeping them hydrated and frizz-free all day.",
+    rating: 4,
+    avatar: avatarTwo,
+  },
+  {
+    name: "Glory John",
+    review:
+      "The African Black Soap Clarifying Shampoo Bar is fantastic. It leaves my hair feeling so clean and refreshed without any residue.",
+    rating: 4,
+    avatar: avatarOne,
+  },
+  {
+    name: "Aisha Umar",
+    review:
+      "I love the Leave-In Protein Treatment! My hair has never been this strong and shiny. It’s a must-have in my hair care routine.",
+    rating: 4,
+    avatar: avatarTwo,
+  },
+  {
+    name: "Ebuka Nwosu",
+    review:
+      "I can’t get enough of the Caffeine Scalp Serum. It has significantly improved the health of my scalp and the growth of my hair. Truly amazing!",
+    rating: 4,
+    avatar: avatarOne,
+  },
+  {
+    name: "Rita Mark",
+    review:
+      "The pH Balancing Mist and Cleanser is a staple in my skincare routine. It’s gentle on my skin and leaves it feeling fresh and clean.",
+    rating: 4,
+    avatar: avatarTwo,
+  },
+  {
+    name: "Jane Doe",
+    review:
+      "The Aloe Vera Extract Oil is a miracle worker! It has helped to soothe my dry scalp and has left my hair feeling soft and nourished.",
+    rating: 4,
+    avatar: avatarOne,
+  },
+];

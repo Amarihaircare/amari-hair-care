@@ -68,7 +68,7 @@ export const CaretRight = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 192 512"
     height="1em"
     width="1em"
@@ -192,7 +192,7 @@ export const LocationIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 384 512"
     height="1em"
     width="1em"
@@ -207,7 +207,7 @@ export const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 512 512"
     height="1em"
     width="1em"
@@ -222,7 +222,7 @@ export const ClockIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 512 512"
     height="1em"
     width="1em"
@@ -237,7 +237,7 @@ export const StarIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 576 512"
     height="1em"
     width="1em"
@@ -252,7 +252,7 @@ export const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 512 512"
     height="1em"
     width="1em"

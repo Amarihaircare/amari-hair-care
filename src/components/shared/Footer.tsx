@@ -19,13 +19,10 @@ import instagramSix from "../../assets/images/instagram-six.webp";
 
 export default function Footer() {
   return (
-    <footer className="footer py-10 lg:py-40 w-full flex justify-center bg-primary transition-all duration-300">
-      <div className="flex justify-between md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl w-full">
-        <div className="flex flex-col gap-4 lg:gap-6 max-w-[300px]">
-          <Link
-            className="brand footer_main-about_brand d-flex align-items-center"
-            href="/"
-          >
+    <footer className="footer py-20 lg:py-40 w-full flex justify-center bg-primary transition-all duration-300">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl w-full gap-10 lg:gap-0 px-4">
+        <div className="flex flex-col gap-4 lg:gap-6 lg:max-w-[300px]">
+          <Link className="brand footer_main-about_brand" href="/">
             <Image src="/logo-white.svg" width={82} height={40} alt="logo" />
           </Link>
           <div className="footer_main-about_wrapper">
@@ -47,7 +44,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="footer_main-contacts flex flex-col gap-4 lg:gap-6">
+        <div className="footer_main-contacts flex flex-col gap-4 w-full lg:gap-6 lg:w-auto">
           <h4 className="footer_main-header text-white text-xl font-semibold">
             {en.cotactInformation}
           </h4>
@@ -76,7 +73,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="footer_main-catalogue flex flex-col gap-4 lg:gap-6">
+        <div className="footer_main-catalogue flex flex-col gap-4 lg:gap-6 w-full lg:w-auto">
           <h4 className="footer_main-header text-white text-xl font-semibold">
             {en.catalog}
           </h4>
@@ -94,11 +91,11 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="footer_main-instagram flex flex-col gap-4 lg:gap-6">
+        <div className="footer_main-instagram flex flex-col gap-4 lg:gap-6 w-full lg:w-auto">
           <h4 className="footer_main-header text-white text-xl font-semibold">
             {en.instagram}
           </h4>
-          <ul className="footer_main-instagram_list grid grid-cols-3 gap-4 lg:gap-6 max-w-[300px]">
+          <ul className="footer_main-instagram_list grid grid-cols-3 gap-4 lg:gap-6 lg:max-w-[300px]">
             {instagramPhotos.map((photo, index) => (
               <li className="list-item" key={index}>
                 <Link
