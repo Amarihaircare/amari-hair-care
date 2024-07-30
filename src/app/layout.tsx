@@ -4,6 +4,13 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/pagination";
+
+import "aos/dist/aos.css"; // You can also use <link> for styles
+
 const nunito = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-nunito-sans",

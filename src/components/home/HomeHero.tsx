@@ -13,8 +13,8 @@ import serum from "../../assets/images/hair-serum.webp";
 import oil from "../../assets/images/aloe-vera-extract-oil.webp";
 import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { useRef, useEffect, useState } from "react";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
@@ -22,6 +22,14 @@ import { cn } from "@/lib/utils";
 
 export default function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const swiperRef = useRef<SwiperRef>(null);
+
+  function handleDotClick(index: number) {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  }
+
   return (
     <section className="w-full overflow-hidden lg:pb-0 pb-20 lg:min-h-[800px] relative flex flex-col items-center">
       <div className="absolute w-[50%] right-0 top-0 bottom-0 bg-primary hidden lg:block" />
@@ -65,6 +73,7 @@ export default function HomeHero() {
         <div className="bg-primary lg:w-[50%] flex lg:items-center px-4 justify-center flex-col relative py-20 lg:py-0">
           <div className="hero_media lg:absolute lg:top-[20%] lg:left-[-25%] z-[90] ">
             <Swiper
+              ref={swiperRef}
               onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
               effect={"fade"}
               grabCursor={true}
@@ -128,7 +137,7 @@ export default function HomeHero() {
             {Array.from({ length: slides.length }, (_, index) => (
               <button
                 key={index}
-                onClick={() => setActiveSlide(index)}
+                onClick={() => handleDotClick(index)}
                 className={cn(
                   "text-white/60 text-sm font-bold transition-all",
                   {

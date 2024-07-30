@@ -12,7 +12,10 @@ export default function FaqSection() {
   return (
     <section className="faq_section pb-20 lg:pb-40 w-full flex-col flex items-center justify-center bg-white">
       <div className="faq_container justify-between flex flex-col gap-10 lg:gap-0 lg:flex-row items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
-        <div className="faq_media w-full lg:w-[50%] rounded overflow-hidden h-[300px] xl:h-[700px]">
+        <div
+          className="faq_media w-full lg:w-[50%] rounded overflow-hidden h-[300px] xl:h-[700px]"
+          data-aos="fade-right"
+        >
           <Image
             src={faqMedia}
             alt="media"
@@ -36,6 +39,7 @@ export default function FaqSection() {
                 className="accordion_component shadow rounded-3xl border-gray-200"
                 id="accordionComponent"
                 key={index}
+                data-aos="fade-up"
               >
                 <div className="accordion_component-item">
                   <button

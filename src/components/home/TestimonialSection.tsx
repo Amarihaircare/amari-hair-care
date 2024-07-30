@@ -5,31 +5,42 @@ import Image from "next/image";
 import avatarOne from "../../assets/images/avatar-one.png";
 import avatarTwo from "../../assets/images/avatar-two.png";
 import Rating from "../ui/Rating";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
-
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { useRef, useState } from "react";
+import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { Autoplay } from "swiper/modules";
-import { cn } from "@/lib/utils";
+import SlidesPagination from "../ui/SlidesPagination";
 
 export default function TestimonialsSection() {
+  const slidesPerView = useSlidesPerView();
   const [activeSlide, setActiveSlide] = useState(0);
+  const swiperRef = useRef<SwiperRef>(null);
+
+  const handleDotClick = (index: number) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  };
+
   return (
     <section className="review_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-white">
       <div className="review_container flex flex-col items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
         <div className="reviews_header lg:max-w-[600px] flex flex-col items-center">
-          <h2 className="reviews_header-title text-2xl w-[220px] lg:w-auto lg:text-4xl text-center mb-6 font-bold">
+          <h2
+            className="reviews_header-title text-2xl w-[220px] lg:w-auto lg:text-4xl text-center mb-6 font-bold"
+            data-aos="fade-up"
+          >
             {en.reviewHeader}
           </h2>
 
-          <p className="reviews_header-text text-center">
+          <p className="reviews_header-text text-center" data-aos="fade-left">
             {en.reviewDescription}
           </p>
         </div>
         <Swiper
+          ref={swiperRef}
           onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-          slidesPerView={
-            window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1
-          }
+          slidesPerView={slidesPerView}
           spaceBetween={30}
           loop={true}
           autoplay={{
@@ -59,16 +70,11 @@ export default function TestimonialsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex items-center justify-center gap-2">
-          {Array.from({ length: reviews.length }, (_, index) => (
-            <div
-              key={index}
-              className={cn(" w-3 h-3 rounded-full bg-secondary", {
-                "bg-primary": index === activeSlide,
-              })}
-            />
-          ))}
-        </div>
+        <SlidesPagination
+          length={reviews.length}
+          activeSlide={activeSlide}
+          handleDotClick={handleDotClick}
+        />
       </div>
     </section>
   );

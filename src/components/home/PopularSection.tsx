@@ -10,17 +10,27 @@ import productFive from "../../assets/images/instagram-six.webp";
 import productSix from "../../assets/images/moisturizer.webp";
 import productSeven from "../../assets/images/cleanser.webp";
 import productEight from "../../assets/images/vitamin-e-serum.webp";
-import { cn, formatCurrency } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
 import Rating from "../ui/Rating";
 import { EyeIcon, ShoppingBasket } from "lucide-react";
 import { HeartIcon } from "@/assets/icons";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { useRef, useState } from "react";
+import useSlidesPerView from "@/hooks/useSlidesPerView";
 
 import { Autoplay } from "swiper/modules";
+import SlidesPagination from "../ui/SlidesPagination";
 
 export default function PopularSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const slidesPerView = useSlidesPerView();
+  const swiperRef = useRef<SwiperRef>(null);
+
+  const handleDotClick = (index: number) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  };
 
   return (
     <section className="popular_section bg-white pb-20 lg:pb-40 w-full flex-col flex items-center justify-center">
@@ -35,9 +45,7 @@ export default function PopularSection() {
         </div>
         <Swiper
           onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-          slidesPerView={
-            window.innerWidth > 1024 ? 4 : window.innerWidth > 768 ? 3 : 1
-          }
+          slidesPerView={slidesPerView}
           spaceBetween={30}
           autoplay={{
             delay: 2500,
@@ -46,6 +54,7 @@ export default function PopularSection() {
           loop={true}
           modules={[Autoplay]}
           className="mySwiper my-8"
+          ref={swiperRef}
         >
           {popularProducts.map((product, index) => (
             <SwiperSlide key={index}>
@@ -91,16 +100,11 @@ export default function PopularSection() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex items-center justify-center gap-2">
-          {Array.from({ length: popularProducts.length }, (_, index) => (
-            <div
-              key={index}
-              className={cn(" w-3 h-3 rounded-full bg-secondary", {
-                "bg-primary": index === activeSlide,
-              })}
-            />
-          ))}
-        </div>
+        <SlidesPagination
+          length={popularProducts.length}
+          activeSlide={activeSlide}
+          handleDotClick={handleDotClick}
+        />
       </div>
     </section>
   );

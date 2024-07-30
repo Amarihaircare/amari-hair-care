@@ -58,7 +58,7 @@ export default function PromoSection() {
             </Link>
           </Button>
         </div>
-        <div className="media">
+        <div className="media" data-aos="fade-left">
           <Image
             src={promoProduct}
             alt="media"
