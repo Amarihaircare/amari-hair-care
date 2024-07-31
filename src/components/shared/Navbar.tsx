@@ -67,7 +67,7 @@ export default function Navbar() {
         }
       )}
     >
-      <div className="flex relative flex-wrap md:flex-nowrap items-center justify-between px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl w-full">
+      <div className="flex relative flex-wrap md:flex-nowrap items-center justify-between px-4 md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl w-full">
         <Link href="/">
           <Image
             src="/logo-black.svg"

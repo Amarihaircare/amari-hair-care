@@ -171,6 +171,16 @@ const en = {
   errorPageDescription:
     "We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!",
   error: "Error",
+  addToCart: "Add to Cart",
+  category: "Category",
+  size: "Size",
+  tags: "Tags",
+  description: "Description",
+  reviews: "Reviews",
+  additionalInformation: "Additional Information",
+  reply: "Reply",
+  ingredients: "Ingredients",
+  recommendedUsage: "Recommended Usage",
 };
 
 export default en;

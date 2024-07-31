@@ -14,7 +14,7 @@ import oil from "../../assets/images/aloe-vera-extract-oil.webp";
 import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
@@ -33,13 +33,13 @@ export default function HomeHero() {
   return (
     <section className="w-full overflow-hidden lg:pb-0 pb-20 lg:min-h-[800px] relative flex flex-col items-center">
       <div className="absolute w-[50%] right-0 top-0 bottom-0 bg-primary hidden lg:block" />
-      <div className=" w-full md:max-w-screen-sm  lg:min-h-[800px] xl:max-w-screen-lg 2xl:max-w-screen-xl flex flex-col lg:flex-row justify-center lg:justify-normal">
+      <div className=" w-full md:max-w-screen-sm  lg:min-h-[800px] xl:max-w-[95%] 2xl:max-w-screen-xl flex flex-col lg:flex-row justify-center lg:justify-normal">
         <div className="hero_content lg:w-[50%] flex flex-col gap-4 lg:items-start items-center justify-center px-4 py-20 lg:py-0">
           <div className="hero_content-header flex flex-col gap-4">
             <h1 className="hero_content-header_title lg:max-w-[560px] text-center lg:text-left text-3xl lg:text-6xl font-black">
               {en.heroTitle}
             </h1>
-            <p className="hero_content-header_text max-w-[500px] text-center lg:text-left">
+            <p className="hero_content-header_text max-w-[400px] 2xl:max-w-[500px] text-center lg:text-left">
               {en.heroDescription}
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function HomeHero() {
               pagination={false}
               loop={true}
               autoplay={{
-                delay: 2500,
+                delay: 5000,
                 disableOnInteraction: false,
               }}
               modules={[Autoplay]}
@@ -215,7 +215,7 @@ const ourValues = [
   },
   {
     name: en.employeeSatisfaction,
-    icon: <EmployeeIcon />,
+    icon: <EmployeeIcon className="text-2xl" />,
   },
   {
     name: en.environmentalSustainability,

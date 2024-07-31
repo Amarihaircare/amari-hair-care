@@ -126,13 +126,13 @@ export const CaretDown = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const EmployeeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
-    height="36"
+    height="1em"
     viewBox="0 0 36 36"
-    width="36"
+    width="1em"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
     stroke="currentColor"
     fill="currentColor"
+    {...props}
   >
     <path d="m18.42 16.31a5.7 5.7 0 1 1 5.76-5.7 5.74 5.74 0 0 1 -5.76 5.7zm0-9.4a3.7 3.7 0 1 0 3.76 3.7 3.74 3.74 0 0 0 -3.76-3.7z" />
     <path d="m18.42 16.31a5.7 5.7 0 1 1 5.76-5.7 5.74 5.74 0 0 1 -5.76 5.7zm0-9.4a3.7 3.7 0 1 0 3.76 3.7 3.74 3.74 0 0 0 -3.76-3.7z" />

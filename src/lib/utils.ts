@@ -5,20 +5,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const currencySymbols: { [key: string]: string } = {
-  NGN: "₦",
-  USD: "$",
-  EUR: "€",
-};
-
-export const formatCurrency = (amount: number, currency: string) => {
-  const formattedAmount = new Intl.NumberFormat("en-US", {
+export const formatCurrency = (
+  amount: number,
+  currency = "NGN",
+  locale?: Intl.LocalesArgument
+) => {
+  return amount.toLocaleString(locale ?? "en-NG", {
     style: "currency",
     currency,
-  }).format(amount);
-
-  if (currency in currencySymbols) {
-    return formattedAmount.replace(currency, currencySymbols[currency]);
-  }
-  return formattedAmount;
+    minimumFractionDigits: 2,
+  });
 };

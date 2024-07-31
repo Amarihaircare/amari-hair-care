@@ -8,7 +8,7 @@ export default function PromoSection() {
   const timeCards = [en.days, en.hours, en.mins, en.secs];
   return (
     <section className="promo_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-background">
-      <div className="promo_container flex flex-col lg:flex-row justify-center items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-screen-lg 2xl:max-w-screen-xl">
+      <div className="promo_container flex flex-col lg:flex-row justify-center items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl">
         <div className="wrapper max-w-[500px] flex flex-col items-center">
           <div className="promo_header mb-6">
             <Link
