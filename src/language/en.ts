@@ -149,6 +149,10 @@ const en = {
   benzylAlcohol: "Benzyl Alcohol",
   glycerin: "Glycerin (and) Sorbic Acid",
   backToHomePage: "Back to Home Page",
+  platform: "Platform",
+  pages: "Pages",
+  faq: "FAQ",
+  services: "Services",
 };
 
 export default en;

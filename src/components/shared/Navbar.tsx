@@ -122,7 +122,7 @@ export default function Navbar() {
                       }
                     )}
                   >
-                    <ul className="dropdown-list bg-white rounded py-4">
+                    <ul className="dropdown-list bg-white rounded py-4 lg:min-w-[200px]">
                       {navLink.dropdown.map((item) => (
                         <li className="list-item nav-item" key={item.url}>
                           <Link
@@ -229,11 +229,29 @@ const navLinks = [
     ],
   },
   {
-    name: en.about,
-    url: "/about",
+    name: en.platform,
+    url: "/platform",
   },
   {
-    name: en.contact,
-    url: "/contact",
+    name: en.pages,
+    url: "#",
+    dropdown: [
+      {
+        name: en.about,
+        url: "/about",
+      },
+      {
+        name: en.contact,
+        url: "/contact",
+      },
+      {
+        name: en.faq,
+        url: "/faq",
+      },
+      {
+        name: en.services,
+        url: "/services",
+      },
+    ],
   },
 ];

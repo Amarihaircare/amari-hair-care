@@ -12,8 +12,7 @@ import productSeven from "../../assets/images/cleanser.webp";
 import productEight from "../../assets/images/vitamin-e-serum.webp";
 import { formatCurrency } from "@/lib/utils";
 import Rating from "../ui/Rating";
-import { EyeIcon, ShoppingBasket } from "lucide-react";
-import { HeartIcon } from "@/assets/icons";
+import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
@@ -67,7 +66,7 @@ export default function PopularSection() {
                   className="w-full h-[220px] rounded object-cover"
                 />
 
-                <div className="overlay flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
+                <div className="overlay hidden lg:flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
                   <ul className="action flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
                     {productMenu.map((menu, index) => (
                       <li key={index} className="list-item">
