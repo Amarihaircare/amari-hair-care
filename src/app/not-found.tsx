@@ -15,7 +15,9 @@ export default function NotFound() {
         alt="404"
         className="mb-8"
       />
-      <h1 className="text-3xl font-semibold text-center">{en.pageNotFound}</h1>
+      <h1 className="text-3xl font-semibold text-center mb-4">
+        {en.pageNotFound}
+      </h1>
       <p className="max-w-[360px] text-center">{en.notFoundDescription}</p>
       <Button asChild>
         <Link

@@ -1,10 +1,12 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import { CaretRight, CaretLeft } from "@/assets/icons";
+import { cn } from "@/lib/utils";
 
 interface ProductImageSlidesProps {
   images: StaticImageData[];
@@ -12,31 +14,71 @@ interface ProductImageSlidesProps {
 export default function ProductImageSlides({
   images,
 }: ProductImageSlidesProps) {
+  const swiperRef = useRef<SwiperRef>(null);
+
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-  console.log(images, "images");
+  const navigations = [
+    {
+      name: "next",
+      icon: <CaretRight />,
+    },
+    {
+      name: "prev",
+      icon: <CaretLeft />,
+    },
+  ];
+
+  function handleNavigationClick(name: string) {
+    if (!swiperRef.current || !swiperRef.current.swiper) return;
+
+    if (name === "next") {
+      swiperRef.current.swiper.slideNext();
+      return;
+    }
+    swiperRef.current.swiper.slidePrev();
+  }
 
   return (
     <div className="w-full lg:w-[50%] flex flex-col gap-4">
-      <Swiper
-        loop={true}
-        spaceBetween={10}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 w-full h-[370px] lg:h-[480px]"
-      >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <Image
-              src={image}
-              width={600}
-              height={400}
-              alt="Product Image"
-              className="w-full h-full object-cover rounded"
-            />
-          </SwiperSlide>
+      <div className="relative flex flex-col items-center justify-center">
+        <Swiper
+          ref={swiperRef}
+          loop={true}
+          spaceBetween={10}
+          navigation={true}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper2 w-full h-[370px] lg:h-[480px]"
+        >
+          {images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={image}
+                width={600}
+                height={400}
+                alt="Product Image"
+                className="w-full h-full object-cover rounded"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {navigations.map((nav, index) => (
+          <button
+            onClick={() => handleNavigationClick(nav.name)}
+            key={index}
+            className={cn(
+              "w-10 h-10 flex items-center justify-center bg-white rounded-full text-3xl shadow text-primary absolute z-[99]",
+              {
+                "right-4": nav.name === "next",
+                "left-4": nav.name === "prev",
+              }
+            )}
+          >
+            {nav.icon}
+          </button>
         ))}
-      </Swiper>
+      </div>
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}

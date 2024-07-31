@@ -3,7 +3,7 @@ import growthSerum from "../images/growth-serum.webp";
 import instagramFive from "../images/instagram-five.webp";
 import ayurvedic from "../images/instagram-six.webp";
 import moisturizer from "../images/moisturizer.webp";
-import vitaminE from "../images/oil.webp";
+import aloe from "../images/oil.webp";
 import protein from "../images/protien-treatment.webp";
 import shampoo from "../images/shampoo.webp";
 import treatment from "../images/treatment.webp";
@@ -17,6 +17,7 @@ import aloeTwo from "../images/aloe-vera-two.webp";
 export const products = [
   {
     name: "Caffeine Scalp Serum",
+    slug: "caffeine-scalp-serum",
     rating: 4.5,
     reviews: [
       {
@@ -25,7 +26,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [growthSerum, vpg, instagramFive],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -41,7 +42,8 @@ export const products = [
     category: "oil",
     size: "1.7 oz",
     tags: ["caffeine", "hair", "growth"],
-    images: [],
+    images: [growthSerum, vpg, instagramFive],
+
     description:
       "<b>WHY PEOPLE PREFER CAFFEINE</b>\n\nWhile minoxidil and finasteride have extensive scientific backing for their effectiveness in treating hair loss, some individuals may prefer caffeine as an alternative due to its mildness and fewer reported side effects. Here's how caffeine can be considered a gentler option:\n <b>Mildness:</b> Caffeine is generally well-tolerated by most individuals when applied topically to the scalp. Unlike some pharmaceutical treatments, caffeine is derived from natural sources and is milder on the scalp and hair follicles.\n <b>Minimal side effects:</b> Minimal Side Effects: Compared to minoxidil and finasteride, which may have systemic side effects such as scalp irritation, itching, blood pressure and sexual dysfunction, caffeine is a safer alternative when used topically. This makes it a preferred option for individuals seeking a gentler approach to hair loss treatment. \n <b>Natural Ingredient:</b> Caffeine is a naturally occurring compound found in coffee, tea, and other plants. As a result, many people prefer it as a safer and more sustainable alternative to synthetic pharmaceuticals like minoxidil and finasteride. \n <b>Stimulation of Hair Growth:</b> Research suggests that caffeine can promote hair growth by stimulating blood circulation to the scalp, prolonging the anagen (growth) phase of the hair cycle, and counteracting the effects of dihydrotestosterone (DHT), a hormone associated with hair loss. \n <b>Convenience and Accessibility:</b> Our Caffeine scalp serum can be readily available over the counter and can be easily incorporated into daily hair care routines. This accessibility makes caffeine a convenient option for individuals seeking a non-prescription solution to hair loss. \n <b>Complementary Treatment:</b> While caffeine may not have the same level of scientific evidence as minoxidil and finasteride, some individuals choose to use caffeine-based products in conjunction with other treatments for a multifaceted approach to hair loss management. Combining caffeine with treatments like ketoconazole shampoo may enhance overall efficacy. \n <b>Suitable for Sensitive Skin:</b>  Our Caffeine formulation is gentle on the scalp and suitable for individuals with sensitive skin or those prone to irritation from other hair loss treatments. This makes the serum a viable option for people who may not tolerate more potent treatments well. \n Therefore, while caffeine may lack the extensive scientific validation of minoxidil and finasteride, it presents an appealing option for those seeking a gentler, more natural alternative with potentially fewer side effects. Yet, it's crucial to temper expectations, recognising that individual responses to treatment can differ. Consistent, long-term use may be required to observe significant enhancements in hair growth and thickness. Additionally, the serum's dual function of nourishing the scalp makes it a great option for healthier hair overall.",
     ingredients:
@@ -51,6 +53,7 @@ export const products = [
   },
   {
     name: "Vitamin E Serum",
+    slug: "vitamin-e-serum",
     rating: 3.5,
     reviews: [
       {
@@ -59,7 +62,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [vitaminE, vitaminE2, vpg],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -75,7 +78,7 @@ export const products = [
     category: "oil",
     size: "1.7 oz",
     tags: ["hair", "growth"],
-    images: [],
+    images: [vitaminE2, vpg],
     description:
       "The serum's antioxidant properties are derived from Vitamin E which combats oxidative stress and can help reduce the breakdown of hair follicle cells, preventing hair loss. The serum's moisturizing properties also prevent dandruff and provide moisture to the scalp. ",
     ingredients:
@@ -85,6 +88,7 @@ export const products = [
   },
   {
     name: "pH Balancing Mist + Cleanser",
+    slug: "ph-balancing-mist-and-cleanser",
     rating: 4.2,
     reviews: [
       {
@@ -93,7 +97,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [cleanser, pla, ap],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -109,7 +113,7 @@ export const products = [
     category: "oil",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
-    images: [],
+    images: [cleanser, pla, ap],
     description:
       "pH is a critical factor in determining the strength and health of the hair. The pH scale ranges from 0-14, with acidity levels ranging from 0-6, neutrality at 7, and alkaline levels from 8-14. The hair's natural pH should typically fall within the range of 4.5-5.5 to maintain optimal health This product is designed to help you achieve the perfect pH balance for the hair. By providing a healthy balance of acidity and alkalinity, this formula ensures that the hair is at its strongest and healthiest. This pH-balancing solution also provides additional benefits such as opening pores for deeper penetration of hair growth products and protection against harmful bacteria and fungus. It is a vegan-friendly blend of floral water with no added fragrance.",
     ingredients:
@@ -119,6 +123,7 @@ export const products = [
   },
   {
     name: "Natural Hair Moisturizer",
+    slug: "natural-hair-moisturizer",
     rating: 3.5,
     reviews: [
       {
@@ -127,7 +132,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [aloeTwo, moisturizer, moisturizer2],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -143,7 +148,7 @@ export const products = [
     category: "jelly",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
-    images: [],
+    images: [moisturizer, aloeTwo, moisturizer2],
     description:
       "Unlike traditional leave-in conditioners, our moisturizer aims to provide the hair with the long-lasting nourishment it needs to thrive. The fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured, without the need for the time-consuming LOC/LCO method. The Natural Hair Moisturizer is designed to provide deep moisture to natural hair, restoring vitality and softness to dry/ brittle hair and keeping the hair moisturized for up to 72 hrs. The fast-absorbing formula of the Natural Hair Moisturizer ensures that it quickly penetrates the hair, leaving no greasy residue.",
     ingredients:
@@ -153,6 +158,7 @@ export const products = [
   },
   {
     name: "Leave-in Protein Treatment",
+    slug: "leave-in-protein-treatment",
     rating: 3.5,
     reviews: [
       {
@@ -177,7 +183,7 @@ export const products = [
     category: "oil",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
-    images: [pla, protein],
+    images: [protein, pla],
     description:
       "The Leave-in-Protein Treatment works by temporarily filling in the cracks and gaps in damaged hair cuticles, providing a stronger barrier against breakage. Unlike other protein treatments, our protein treatment is leave-in.",
     ingredients:
@@ -211,7 +217,7 @@ export const products = [
     category: "oil",
     size: "1.7 oz",
     tags: ["hair", "growth", "hydration"],
-    images: [aloeTwo, pla, ap, vpg],
+    images: [aloeTwo, pla, ap, aloe],
     description:
       "This oil is extracted from the Aloe Vera plant. It is a lightweight oil that can be used to improve hydration by sealing in moisture as well as add strength and shine to the hair by diminishing the look of frizzy unruly hair. By diminishing the look of frizzy and unruly hair, Aloe vera extract oil helps to create a smoother and shiny hair texture.",
     ingredients: "Aloe Vera Extract",
@@ -220,6 +226,7 @@ export const products = [
   },
   {
     name: "African Black Soap Clarifying Shampoo Bar ",
+    slug: "african-black-soap-clarifying-shampoo-bar",
     rating: 3.5,
     reviews: [
       {
@@ -228,7 +235,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [shampoo],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -244,7 +251,8 @@ export const products = [
     category: "soap",
     size: "1.7 oz",
     tags: ["hair", "growth", "treatment"],
-    images: [],
+    images: [shampoo],
+
     description:
       "By effectively cleansing the hair, the shampoo helps to maintain a healthy scalp environment. It can soothe and balance the scalp, reducing dryness, and itchiness.",
     ingredients:
@@ -254,6 +262,7 @@ export const products = [
   },
   {
     name: "Ayurvedic Hair Treatment (250g)",
+    slug: "ayurvedic-hair-treatment",
     rating: 3.5,
     reviews: [
       {
@@ -262,7 +271,7 @@ export const products = [
         date: "2021-10-01",
         review:
           "This product is amazing! It has helped me grow my hair back after years of hair loss. I highly recommend it to anyone who is struggling with hair loss.",
-        images: [ayurvedic, treatment],
+        images: [],
       },
       {
         name: "Jane Doe",
@@ -278,7 +287,7 @@ export const products = [
     category: "oil",
     size: "250g",
     tags: ["hair", "growth", "treatment"],
-    images: [],
+    images: [ayurvedic, treatment],
     description:
       "The synergistic blend of nourishing oils works to strengthen your strands from within, promoting resilience, increasing elasticity and reducing breakage.",
     ingredients:
@@ -288,8 +297,39 @@ export const products = [
   },
 ];
 
-export const getProduct = (name: string) => {
+export const findProduct = (name: string) => {
   return products.find(
     (product) => product.name.toLowerCase().replace(/ /g, "-") === name
   );
 };
+
+export const popularProducts = products
+  .filter((product) => product.rating >= 3)
+  .slice(0, 5);
+
+export const categories = [
+  {
+    name: "Moisturizers",
+    image: moisturizer,
+  },
+  {
+    name: "Cleansers",
+    image: cleanser,
+  },
+  {
+    name: "Oil",
+    image: aloe,
+  },
+  {
+    name: "Serum",
+    image: growthSerum,
+  },
+  {
+    name: "Treatments",
+    image: treatment,
+  },
+  {
+    name: "Shampoo",
+    image: shampoo,
+  },
+];

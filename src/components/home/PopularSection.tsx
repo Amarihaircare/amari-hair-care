@@ -2,14 +2,6 @@
 import en from "@/language/en";
 import Image from "next/image";
 import Link from "next/link";
-import productOne from "../../assets/images/oil.webp";
-import productTwo from "../../assets/images/shampoo.webp";
-import productThree from "../../assets/images/treatment.webp";
-import productFour from "../../assets/images/protien-treatment.webp";
-import productFive from "../../assets/images/instagram-six.webp";
-import productSix from "../../assets/images/moisturizer.webp";
-import productSeven from "../../assets/images/cleanser.webp";
-import productEight from "../../assets/images/vitamin-e-serum.webp";
 import { formatCurrency } from "@/lib/utils";
 import Rating from "../ui/Rating";
 import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
@@ -19,6 +11,7 @@ import useSlidesPerView from "@/hooks/useSlidesPerView";
 
 import { Autoplay } from "swiper/modules";
 import SlidesPagination from "../ui/SlidesPagination";
+import { popularProducts } from "@/assets/data/products";
 
 export default function PopularSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -59,7 +52,7 @@ export default function PopularSection() {
             <SwiperSlide key={index}>
               <div className="media w-full mb-4 relative rounded overflow-hidden">
                 <Image
-                  src={product.image}
+                  src={product.images[0]}
                   alt="media"
                   width={320}
                   height={220}
@@ -80,12 +73,11 @@ export default function PopularSection() {
               </div>
               <div className="main flex flex-col gap-2">
                 <div className="main_rating">
-                  <Rating value={product.star} />
+                  <Rating value={product.rating} />
                 </div>
                 <Link
                   className="main_title max-w-[300px] font-semibold text-black"
-                  href="/product/caffeine-scalp-serum"
-                  target="_blank"
+                  href={`/product/${product.slug}`}
                   rel="noopener norefferer"
                 >
                   {product.name}
@@ -118,57 +110,5 @@ const productMenu = [
   },
   {
     icon: <EyeIcon />,
-  },
-];
-const popularProducts = [
-  {
-    name: en.caffeineScalpSerum,
-    price: 10000,
-    star: 4,
-    image: productFour,
-  },
-  {
-    name: en.vitaminESerum,
-    price: 10000,
-    star: 4,
-    image: productEight,
-  },
-  {
-    name: en.phBalancingMistAndCleanser,
-    price: 5000,
-    star: 3,
-    discount: 10,
-    image: productSeven,
-  },
-  {
-    name: en.naturalHairMoisturizer,
-    price: 15000,
-    star: 5,
-    image: productSix,
-  },
-  {
-    name: en.leaveInProteinTreatment,
-    price: 75000,
-    star: 3,
-    discount: 10,
-    image: productThree,
-  },
-  {
-    name: en.aloeVeraExtractOil,
-    price: 10200,
-    star: 3,
-    image: productOne,
-  },
-  {
-    name: en.africanBlackSoapClarifyingShampooBar,
-    price: 3000,
-    star: 3,
-    image: productTwo,
-  },
-  {
-    name: `${en.ayurvedicHairTreatment} (250g)`,
-    price: 6000,
-    star: 4,
-    image: productFive,
   },
 ];

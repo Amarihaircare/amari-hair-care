@@ -13,6 +13,7 @@ import { Input } from "../ui/input";
 import en from "@/language/en";
 import Image from "next/image";
 import BurgerButton from "../ui/BurgerButton";
+import RoundedIconButton from "../ui/RoundedIconButton";
 
 export default function Navbar() {
   const [dropdown, setDropdown] = useState("");
@@ -162,17 +163,13 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 lg:gap-6">
             {userAction.map((action, index) => (
-              <button
+              <RoundedIconButton
+                className={cn({
+                  "lg:hidden": action.name.toLowerCase() === "search",
+                })}
                 key={index}
-                className={cn(
-                  "header_user-action bg-secondary flex items-center justify-center rounded-full w-10 h-10",
-                  {
-                    "lg:hidden": action.name.toLowerCase() === "search",
-                  }
-                )}
-              >
-                {action.icon}
-              </button>
+                icon={action.icon}
+              />
             ))}
           </div>
           <BurgerButton
@@ -192,41 +189,7 @@ const navLinks = [
   },
   {
     name: en.catalog,
-    url: "#",
-    dropdown: [
-      {
-        name: en.caffeineScalpSerum,
-        url: "/product/caffeine-scalp-serum",
-      },
-      {
-        name: en.vitaminESerum,
-        url: "/product/vitamin-e-serum",
-      },
-      {
-        name: en.phBalancingMistAndCleanser,
-        url: "/product/ph-balancing-mist-and-cleanser",
-      },
-      {
-        name: en.naturalHairMoisturizer,
-        url: "/product/natural-hair-moisturizer",
-      },
-      {
-        name: en.leaveInProteinTreatment,
-        url: "/product/leave-in-protein-treatment",
-      },
-      {
-        name: en.aloeVeraExtractOil,
-        url: "/product/aloe-vera-extract-oil",
-      },
-      {
-        name: en.africanBlackSoapClarifyingShampooBar,
-        url: "/product/african-black-soap-clarifying-shampoo-bar",
-      },
-      {
-        name: en.ayurvedicHairTreatment,
-        url: "/product/ayurvedic-hair-treatment",
-      },
-    ],
+    url: "/catalog",
   },
   {
     name: en.platform,

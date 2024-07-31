@@ -1,11 +1,5 @@
+import { categories } from "@/assets/data/products";
 import Image from "next/image";
-import moisturizers from "../../assets/images/moisturizer.webp";
-import cleansers from "../../assets/images/cleanser.webp";
-import serum from "../../assets/images/growth-serum.webp";
-import oil from "../../assets/images/oil.webp";
-import treatments from "../../assets/images/treatment.webp";
-import shampoo from "../../assets/images/shampoo.webp";
-import en from "@/language/en";
 
 export default function CategoriesSection() {
   return (
@@ -33,30 +27,3 @@ export default function CategoriesSection() {
     </section>
   );
 }
-
-const categories = [
-  {
-    name: en.moisturizers,
-    image: moisturizers,
-  },
-  {
-    name: en.cleansers,
-    image: cleansers,
-  },
-  {
-    name: en.oil,
-    image: oil,
-  },
-  {
-    name: en.serums,
-    image: serum,
-  },
-  {
-    name: en.treatments,
-    image: treatments,
-  },
-  {
-    name: en.shampoo,
-    image: shampoo,
-  },
-];

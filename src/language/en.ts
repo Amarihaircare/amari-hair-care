@@ -165,6 +165,12 @@ const en = {
   productMetaDescription:
     "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
   productMetaTitle: "Product | Our hair product page",
+  errorPage: "Error Page",
+  productPageDescription:
+    "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
+  errorPageDescription:
+    "We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!",
+  error: "Error",
 };
 
 export default en;
