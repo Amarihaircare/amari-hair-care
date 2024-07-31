@@ -9,7 +9,7 @@ export default function PromoSection() {
   return (
     <section className="promo_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-background">
       <div className="promo_container flex flex-col lg:flex-row justify-between items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl gap-10">
-        <div className="wrapper max-w-[500px] flex flex-col items-center">
+        <div className="wrapper max-w-[500px] flex flex-col items-center lg:items-start">
           <div className="promo_header mb-6">
             <Link
               className="promo_header-title font-bold text-2xl text-center lg:text-left lg:text-4xl block mb-6"
