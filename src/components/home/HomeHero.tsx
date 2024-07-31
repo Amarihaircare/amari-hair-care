@@ -39,7 +39,7 @@ export default function HomeHero() {
             <h1 className="hero_content-header_title lg:max-w-[560px] text-center lg:text-left text-3xl lg:text-6xl font-black">
               {en.heroTitle}
             </h1>
-            <p className="hero_content-header_text max-w-[400px] 2xl:max-w-[500px] text-center lg:text-left">
+            <p className="hero_content-header_text max-w-[400px] 2xl:max-w-[450px] text-center lg:text-left">
               {en.heroDescription}
             </p>
           </div>
