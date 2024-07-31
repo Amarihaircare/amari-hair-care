@@ -99,11 +99,12 @@ export default function Navbar() {
                 key={navLink.url}
               >
                 <Link
-                  onClick={() =>
+                  onClick={() => {
                     setDropdown((prev) =>
                       prev === navLink.name ? "" : navLink.name
-                    )
-                  }
+                    );
+                    !navLink.dropdown && setShowNav(!showNav);
+                  }}
                   onMouseLeave={() => setDropdown("")}
                   className="nav-link flex items-center gap-2 font-bold font-nunito hover:text-green-700 transition-colors"
                   href={navLink.url}
@@ -127,7 +128,8 @@ export default function Navbar() {
                       {navLink.dropdown.map((item) => (
                         <li className="list-item nav-item" key={item.url}>
                           <Link
-                            className="dropdown-item block px-4 py-2 hover:bg-gray-100 hover:text-green-700 transition-colors lg:min-w-max"
+                            onClick={() => setShowNav(!showNav)}
+                            className="dropdown-item font-semibold block px-4 py-2 hover:bg-gray-100 hover:text-green-700 transition-colors lg:min-w-max"
                             href={item.url}
                           >
                             {item.name}
