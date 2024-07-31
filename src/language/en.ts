@@ -148,6 +148,7 @@ const en = {
   vitexExtract: "Vitex extract",
   benzylAlcohol: "Benzyl Alcohol",
   glycerin: "Glycerin (and) Sorbic Acid",
+  backToHomePage: "Back to Home Page",
 };
 
 export default en;

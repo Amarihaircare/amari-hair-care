@@ -11,6 +11,7 @@ import Image from "next/image";
 import BurgerButton from "../ui/BurgerButton";
 
 export default function Navbar() {
+  const [dropdown, setDropdown] = useState("");
   const [showNav, setShowNav] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -45,6 +46,7 @@ export default function Navbar() {
       icon: <ShoppingBasket />,
     },
   ];
+  console.log(dropdown);
 
   return (
     <header
@@ -81,14 +83,20 @@ export default function Navbar() {
             }
           )}
         >
-          <ul className="header_nav-list flex flex-col lg:flex-row items-center px-2 py-8 lg:p-0 gap-4 lg:gap-10">
+          <ul className="header_nav-list flex flex-col lg:flex-row lg:items-center px-2 py-8 lg:p-0 gap-4 lg:gap-10">
             {navLinks.map((navLink) => (
               <li
-                className="header_nav-list_item relative group hidden lg:block"
+                className="header_nav-list_item relative group"
                 key={navLink.url}
               >
                 <Link
-                  className="nav-link flex items-center gap-2 font-bold font-nunito"
+                  onClick={() =>
+                    setDropdown((prev) =>
+                      prev === navLink.name ? "" : navLink.name
+                    )
+                  }
+                  onMouseLeave={() => setDropdown("")}
+                  className="nav-link flex items-center gap-2 font-bold font-nunito hover:text-green-700 transition-colors"
                   href={navLink.url}
                   aria-expanded="false"
                   aria-controls={navLink.name}
@@ -98,48 +106,30 @@ export default function Navbar() {
                 </Link>
 
                 {navLink.dropdown && (
-                  <ul className="dropdown-list hidden group-hover:block absolute top-[calc(100%+16px)] bg-white rounded py-4">
-                    {navLink.dropdown.map((item) => (
-                      <li className="list-item nav-item" key={item.url}>
-                        <Link
-                          className="dropdown-item block px-4 py-2 hover:bg-gray-100 transition-colors min-w-max"
-                          href={item.url}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <div
+                    className={cn(
+                      "lg:absolute top-full group-hover:block hidden lg:py-4",
+                      {
+                        block: dropdown === navLink.name,
+                      }
+                    )}
+                  >
+                    <ul className="dropdown-list bg-white rounded py-4">
+                      {navLink.dropdown.map((item) => (
+                        <li className="list-item nav-item" key={item.url}>
+                          <Link
+                            className="dropdown-item block px-4 py-2 hover:bg-gray-100 hover:text-green-700 transition-colors lg:min-w-max"
+                            href={item.url}
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </li>
             ))}
-            {navLinks.map((navLink) =>
-              !navLink.dropdown ? (
-                <Link
-                  key={navLink.url}
-                  className={cn(
-                    "nav-link lg:hidden flex items-center gap-2 font-bold font-nunito text-center"
-                  )}
-                  href={navLink.url}
-                  aria-expanded="false"
-                  aria-controls={navLink.name}
-                >
-                  {navLink.name}
-                </Link>
-              ) : (
-                navLink.dropdown.map((link) => (
-                  <Link
-                    key={`${link.url}${navLink.url}`}
-                    className={cn(
-                      "nav-link lg:hidden flex items-center gap-2 font-bold font-nunito text-center"
-                    )}
-                    href={link.url}
-                  >
-                    {link.name}
-                  </Link>
-                ))
-              )
-            )}
           </ul>
         </nav>
         <div className="header_user flex gap-4 md:gap-8 lg:gap-36 items-center">
