@@ -86,3 +86,23 @@
   background-position: center;
   background-size: cover;
 }
+
+.product_slide .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.product_slide .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.w-\[168px\] {
+  width: 168px !important;
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[280px\] {
+    width: 280px !important;
+  }
+}

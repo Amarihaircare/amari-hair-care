@@ -196,35 +196,35 @@ const navLinks = [
     dropdown: [
       {
         name: en.caffeineScalpSerum,
-        url: "/catalog/caffeine-scalp-serum",
+        url: "/product/caffeine-scalp-serum",
       },
       {
         name: en.vitaminESerum,
-        url: "/catalog/vitamin-e-serum",
+        url: "/product/vitamin-e-serum",
       },
       {
         name: en.phBalancingMistAndCleanser,
-        url: "/catalog/ph-balancing-mist-and-cleanser",
+        url: "/product/ph-balancing-mist-and-cleanser",
       },
       {
         name: en.naturalHairMoisturizer,
-        url: "/catalog/natural-hair-moisturizer",
+        url: "/product/natural-hair-moisturizer",
       },
       {
         name: en.leaveInProteinTreatment,
-        url: "/catalog/leave-in-protein-treatment",
+        url: "/product/leave-in-protein-treatment",
       },
       {
         name: en.aloeVeraExtractOil,
-        url: "/catalog/aloe-vera-extract-oil",
+        url: "/product/aloe-vera-extract-oil",
       },
       {
         name: en.africanBlackSoapClarifyingShampooBar,
-        url: "/catalog/african-black-soap-clarifying-shampoo-bar",
+        url: "/product/african-black-soap-clarifying-shampoo-bar",
       },
       {
         name: en.ayurvedicHairTreatment,
-        url: "/catalog/ayurvedic-hair-treatment",
+        url: "/product/ayurvedic-hair-treatment",
       },
     ],
   },

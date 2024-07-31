@@ -1,4 +1,5 @@
 const en = {
+  amariHaircare: "Amari Haircare",
   home: "Home",
   catalog: "Catalog",
   caffeineScalpSerum: "Caffeine Scalp Serum",
@@ -161,6 +162,9 @@ const en = {
   stockistTermsAndConditions: "Stockist Terms and Conditions",
   wholesale: "Wholesale",
   findAStockist: "Find a Stockist",
+  productMetaDescription:
+    "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
+  productMetaTitle: "Product | Our hair product page",
 };
 
 export default en;

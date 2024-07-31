@@ -192,7 +192,7 @@ export const EmailIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 24 24"
     height="1em"
     width="1em"
@@ -283,7 +283,7 @@ export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 512 512"
     height="1em"
     width="1em"
@@ -298,7 +298,7 @@ export const ShoppingBasket = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 576 512"
     height="1em"
     width="1em"
@@ -313,7 +313,7 @@ export const EyeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 576 512"
     height="1em"
     width="1em"

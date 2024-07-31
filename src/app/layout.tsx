@@ -7,9 +7,11 @@ import Footer from "@/components/shared/Footer";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cube";
-import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import en from "@/language/en";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -21,9 +23,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Amari Haircare",
-  description:
-    "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
+  title: en.amariHaircare,
+  description: en.metaDescription,
 };
 
 export default function RootLayout({
