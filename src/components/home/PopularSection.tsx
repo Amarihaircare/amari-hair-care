@@ -84,7 +84,7 @@ export default function PopularSection() {
                 </div>
                 <Link
                   className="main_title max-w-[300px] font-semibold text-black"
-                  href="/catalog/caffeine-scalp-serum"
+                  href="/caffeine-scalp-serum"
                   target="_blank"
                   rel="noopener norefferer"
                 >

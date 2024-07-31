@@ -252,6 +252,14 @@ const navLinks = [
         name: en.services,
         url: "/services",
       },
+      {
+        name: en.privacyPolicy,
+        url: "/privacy",
+      },
+      {
+        name: en.termsOfService,
+        url: "/tos",
+      },
     ],
   },
 ];
