@@ -1,8 +1,12 @@
 "use client";
 
-import { CaretDown, HeartIcon } from "@/assets/icons";
+import {
+  CaretDown,
+  HeartIcon,
+  SearchIcon,
+  ShoppingBasket,
+} from "@/assets/icons";
 import { cn } from "@/lib/utils";
-import { Search, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
@@ -37,6 +41,10 @@ export default function Navbar() {
   }, []);
 
   const userAction = [
+    {
+      name: en.search,
+      icon: <SearchIcon strokeWidth="3" />,
+    },
     {
       name: en.wishlists,
       icon: <HeartIcon />,
@@ -148,7 +156,7 @@ export default function Navbar() {
               type="submit"
               data-trigger="search"
             >
-              <Search className="text-sm" />
+              <SearchIcon className="text-sm" />
             </button>
           </form>
 
@@ -156,7 +164,12 @@ export default function Navbar() {
             {userAction.map((action, index) => (
               <button
                 key={index}
-                className="header_user-action bg-secondary flex items-center justify-center rounded-full w-10 h-10"
+                className={cn(
+                  "header_user-action bg-secondary flex items-center justify-center rounded-full w-10 h-10",
+                  {
+                    "lg:hidden": action.name.toLowerCase() === "search",
+                  }
+                )}
               >
                 {action.icon}
               </button>
