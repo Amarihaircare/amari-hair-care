@@ -55,7 +55,6 @@ export default function Navbar() {
       icon: <ShoppingBasket />,
     },
   ];
-  console.log(dropdown);
 
   return (
     <header
@@ -100,9 +99,6 @@ export default function Navbar() {
               >
                 <Link
                   onClick={() => {
-                    setDropdown((prev) =>
-                      prev === navLink.name ? "" : navLink.name
-                    );
                     !navLink.dropdown && setShowNav(!showNav);
                   }}
                   onMouseLeave={() => setDropdown("")}
@@ -190,8 +186,8 @@ const navLinks = [
     url: "/",
   },
   {
-    name: en.catalog,
-    url: "/catalog",
+    name: en.catalogue,
+    url: "/catalogue",
   },
   {
     name: en.platform,

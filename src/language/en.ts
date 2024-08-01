@@ -1,7 +1,7 @@
 const en = {
   amariHaircare: "Amari Haircare",
   home: "Home",
-  catalog: "Catalog",
+  catalogue: "Catalogue",
   caffeineScalpSerum: "Caffeine Scalp Serum",
   hairCare: "Hair Care",
   scalpCare: "Scalp Care",
@@ -181,6 +181,16 @@ const en = {
   reply: "Reply",
   ingredients: "Ingredients",
   recommendedUsage: "Recommended Usage",
+  cataloguePageDescription:
+    "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for today's needs.",
+  searchByProducts: "Search by Products",
+  productCategories: "Product Categories",
+  onSale: "On Sale",
+  spray: "Spray",
+  conditioner: "Conditioner",
+  treatment: "Treatment",
+  weight: "Weight",
+  filterByPrice: "Filter by Price",
 };
 
 export default en;

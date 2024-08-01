@@ -1,9 +1,5 @@
 "use client";
 import en from "@/language/en";
-import Image from "next/image";
-import Link from "next/link";
-import { formatCurrency } from "@/lib/utils";
-import Rating from "../ui/Rating";
 import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
@@ -12,6 +8,7 @@ import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { Autoplay } from "swiper/modules";
 import SlidesPagination from "../ui/SlidesPagination";
 import { popularProducts } from "@/assets/data/products";
+import ProductCard from "../product/ProductCard";
 
 export default function PopularSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -49,45 +46,15 @@ export default function PopularSection() {
           ref={swiperRef}
         >
           {popularProducts.map((product, index) => (
-            <SwiperSlide key={index}>
-              <div className="media w-full mb-4 relative rounded overflow-hidden">
-                <Image
-                  src={product.images[0]}
-                  alt="media"
-                  width={320}
-                  height={220}
-                  className="w-full h-[220px] rounded object-cover"
-                />
-
-                <div className="overlay hidden lg:flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
-                  <ul className="action flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
-                    {productMenu.map((menu, index) => (
-                      <li key={index} className="list-item">
-                        <button className="w-10 h-10 rounded-full bg-white hover:bg-secondary flex items-center justify-center text-secondary hover:text-white">
-                          {menu.icon}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="main flex flex-col gap-2">
-                <div className="main_rating">
-                  <Rating value={product.rating} />
-                </div>
-                <Link
-                  className="main_title max-w-[300px] font-semibold text-black"
-                  href={`/product/${product.slug}`}
-                  rel="noopener norefferer"
-                >
-                  {product.name}
-                </Link>
-                <div className="main_price">
-                  <p className="price font-bold text-green-800">
-                    {formatCurrency(product.price, "NGN")}
-                  </p>
-                </div>
-              </div>
+            <SwiperSlide key={index} className="flex flex-col gap-4">
+              <ProductCard
+                name={product.name}
+                image={product.images[0]}
+                price={product.price}
+                rating={product.rating}
+                discount={product?.discount}
+                slug={product.slug}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -100,15 +67,3 @@ export default function PopularSection() {
     </section>
   );
 }
-
-const productMenu = [
-  {
-    icon: <HeartIcon />,
-  },
-  {
-    icon: <ShoppingBasket />,
-  },
-  {
-    icon: <EyeIcon />,
-  },
-];

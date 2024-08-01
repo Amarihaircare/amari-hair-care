@@ -90,6 +90,7 @@ export const products = [
     name: "pH Balancing Mist + Cleanser",
     slug: "ph-balancing-mist-and-cleanser",
     rating: 4.2,
+    discount: 10,
     reviews: [
       {
         name: "John Doe",
@@ -159,6 +160,7 @@ export const products = [
   {
     name: "Leave-in Protein Treatment",
     slug: "leave-in-protein-treatment",
+    discount: 15,
     rating: 3.5,
     reviews: [
       {

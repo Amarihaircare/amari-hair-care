@@ -24,4 +24,5 @@ export default function OtherPageHero({ heading }: OtherPageHeroProps) {
 const descriptions: Record<string, string> = {
   product: en.productPageDescription,
   "error page": en.errorPageDescription,
+  catalogue: en.cataloguePageDescription,
 };
