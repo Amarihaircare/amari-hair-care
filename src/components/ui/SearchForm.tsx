@@ -4,11 +4,13 @@ import { SearchIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 
 interface SearchFormProps extends React.HTMLAttributes<HTMLFormElement> {
-  setSearchKwd: React.Dispatch<React.SetStateAction<string>>;
+  handleChange: (v: string) => void;
+  searchKwd: string;
 }
 export default function SearchForm({
-  setSearchKwd,
   className,
+  searchKwd,
+  handleChange,
 }: SearchFormProps) {
   return (
     <form
@@ -20,12 +22,15 @@ export default function SearchForm({
         placeholder={`${en.search}...`}
         type="search"
         className="w-full rounded-full"
-        onChange={(e) => setSearchKwd(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
+        value={searchKwd}
+        data-search="true"
       />
       <button
+        disabled
         className="header_user-search_btn absolute bottom-0 right-0 top-0 flex w-10 items-center justify-center rounded-full bg-secondary"
         type="submit"
-        data-trigger="search"
+        data-search="true"
       >
         <SearchIcon className="text-sm" />
       </button>

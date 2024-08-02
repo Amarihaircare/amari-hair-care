@@ -8,17 +8,15 @@ import {
 } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import en from "@/language/en";
 import Image from "next/image";
 import BurgerButton from "../ui/BurgerButton";
 import RoundedIconButton from "../ui/RoundedIconButton";
 import SearchSlide from "./SearchSlide";
 import SearchForm from "../ui/SearchForm";
-import { useOnClickOutside } from "usehooks-ts";
 
 export default function Navbar() {
-  const searchRef = useRef(null);
   const [searchKwd, setSearchKwd] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -26,27 +24,6 @@ export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollingDown, setScrollingDown] = useState(false);
   const SCROLL_THRESHOLD = 600;
-
-  useOnClickOutside(searchRef, () => setShowSearch(false));
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      setScrollingDown(currentScrollY > lastScrollY);
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const userAction = [
     {
@@ -66,18 +43,46 @@ export default function Navbar() {
     },
   ];
 
+  function handleSearch(value: string) {
+    if (!showSearch) {
+      setShowSearch((prev) => !prev);
+    }
+    setSearchKwd(value);
+  }
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setShowSearch(false);
+      setScrollY(currentScrollY);
+      setScrollingDown(currentScrollY > lastScrollY);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
       className={cn(
-        "header top-0 z-[999] flex w-full justify-center bg-background transition-all duration-300",
+        "header top-0 z-[999] flex w-full justify-center bg-background transition-all duration-300 lg:pb-8",
         {
           "sticky bg-white shadow": scrollY > 0,
-          "translate-y-[-200px]": scrollY > SCROLL_THRESHOLD && scrollingDown,
+          "translate-y-[-500%]":
+            scrollY > SCROLL_THRESHOLD && scrollingDown && !showNav,
           "bg-white": showNav,
         },
       )}
     >
-      <div className="relative flex w-full flex-wrap items-center justify-between bg-inherit px-4 py-4 md:max-w-[95%] md:flex-nowrap lg:px-0 lg:py-8 2xl:max-w-screen-xl">
+      <div className="relative flex w-full flex-wrap items-center justify-between bg-inherit px-4 py-4 md:max-w-[95%] md:flex-nowrap lg:p-0 lg:pt-8 xl:max-w-screen-xl">
         <Link href="/">
           <Image
             src="/logo-black.svg"
@@ -136,7 +141,7 @@ export default function Navbar() {
                         <li className="nav-item list-item" key={item.url}>
                           <Link
                             onClick={() => setShowNav(!showNav)}
-                            className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-gray-100 hover:text-green-700 lg:min-w-max"
+                            className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-secondary hover:text-green-700 lg:min-w-max"
                             href={item.url}
                           >
                             {item.name}
@@ -152,8 +157,9 @@ export default function Navbar() {
         </nav>
         <div className="header_user relative flex items-center gap-4 md:gap-8 xl:gap-36">
           <SearchForm
-            setSearchKwd={setSearchKwd}
             className="hidden w-[280px] lg:flex"
+            searchKwd={searchKwd}
+            handleChange={handleSearch}
           />
 
           <div className="flex items-center gap-4 lg:gap-6">
@@ -165,6 +171,7 @@ export default function Navbar() {
                 })}
                 key={index}
                 icon={action.icon}
+                data-search={action?.name?.toLowerCase() === "search"}
               />
             ))}
           </div>
@@ -177,16 +184,18 @@ export default function Navbar() {
             searchKwd={searchKwd}
             showSearch={showSearch}
             setSearchKwd={setSearchKwd}
+            setShowSearch={setShowSearch}
+            handleSearch={handleSearch}
             className="hidden lg:block"
-            searchRef={searchRef}
           />
         </div>
         <SearchSlide
           searchKwd={searchKwd}
           showSearch={showSearch}
           setSearchKwd={setSearchKwd}
+          handleSearch={handleSearch}
+          setShowSearch={setShowSearch}
           className="lg:hidden"
-          searchRef={searchRef}
         />
       </div>
     </header>
