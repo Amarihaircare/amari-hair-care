@@ -20,8 +20,8 @@ export default function Catalogue({
 
   return (
     <section className="w-full flex flex-col pb-10 lg:pb-20 pt-10 lg:pt-20  items-center justify-center bg-white">
-      <div className="flex flex-col md:max-w-screen-sm w-full px-4 xl:max-w-[95%] 2xl:max-w-screen-xl">
-        <div className="w-full flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row justify-between">
+      <div className="flex flex-col w-full px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
+        <div className="w-full flex flex-col-reverse gap-10 lg:flex-row justify-between">
           <div className="w-lg:w-[78%] flex flex-col gap-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.slice(from, to).map((product, index) => (

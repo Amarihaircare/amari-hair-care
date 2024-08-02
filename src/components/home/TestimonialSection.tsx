@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="review_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-white">
-      <div className="review_container flex flex-col items-center w-full overflow-hidden px-4 md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl">
+      <div className="review_container flex flex-col items-center w-full overflow-hidden px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
         <div className="reviews_header lg:max-w-[600px] flex flex-col items-center">
           <h2
             className="reviews_header-title text-2xl w-[220px] lg:w-auto lg:text-4xl text-center mb-6 font-bold"

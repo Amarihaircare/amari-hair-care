@@ -4,7 +4,7 @@ import DOMPurify from "dompurify";
 
 export default function SeoText() {
   return (
-    <div className="py-10 lg:py-20 flex flex-col gap-6">
+    <div className="py-20 flex flex-col gap-6">
       <div className="grid lg:grid-cols-2 gap-10">
         {seoText.map((text, index) => (
           <div key={index} className="flex flex-col gap-2">

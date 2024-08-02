@@ -106,3 +106,31 @@
     width: 280px !important;
   }
 }
+
+.newsletter_container {
+  background-image: url("../assets/images/flower.png"),
+    url("../assets/images/flower-2.png");
+  background-position: 120% 300%, -20% -150%;
+}
+
+.otherpages__hero {
+  background-image: url("../assets/images/mobile-hero.png");
+}
+
+@media (min-width: 768px) {
+  .otherpages__hero {
+    background-image: url("../assets/images/tablet-hero.png");
+  }
+}
+
+@media (min-width: 1280px) {
+  .otherpages__hero {
+    background-image: url("../assets/images/hero-bg.webp");
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter_container {
+    background-position: 103% 100%, -2% -5%;
+  }
+}

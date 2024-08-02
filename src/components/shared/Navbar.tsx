@@ -66,7 +66,7 @@ export default function Navbar() {
         }
       )}
     >
-      <div className="flex relative flex-wrap md:flex-nowrap items-center justify-between px-4 md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl w-full">
+      <div className="flex relative flex-wrap md:flex-nowrap items-center justify-between px-4 md:max-w-[95%] 2xl:max-w-screen-xl w-full">
         <Link href="/">
           <Image
             src="/logo-black.svg"
@@ -139,11 +139,11 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <div className="header_user flex gap-4 md:gap-8 lg:gap-36 items-center">
+        <div className="header_user flex gap-4 md:gap-8 xl:gap-36 items-center">
           <form
             action="#"
             data-type="searchForm"
-            className="relative md:flex items-center hidden"
+            className="relative lg:flex items-center hidden"
           >
             <Input
               placeholder={`${en.search}...`}

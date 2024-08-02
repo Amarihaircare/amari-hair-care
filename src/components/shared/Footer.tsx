@@ -21,7 +21,7 @@ import instagramSix from "../../assets/images/instagram-six.webp";
 export default function Footer() {
   return (
     <footer className="footer py-20 lg:py-40 w-full flex justify-center bg-primary transition-all duration-300">
-      <div className="flex flex-col lg:flex-row flex-wrap lg:gap-y-20 items-center lg:items-start justify-between md:max-w-screen-sm xl:max-w-[95%] 2xl:max-w-screen-xl w-full gap-10 lg:gap-0 px-4">
+      <div className="flex flex-col lg:flex-row flex-wrap lg:gap-y-20 items-center lg:items-start justify-between md:max-w-[95%] 2xl:max-w-screen-xl w-full gap-10 lg:gap-0 px-4">
         <div className="flex flex-col gap-4 lg:gap-6 lg:max-w-[300px]">
           <Link className="brand footer_main-about_brand" href="/">
             <Image src="/logo-white.svg" width={82} height={40} alt="logo" />
