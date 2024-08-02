@@ -1,10 +1,10 @@
+import type { Metadata } from "next";
 import { findProduct } from "@/assets/data/products";
 import ProductImageSlides from "@/components/product/ProductImageSlides";
 import Rating from "@/components/ui/Rating";
 import RoundedIconButton from "@/components/ui/RoundedIconButton";
 import en from "@/language/en";
 import { HeartIcon } from "@/assets/icons";
-import type { Metadata } from "next";
 import { formatCurrency } from "@/lib/utils";
 import AddToCartAction from "@/components/ui/AddToCartAction";
 import ProductDetails from "@/components/product/ProductDetails";

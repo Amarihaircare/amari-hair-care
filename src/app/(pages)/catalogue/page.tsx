@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
+
 import { products } from "@/assets/data/products";
 import ProductCard from "@/components/product/ProductCard";
-import en from "@/language/en";
 import Paginate from "@/components/ui/Paginate";
 import SeoText from "@/components/product/SeoText";
 import ProductsFilter from "@/components/product/ProductsFilter";
+import en from "@/language/en";
+
+export const metadata: Metadata = {
+  title: en.catalogueMetaTitle,
+  description: en.catalogueMetaDescription,
+};
 
 export default function Catalogue({
   searchParams,
@@ -16,7 +23,6 @@ export default function Catalogue({
   const from = (currentPage - 1) * 9;
   const to = from + 10;
   const total = Math.ceil(products.length / 9);
-  console.log(searchParams);
 
   return (
     <section className="w-full flex flex-col pb-10 lg:pb-20 pt-10 lg:pt-20  items-center justify-center bg-white">

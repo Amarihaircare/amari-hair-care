@@ -165,7 +165,11 @@ const en = {
   productMetaDescription:
     "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
   productMetaTitle: "Product | Our hair product page",
+  catalogueMetaTitle: "Catalogue | Amari Hair Care (Shop)",
+  catalogueMetaDescription:
+    "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for today's needs.",
   errorPage: "Error Page",
+
   productPageDescription:
     "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
   errorPageDescription:

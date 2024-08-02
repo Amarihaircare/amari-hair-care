@@ -1,6 +1,5 @@
-"use client";
 import en from "@/language/en";
-import DOMPurify from "dompurify";
+import PurifyDomClient from "./PurifyDomClient";
 
 export default function SeoText() {
   return (
@@ -10,13 +9,7 @@ export default function SeoText() {
           <div key={index} className="flex flex-col gap-2">
             <h2 className="text-2xl font-bold">{text.title}</h2>
             {text.description.map((description, index) => (
-              <p
-                key={index}
-                className="text-sm"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(description),
-                }}
-              />
+              <PurifyDomClient text={description} key={index} />
             ))}
           </div>
         ))}
@@ -25,6 +18,7 @@ export default function SeoText() {
     </div>
   );
 }
+
 const seoText = [
   {
     title: en.cataloguePageMoreInfoTitle,
