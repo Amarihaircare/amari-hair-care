@@ -191,6 +191,37 @@ const en = {
   treatment: "Treatment",
   weight: "Weight",
   filterByPrice: "Filter by Price",
+  cataloguePageMoreInfoTitle:
+    "Shop Premium Hair Care Products at Amari Hair Care",
+  cataloguePageMoreInfoDescription:
+    "Discover a world of luxurious hair care products at Amari Hair Care, where innovation meets nature. Our products are crafted with advanced technology and natural ingredients sourced from Africa, offering you the best in plant-based hair care solutions.",
+  whyChooseAmariHairCare: "Why Choose Amari Hair Care?",
+  whyChooseAmariHairCareDescription:
+    "In today's fast-paced world, your hair deserves the best care possible. At Amari Hair Care, we understand the importance of healthy, beautiful hair. Our mission is to empower you by promoting self-love and positive self-image through our innovative and comprehensive hair care products and services.",
+  wideRangeOfProducts: "Wide Range of Hair Products",
+  wideRangeOfProductsDescription:
+    "We have a dedicated section for all your hair care needs, featuring a wide range of products from shampoos and conditioners to hair treatments and styling products. Explore our collection to find the perfect products for your hair type and concerns.",
+  topCategories: "Top Categories",
+  topCategoryShampoo:
+    "<b>Shampoos and Conditioners:</b> Nourish and hydrate your hair with our gentle and effective formulas.",
+  topCategoryMoisturizers:
+    "<b>Hair Treatments</b>: Strengthen and repair your hair with our intensive treatment masks and serums.",
+  topCategoryTreatments:
+    "<b>Hair Treatments:</b> Strengthen and repair your hair with our intensive treatment masks and serums.",
+  topCategorySerums:
+    "<b>Hair Treatments</b>: Strengthen and repair your hair with our intensive treatment masks and serums.",
+  premiumIngredients: "Premium Ingredients",
+  premiumIngredientsDescription:
+    "Our products are enriched with the finest natural ingredients like shea butter, baobab oil, moringa oil, and more. Each ingredient is carefully selected for its beneficial properties, ensuring your hair receives the best care.",
+  easyShoppingExperience: "Easy Shopping Experience",
+  easyShoppingExperienceDescription:
+    "Our website's user-friendly interface and filter options make it easy for you to find exactly what you need. Whether you are looking to revitalize your hair or maintain its natural beauty, we have the perfect product for you.",
+  unbeatablePrices: "Unbeatable Prices and Offers",
+  unbeatablePricesDescription:
+    "Enjoy our premium hair care products at the best prices with exclusive discounts, free and fast delivery, and a flexible return policy. Shop with confidence knowing that we are committed to providing you with the best shopping experience possible.",
+  exploreDescription:
+    "Explore our extensive collection of hair care products and transform your hair care routine with Amari Hair Care. Visit our website today and discover the best products for healthy, beautiful hair.",
+  filter: "Filter",
 };
 
 export default en;
