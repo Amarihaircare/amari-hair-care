@@ -226,6 +226,8 @@ const en = {
   exploreDescription:
     "Explore our extensive collection of hair care products and transform your hair care routine with Amari Hair Care. Visit our website today and discover the best products for healthy, beautiful hair.",
   filter: "Filter",
+  noResults:
+    "No Results found with the search term. Check out our other products",
 };
 
 export default en;

@@ -4,6 +4,7 @@ import { products } from "@/assets/data/products";
 import Link from "next/link";
 import { useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
+import en from "@/language/en";
 
 interface SearchSlideProps extends React.HTMLAttributes<HTMLDivElement> {
   showSearch: boolean;
@@ -31,7 +32,6 @@ export default function SearchSlide({
   useOnClickOutside(searchRef, (e) => {
     // @ts-expect-error ignore datasat
     const shouldClose = e.target?.dataset?.search !== "true";
-    console.log(e.target.dataset);
 
     if (!shouldClose) return;
     setShowSearch(false);
@@ -56,21 +56,40 @@ export default function SearchSlide({
         handleChange={handleSearch}
       />
 
-      <div className="search-results flex w-full flex-col gap-4 lg:gap-0">
-        {searchResult.map((result) => (
-          <Link
-            data-search="true"
-            key={result.slug}
-            href={`/product/${result.slug}`}
-            className="flex items-center justify-between font-medium hover:bg-secondary lg:p-4"
-            onClick={() => {
-              setShowSearch(false);
-              setSearchKwd("");
-            }}
-          >
-            {result.name}
-          </Link>
-        ))}
+      <div className="search-results flex w-full flex-col items-center gap-4 lg:gap-0">
+        {searchResult.length > 0 ? (
+          searchResult.map((result) => (
+            <Link
+              data-search="true"
+              key={result.slug}
+              href={`/product/${result.slug}`}
+              className="flex w-full items-center justify-between font-medium lg:p-4 lg:hover:bg-secondary"
+              onClick={() => {
+                setShowSearch(false);
+                setSearchKwd("");
+              }}
+            >
+              {result.name}
+            </Link>
+          ))
+        ) : (
+          <>
+            <p className="max-w-[300px] px-4 text-center text-sm">
+              {en.noResults}
+            </p>
+            <Link
+              data-search="true"
+              href="/catalogue"
+              className="items-center justify-between font-medium lg:p-4"
+              onClick={() => {
+                setShowSearch(false);
+                setSearchKwd("");
+              }}
+            >
+              {en.catalogue}
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
