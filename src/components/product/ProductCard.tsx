@@ -3,6 +3,8 @@ import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
 import Rating from "../ui/Rating";
 import Link from "next/link";
 import { cn, formatCurrency } from "@/lib/utils";
+import en from "@/language/en";
+import { Button } from "../ui/button";
 
 interface ProductCardProps {
   image: StaticImageData;
@@ -50,12 +52,12 @@ export default function ProductCard({
           </ul>
         </div>
       </div>
-      <div className="main flex flex-col gap-2">
-        <div className="main_rating">
+      <div className="main flex flex-col gap-2 relative">
+        <div className="main_rating ">
           <Rating value={rating} />
         </div>
         <Link
-          className="main_title max-w-[300px] font-semibold text-black"
+          className="main_title max-w-[70%] lg:max-w-[90%] font-semibold text-black"
           href={`/product/${slug}`}
           rel="noopener norefferer"
         >
@@ -75,6 +77,12 @@ export default function ProductCard({
             {formatCurrency(discountedPrice, "NGN")}
           </p>
         </div>
+        <Button
+          variant={"secondary"}
+          className="font-semibold absolute self-end bottom-0 lg:hidden"
+        >
+          {en.addToCart}
+        </Button>
       </div>
     </>
   );

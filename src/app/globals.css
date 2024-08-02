@@ -101,6 +101,10 @@
   width: 168px !important;
 }
 
+.flex {
+  display: flex !important;
+}
+
 @media (min-width: 1024px) {
   .lg\:w-\[280px\] {
     width: 280px !important;
