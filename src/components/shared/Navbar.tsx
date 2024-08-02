@@ -171,7 +171,7 @@ export default function Navbar() {
                 })}
                 key={index}
                 icon={action.icon}
-                data-search={action?.name?.toLowerCase() === "search"}
+                data-search={action.name.toLowerCase() === "search"}
               />
             ))}
           </div>

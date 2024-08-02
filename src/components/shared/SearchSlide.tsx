@@ -30,8 +30,10 @@ export default function SearchSlide({
   );
   useOnClickOutside(searchRef, (e) => {
     // @ts-expect-error ignore datasat
-    const canClose = e.currentTarget?.dataset?.search;
-    if (!canClose) return;
+    const shouldClose = e.target?.dataset?.search !== "true";
+    console.log(e.target.dataset);
+
+    if (!shouldClose) return;
     setShowSearch(false);
   });
 
