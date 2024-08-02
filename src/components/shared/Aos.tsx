@@ -7,7 +7,7 @@ export default function Aos() {
     import("aos").then((AOS) =>
       AOS.init({
         duration: 1200,
-      })
+      }),
     );
   }, []);
 

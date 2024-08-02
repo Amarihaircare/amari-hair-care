@@ -70,7 +70,7 @@ export default function Paginate({ currentPage, lastPage }: PaginateProps) {
                 </PaginationLink>
               </PaginationItem>
             )
-          )
+          ),
         )}
         <PaginationItem>
           <PaginationNext

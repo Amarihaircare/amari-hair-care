@@ -123,7 +123,7 @@ export default function HomeHero() {
                       {ingredient}
                     </p>
                   </li>
-                )
+                ),
               )}
             </ul>
             <Link
@@ -142,7 +142,7 @@ export default function HomeHero() {
                   "text-white/60 text-sm font-bold transition-all",
                   {
                     "scale-[1.8] text-white": activeSlide === index,
-                  }
+                  },
                 )}
               >
                 0{index + 1}

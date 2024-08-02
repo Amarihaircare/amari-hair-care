@@ -72,7 +72,7 @@ export default function ProductImageSlides({
               {
                 "right-4": nav.name === "next",
                 "left-4": nav.name === "prev",
-              }
+              },
             )}
           >
             {nav.icon}

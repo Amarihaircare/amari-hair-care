@@ -304,7 +304,7 @@ export type TProduct = (typeof products)[0];
 
 export const findProduct = (slug: string) => {
   return products.find(
-    (product) => product.slug.toLowerCase().replace(/ /g, "-") === slug
+    (product) => product.slug.toLowerCase().replace(/ /g, "-") === slug,
   );
 };
 

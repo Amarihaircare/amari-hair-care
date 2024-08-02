@@ -10,7 +10,7 @@ import { cn, formatCurrency } from "@/lib/utils";
 
 export default function ProductsFilter() {
   const [showFilter, setShowFilter] = useState(
-    typeof window === "undefined" ? true : window.innerWidth > 1024
+    typeof window === "undefined" ? true : window.innerWidth > 1024,
   );
   return (
     <div className="flex flex-col gap-8 lg:w-[20%]">
@@ -88,7 +88,7 @@ export default function ProductsFilter() {
                       "py-3 px-5 rounded-lg border border-gray-200",
                       {
                         "bg-primary text-white": weight === 5,
-                      }
+                      },
                     )}
                   >
                     {weight}g

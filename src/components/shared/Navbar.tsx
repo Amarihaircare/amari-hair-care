@@ -8,19 +8,26 @@ import {
 } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Input } from "../ui/input";
+import { useEffect, useRef, useState } from "react";
 import en from "@/language/en";
 import Image from "next/image";
 import BurgerButton from "../ui/BurgerButton";
 import RoundedIconButton from "../ui/RoundedIconButton";
+import SearchSlide from "./SearchSlide";
+import SearchForm from "../ui/SearchForm";
+import { useOnClickOutside } from "usehooks-ts";
 
 export default function Navbar() {
+  const searchRef = useRef(null);
+  const [searchKwd, setSearchKwd] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
   const [dropdown, setDropdown] = useState("");
   const [showNav, setShowNav] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [scrollingDown, setScrollingDown] = useState(false);
   const SCROLL_THRESHOLD = 600;
+
+  useOnClickOutside(searchRef, () => setShowSearch(false));
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -45,12 +52,15 @@ export default function Navbar() {
     {
       name: en.search,
       icon: <SearchIcon strokeWidth="3" />,
+      onClick: () => setShowSearch(!showSearch),
     },
     {
       name: en.wishlists,
       icon: <HeartIcon />,
+      onClick: () => console.log("Wishlist"),
     },
     {
+      onClick: () => console.log("Cart"),
       name: en.cart,
       icon: <ShoppingBasket />,
     },
@@ -59,14 +69,15 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "header py-4 lg:py-8 w-full flex justify-center z-[999] top-0 bg-background transition-all duration-300",
+        "header top-0 z-[999] flex w-full justify-center bg-background transition-all duration-300",
         {
-          "bg-white shadow sticky": scrollY > 0,
+          "sticky bg-white shadow": scrollY > 0,
           "translate-y-[-200px]": scrollY > SCROLL_THRESHOLD && scrollingDown,
-        }
+          "bg-white": showNav,
+        },
       )}
     >
-      <div className="flex relative flex-wrap md:flex-nowrap items-center justify-between lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl w-full">
+      <div className="relative flex w-full flex-wrap items-center justify-between bg-inherit px-4 py-4 md:max-w-[95%] md:flex-nowrap lg:px-0 lg:py-8 2xl:max-w-screen-xl">
         <Link href="/">
           <Image
             src="/logo-black.svg"
@@ -85,16 +96,16 @@ export default function Navbar() {
         </Link>
         <nav
           className={cn(
-            "header_nav absolute lg:bg-transparent border-gray-200 lg:border-0 border bg-white left-4 right-4 top-[calc(100%+24px)] lg:block lg:static translate-x-[-12000px] lg:translate-x-0",
+            "header_nav absolute left-0 right-0 top-[100%] h-screen translate-x-[-120%] bg-white transition-transform ease-in-out lg:static lg:h-auto lg:translate-x-0 lg:bg-transparent",
             {
               "translate-x-0": showNav,
-            }
+            },
           )}
         >
-          <ul className="header_nav-list flex flex-col lg:flex-row lg:items-center px-2 py-8 lg:p-0 gap-4 lg:gap-10">
+          <ul className="header_nav-list flex flex-col gap-4 px-2 py-8 lg:flex-row lg:items-center lg:gap-10 lg:p-0">
             {navLinks.map((navLink) => (
               <li
-                className="header_nav-list_item relative group"
+                className="header_nav-list_item group relative"
                 key={navLink.url}
               >
                 <Link
@@ -102,7 +113,7 @@ export default function Navbar() {
                     !navLink.dropdown && setShowNav(!showNav);
                   }}
                   onMouseLeave={() => setDropdown("")}
-                  className="nav-link flex items-center gap-2 font-bold font-nunito hover:text-green-700 transition-colors"
+                  className="nav-link flex items-center gap-2 font-nunito font-bold transition-colors hover:text-green-700"
                   href={navLink.url}
                   aria-expanded="false"
                   aria-controls={navLink.name}
@@ -114,18 +125,18 @@ export default function Navbar() {
                 {navLink.dropdown && (
                   <div
                     className={cn(
-                      "lg:absolute top-full group-hover:block hidden lg:py-4",
+                      "top-full hidden group-hover:block lg:absolute lg:py-4",
                       {
                         block: dropdown === navLink.name,
-                      }
+                      },
                     )}
                   >
-                    <ul className="dropdown-list bg-white rounded py-4 lg:min-w-[200px]">
+                    <ul className="dropdown-list rounded bg-white py-4 lg:min-w-[200px]">
                       {navLink.dropdown.map((item) => (
-                        <li className="list-item nav-item" key={item.url}>
+                        <li className="nav-item list-item" key={item.url}>
                           <Link
                             onClick={() => setShowNav(!showNav)}
-                            className="dropdown-item font-semibold block px-4 py-2 hover:bg-gray-100 hover:text-green-700 transition-colors lg:min-w-max"
+                            className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-gray-100 hover:text-green-700 lg:min-w-max"
                             href={item.url}
                           >
                             {item.name}
@@ -139,29 +150,16 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <div className="header_user flex gap-4 md:gap-8 xl:gap-36 items-center">
-          <form
-            action="#"
-            data-type="searchForm"
-            className="relative lg:flex items-center hidden"
-          >
-            <Input
-              placeholder={`${en.search}...`}
-              type="search"
-              className="rounded-full min-w-[280px]"
-            />
-            <button
-              className="header_user-search_btn  flex absolute w-10 right-0 bg-secondary bottom-0 top-0 rounded-full items-center justify-center"
-              type="submit"
-              data-trigger="search"
-            >
-              <SearchIcon className="text-sm" />
-            </button>
-          </form>
+        <div className="header_user relative flex items-center gap-4 md:gap-8 xl:gap-36">
+          <SearchForm
+            setSearchKwd={setSearchKwd}
+            className="hidden w-[280px] lg:flex"
+          />
 
           <div className="flex items-center gap-4 lg:gap-6">
             {userAction.map((action, index) => (
               <RoundedIconButton
+                onClick={action.onClick}
                 className={cn({
                   "lg:hidden": action.name.toLowerCase() === "search",
                 })}
@@ -174,7 +172,22 @@ export default function Navbar() {
             handleClick={() => setShowNav(!showNav)}
             showNav={showNav}
           />
+
+          <SearchSlide
+            searchKwd={searchKwd}
+            showSearch={showSearch}
+            setSearchKwd={setSearchKwd}
+            className="hidden lg:block"
+            searchRef={searchRef}
+          />
         </div>
+        <SearchSlide
+          searchKwd={searchKwd}
+          showSearch={showSearch}
+          setSearchKwd={setSearchKwd}
+          className="lg:hidden"
+          searchRef={searchRef}
+        />
       </div>
     </header>
   );

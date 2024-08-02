@@ -25,11 +25,11 @@ export default function Catalogue({
   const total = Math.ceil(products.length / 9);
 
   return (
-    <section className="w-full flex flex-col pb-10 lg:pb-20 pt-10 lg:pt-20  items-center justify-center bg-white">
-      <div className="flex flex-col w-full lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
-        <div className="w-full flex flex-col-reverse gap-10 lg:flex-row justify-between">
+    <section className="flex w-full flex-col items-center justify-center bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
+      <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
+        <div className="flex w-full flex-col-reverse justify-between gap-10 lg:flex-row">
           <div className="w-lg:w-[78%] flex flex-col gap-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {products.slice(from, to).map((product, index) => (
                 <div key={index} className="flex flex-col gap-4">
                   <ProductCard

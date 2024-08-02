@@ -63,7 +63,7 @@ export default function ProductDetails({
                 {
                   "border-b-2 border-green-700 text-green-700":
                     activeTab === index,
-                }
+                },
               )}
             >
               {tab}
