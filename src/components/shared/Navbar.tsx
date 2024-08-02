@@ -42,6 +42,7 @@ export default function Navbar() {
       icon: <ShoppingBasket />,
     },
   ];
+  console.log(showNav);
 
   function handleSearch(value: string) {
     if (!showSearch) {
@@ -115,7 +116,7 @@ export default function Navbar() {
               >
                 <Link
                   onClick={() => {
-                    !navLink.dropdown && setShowNav(!showNav);
+                    !navLink.dropdown && setShowNav(false);
                   }}
                   onMouseLeave={() => setDropdown("")}
                   className="nav-link flex items-center gap-2 font-nunito font-bold transition-colors hover:text-green-700"
@@ -140,7 +141,7 @@ export default function Navbar() {
                       {navLink.dropdown.map((item) => (
                         <li className="nav-item list-item" key={item.url}>
                           <Link
-                            onClick={() => setShowNav(!showNav)}
+                            onClick={() => setShowNav(false)}
                             className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-secondary hover:text-green-700 lg:min-w-max"
                             href={item.url}
                           >
