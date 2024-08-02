@@ -45,7 +45,7 @@ export default function Product({ params }: { params: { product: string } }) {
 
   return (
     <section className="w-full flex flex-col pb-10 lg:pb-20 pt-10 lg:pt-20  items-center justify-center bg-white">
-      <div className="flex flex-col md:max-w-screen-sm w-full px-4 xl:max-w-[95%] 2xl:max-w-screen-xl gap-10">
+      <div className="flex flex-col md:max-w-screen-sm w-full lg:px-0 px-4 xl:max-w-[95%] 2xl:max-w-screen-xl gap-10">
         <div className="w-full flex flex-col gap-10 lg:gap-0 lg:flex-row items-center justify-between">
           <ProductImageSlides images={product?.images ?? []} />
           <div className="product-info lg:w-[46%] w-full flex flex-col gap-6">

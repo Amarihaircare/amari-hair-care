@@ -22,7 +22,7 @@ export default function PopularSection() {
 
   return (
     <section className="popular_section bg-white pb-20 lg:pb-40 w-full flex-col flex items-center justify-center">
-      <div className=" w-full overflow-hidden px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
+      <div className=" w-full overflow-hidden lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
         <div className="popular_header flex flex-col items-center gap-4">
           <h2 className="popular_header-title text-2xl lg:text-4xl font-bold text-center">
             {en.popularProducts}

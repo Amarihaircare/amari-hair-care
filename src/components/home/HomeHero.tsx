@@ -34,7 +34,7 @@ export default function HomeHero() {
     <section className="w-full overflow-hidden lg:pb-0 pb-20 lg:min-h-[800px] relative flex flex-col items-center">
       <div className="absolute w-[50%] right-0 top-0 bottom-0 bg-primary hidden lg:block" />
       <div className=" w-full lg:min-h-[800px] md:max-w-[95%] 2xl:max-w-screen-xl flex flex-col lg:flex-row justify-center lg:justify-normal">
-        <div className="hero_content lg:w-[50%] flex flex-col gap-4 lg:items-start items-center justify-center px-4 py-20 lg:py-0">
+        <div className="hero_content lg:w-[50%] flex flex-col gap-4 lg:items-start items-center lg:px-0 justify-center px-4 py-20 lg:py-0">
           <div className="hero_content-header flex flex-col gap-4 items-center lg:items-start">
             <h1 className="hero_content-header_title lg:max-w-[560px] text-center lg:text-left text-3xl lg:text-6xl font-black">
               {en.heroTitle}
