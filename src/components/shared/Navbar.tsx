@@ -20,7 +20,6 @@ import { useCart } from "@/hooks/useCart";
 
 export default function Navbar() {
   const { cart } = useCart();
-  console.log(cart, "navbar");
 
   const router = useRouter();
   const [searchKwd, setSearchKwd] = useState("");

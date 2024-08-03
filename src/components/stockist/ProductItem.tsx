@@ -26,14 +26,10 @@ export default function ProductItem({
   slug,
   index,
   length,
-  addToCart,
-  removeFromCart,
 }: ProductItemProps) {
   const { count, handleCount, handleRemoveFromCart } = useManageCart({
     productSlug: slug,
     quantity,
-    addToCart,
-    removeFromCart,
   });
   const discountedPrice = price - (price * (discount ?? 0)) / 100;
 
