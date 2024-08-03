@@ -3,6 +3,7 @@ import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TStockistValues } from "@/@types";
+import { useEffect, useState } from "react";
 
 type TReturningStockistValues = Pick<
   TStockistValues,
@@ -16,10 +17,27 @@ interface TNewStockistForm {
 export default function ReturningStockist({
   setShowCheckout,
 }: TNewStockistForm) {
-  const stockist = localStorage.getItem("stockist");
-  const stockistData = stockist
-    ? (JSON.parse(stockist) as TReturningStockistValues)
-    : {};
+  const [stockistData, setStockistData] = useState<TReturningStockistValues>({
+    email: "",
+    comments: "",
+  });
+
+  useEffect(() => {
+    // Ensure code only runs in the browser
+    if (typeof window !== "undefined") {
+      const stockist = localStorage.getItem("stockist");
+      if (stockist) {
+        try {
+          setStockistData(JSON.parse(stockist) as TReturningStockistValues);
+        } catch (error) {
+          console.error(
+            "Failed to parse stockist data from localStorage:",
+            error,
+          );
+        }
+      }
+    }
+  }, []);
 
   const {
     register,
