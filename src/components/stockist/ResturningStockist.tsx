@@ -2,11 +2,11 @@ import en from "@/language/en";
 import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { TStockistValues } from "@/@types";
+import { TFormValues } from "@/@types";
 import { useEffect } from "react";
 
 type TReturningStockistValues = Pick<
-  TStockistValues,
+  TFormValues,
   "email" | "comments" | "stokistId"
 >;
 

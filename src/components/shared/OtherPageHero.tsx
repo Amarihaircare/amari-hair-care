@@ -28,4 +28,5 @@ const descriptions: Record<string, string> = {
   "error page": en.errorPageDescription,
   catalogue: en.cataloguePageDescription,
   stockist: en.stockistPageDescription,
+  contact: en.contactPageDescription,
 };

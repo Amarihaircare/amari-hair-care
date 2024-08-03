@@ -9,12 +9,14 @@ export type TLocalProduct = {
   image: StaticImageData;
 };
 
-export type TStockistValues = {
+export type TFormValues = {
   companyName?: string;
   contactName?: string;
   phone?: string;
-  email: string;
   address?: string;
-  comments: string;
+  comments?: string;
   stokistId?: string;
+  name?: string;
+  email?: string;
+  message?: string;
 };

@@ -1,10 +1,7 @@
-import Facebook, {
+import {
   CaretRight,
-  Instagram,
   LocationIcon,
   PhoneIcon,
-  WhatsApp,
-  XTwitter,
   ClockIcon,
   EmailIcon,
 } from "@/assets/icons";
@@ -17,6 +14,8 @@ import instagramThree from "../../assets/images/instagram-three.webp";
 import instagramFour from "../../assets/images/instagram-four.webp";
 import instagramFive from "../../assets/images/instagram-five.webp";
 import instagramSix from "../../assets/images/instagram-six.webp";
+import Socials from "./Socials";
+import ContactList from "./ContactList";
 
 export default function Footer() {
   return (
@@ -26,7 +25,7 @@ export default function Footer() {
           <Link className="brand footer_main-about_brand" href="/">
             <Image src="/logo-white.svg" width={82} height={40} alt="logo" />
           </Link>
-          <div className="footer_main-about_wrapper flex flex-col gap-6">
+          <div className="footer_main-about_wrapper flex flex-col gap-6 text-secondary">
             <p className="text-white">{en.metaDescription}</p>
 
             <div className="flex items-center gap-2 text-white">
@@ -34,50 +33,14 @@ export default function Footer() {
               <Link href={`mailto:${en.emailAddress}`}>{en.emailAddress}</Link>
             </div>
 
-            <ul className="socials flex items-center gap-4">
-              {socials.map((social, index) => (
-                <li className="list-item" key={index}>
-                  <Link
-                    className="link text-xl text-secondary"
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener norefferer"
-                  >
-                    {social.icon}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Socials />
           </div>
         </div>
-        <div className="footer_main-contacts flex w-full flex-col gap-4 lg:w-auto lg:gap-6">
+        <div className="footer_main-contacts flex w-full flex-col gap-4 text-white lg:w-auto lg:gap-6">
           <h4 className="footer_main-header text-xl font-semibold text-white">
             {en.cotactInformation}
           </h4>
-          <ul className="footer_main-contacts_list flex flex-col gap-3">
-            {contactList.map((contact, index) => (
-              <li className="flex items-center gap-4" key={index}>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-sm">
-                  {contact.icon}
-                </div>
-                {contact.split ? (
-                  <div className="flex flex-col gap-2">
-                    {contact.name.split(" ").map((item, index) => (
-                      <Link
-                        href={`tel:${item}`}
-                        key={index}
-                        className="block text-white"
-                      >
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="max-w-[280px] text-white">{contact.name}</p>
-                )}
-              </li>
-            ))}
-          </ul>
+          <ContactList contactList={contactList} />
         </div>
         <div className="footer_main-catalogue flex w-full flex-col gap-4 lg:w-auto lg:gap-6">
           <h4 className="footer_main-header text-xl font-semibold text-white">
@@ -127,41 +90,18 @@ export default function Footer() {
   );
 }
 
-const socials = [
-  {
-    name: "facebook",
-    url: "#",
-    icon: <Facebook />,
-  },
-  {
-    name: "instagram",
-    url: "#",
-    icon: <Instagram />,
-  },
-  {
-    name: "twitter",
-    url: "#",
-    icon: <XTwitter />,
-  },
-  {
-    name: "whatsapp",
-    url: "#",
-    icon: <WhatsApp />,
-  },
-];
-
 const contactList = [
   {
-    name: `${en.telephone} ${en.mobile}`,
+    name: [en.telephone, en.mobile],
     icon: <PhoneIcon />,
-    split: true,
+    link: [`tel:${en.telephone}`, `tel:${en.mobile}`],
   },
   {
-    name: en.ourAddress,
+    name: [en.ourAddress, en.ourCityState],
     icon: <LocationIcon />,
   },
   {
-    name: en.openFrom,
+    name: [en.openFromTime, en.openFromWeek],
     icon: <ClockIcon />,
   },
 ];

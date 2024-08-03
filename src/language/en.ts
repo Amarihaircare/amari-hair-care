@@ -39,8 +39,10 @@ const en = {
   instagram: "Instagram",
   telephone: "+234-812-929-8789",
   mobile: "+234-906-498-2292",
-  ourAddress: "1234 Street Name, City Name, United States",
-  openFrom: "Open from 9:00 AM to 5:00 PM (Monday to Friday)",
+  ourAddress: "1234 Street Name",
+  ourCityState: "City Name, United States",
+  openFromTime: "Open from 9:00 AM to 5:00 PM",
+  openFromWeek: "(Monday to Friday)",
   pageNotFound: "Page Not Found",
   notFound: "Not Found",
   notFoundDescription:
@@ -256,6 +258,20 @@ const en = {
   addProduct: "Add Product(s)",
   placeOrder: "Place Order",
   emptyCart: "Your cart is empty. Checkout our premium hair products",
+  haveAnyQuestion: "Have any question?",
+  contactDescription:
+    "We are here to help you with any inquiries you may have. Feel free to reach out to us via phone, email, or visit our office during business hours.",
+  contactPageMetaTitle: "Contact Us | Amari Hair Care",
+  contactPageMetaDescription:
+    "Contact Amari Hair Care for any inquiries, feedback, or support. Our team is here to assist you with all your hair care needs.",
+  contactPageDescription:
+    "Contact Amari Hair Care for any inquiries, feedback, or support. Our team is here to assist you with all your hair care needs.",
+  yourName: "Your Name",
+  yourEmail: "Your Email",
+  message: "Message",
+  sendAMessage: "Send a Message",
+  yourEmailAddres: "you@example.com",
+  typeYourMessage: "Type Your Message",
 };
 
 export default en;

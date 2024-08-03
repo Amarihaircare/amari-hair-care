@@ -1,16 +1,18 @@
 import { UseFormRegister } from "react-hook-form";
 import { Input } from "./input";
 import { Textarea } from "./textarea";
-import { TStockistValues } from "@/@types";
+import { TFormValues } from "@/@types";
+import { cn } from "@/lib/utils";
 
 interface IInputFieldset {
-  name: keyof TStockistValues;
+  name: keyof TFormValues;
   label: string;
   type: string;
   placeholder?: string;
   error?: string;
-  register: UseFormRegister<TStockistValues>;
+  register: UseFormRegister<TFormValues>;
   required?: string;
+  textAreaStyles?: string;
 }
 export default function InputFieldset({
   name,
@@ -20,6 +22,7 @@ export default function InputFieldset({
   error,
   register,
   required,
+  textAreaStyles,
 }: IInputFieldset) {
   return (
     <fieldset className="flex w-full flex-col gap-2">
@@ -30,7 +33,7 @@ export default function InputFieldset({
         <Textarea
           id={name}
           placeholder={placeholder}
-          className="resize-none rounded"
+          className={cn("resize-none rounded", textAreaStyles)}
           {...register(name, {
             ...(required && { required }),
           })}

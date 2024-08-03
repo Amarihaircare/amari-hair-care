@@ -146,7 +146,7 @@ export default function Navbar() {
                         <li className="nav-item list-item" key={item.url}>
                           <Link
                             onClick={() => setShowNav(false)}
-                            className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-secondary hover:text-green-700 lg:min-w-max"
+                            className="dropdown-item block px-4 py-2 font-semibold transition-colors hover:bg-secondary lg:min-w-max"
                             href={item.url}
                           >
                             {item.name}
