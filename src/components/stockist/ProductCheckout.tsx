@@ -15,20 +15,36 @@ export default function ProductCheckout() {
           {en.addProduct}
         </Link>
       </div>
-      <div className="flex flex-col">
-        {cart.map((product, index) => (
-          <ProductItem
-            key={product.slug}
-            name={product.name}
-            image={product.image}
-            price={product.price}
-            discount={product.discount}
-            quantity={product.quantity}
-            slug={product.slug}
-            index={index}
-            length={cart.length}
-          />
-        ))}
+      <div className="flex flex-col items-center gap-2">
+        {cart?.length ? (
+          cart.map((product, index) => (
+            <ProductItem
+              key={product.slug}
+              name={product.name}
+              image={product.image}
+              price={product.price}
+              discount={product.discount}
+              quantity={product.quantity}
+              slug={product.slug}
+              index={index}
+              length={cart.length}
+            />
+          ))
+        ) : (
+          <>
+            <p className="max-w-[300px] px-4 text-center text-sm">
+              {en.emptyCart}
+            </p>
+
+            <Link
+              data-search="true"
+              href="/catalogue"
+              className="items-center justify-between font-medium lg:p-4"
+            >
+              {en.catalogue}
+            </Link>
+          </>
+        )}
       </div>
       <Button
         type="button"

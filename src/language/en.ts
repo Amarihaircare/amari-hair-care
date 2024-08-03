@@ -227,7 +227,7 @@ const en = {
     "Explore our extensive collection of hair care products and transform your hair care routine with Amari Hair Care. Visit our website today and discover the best products for healthy, beautiful hair.",
   filter: "Filter",
   noResults:
-    "No Results found with the search term. Check out our other products",
+    "No Results found with the search term. Check out our other hair products",
   stockistPageDescription:
     "Join our network of trusted partners by becoming an authorized stockist of Amari Hair Care products. Our stockist program offers exclusive access to our premium, plant-based hair care products that combine cutting-edge technology with natural ingredients sourced from Africa. ",
   newStockist: "New Stockist",
@@ -255,6 +255,7 @@ const en = {
   itemAdded: "Item(s) Added",
   addProduct: "Add Product(s)",
   placeOrder: "Place Order",
+  emptyCart: "Your cart is empty. Checkout our premium hair products",
 };
 
 export default en;

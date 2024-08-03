@@ -11,13 +11,18 @@ export default function StockistTab() {
   const [showCheckout, setShowCheckout] = useState(false);
   const tabs = [en.newStockist, en.returningStockist];
 
+  function handleTabClick(index: number) {
+    setActiveTab(index);
+    setShowCheckout(false);
+  }
+
   return (
     <>
       <div className="grid w-full grid-cols-2 lg:max-w-[500px]">
         {tabs.map((tab, index) => (
           <button
             key={index}
-            onClick={() => setActiveTab(index)}
+            onClick={() => handleTabClick(index)}
             className={cn(
               "flex h-12 w-full items-center justify-center bg-primary text-sm font-medium text-white",
               {

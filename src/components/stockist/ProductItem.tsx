@@ -40,7 +40,7 @@ export default function ProductItem({
         "border-b": index !== length - 1,
       })}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-3">
         <div className="flex gap-4">
           <div className="h-[70px] w-[100px] lg:h-[100px]">
             <Image
