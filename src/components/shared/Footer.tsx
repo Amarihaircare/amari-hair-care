@@ -20,9 +20,9 @@ import instagramSix from "../../assets/images/instagram-six.webp";
 
 export default function Footer() {
   return (
-    <footer className="footer py-20 lg:py-40 w-full flex justify-center bg-primary transition-all duration-300">
-      <div className="flex flex-col lg:flex-row flex-wrap lg:gap-y-20 items-center lg:items-start justify-between md:max-w-[95%] 2xl:max-w-screen-xl w-full gap-10 lg:gap-0 lg:px-0 px-4">
-        <div className="flex flex-col gap-4 lg:gap-6 lg:max-w-[300px]">
+    <footer className="footer flex w-full justify-center bg-primary py-20 transition-all duration-300 lg:py-40">
+      <div className="flex w-full flex-col flex-wrap items-center justify-between gap-10 px-4 md:max-w-[95%] lg:flex-row lg:items-start lg:gap-0 lg:gap-y-20 lg:px-0 2xl:max-w-screen-xl">
+        <div className="flex flex-col gap-4 lg:max-w-[300px] lg:gap-6">
           <Link className="brand footer_main-about_brand" href="/">
             <Image src="/logo-white.svg" width={82} height={40} alt="logo" />
           </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
               {socials.map((social, index) => (
                 <li className="list-item" key={index}>
                   <Link
-                    className="link text-secondary text-xl"
+                    className="link text-xl text-secondary"
                     href={social.url}
                     target="_blank"
                     rel="noopener norefferer"
@@ -50,14 +50,14 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="footer_main-contacts flex flex-col gap-4 w-full lg:gap-6 lg:w-auto">
-          <h4 className="footer_main-header text-white text-xl font-semibold">
+        <div className="footer_main-contacts flex w-full flex-col gap-4 lg:w-auto lg:gap-6">
+          <h4 className="footer_main-header text-xl font-semibold text-white">
             {en.cotactInformation}
           </h4>
           <ul className="footer_main-contacts_list flex flex-col gap-3">
             {contactList.map((contact, index) => (
               <li className="flex items-center gap-4" key={index}>
-                <div className="bg-secondary w-10 h-10 rounded-full flex items-center justify-center text-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-sm">
                   {contact.icon}
                 </div>
                 {contact.split ? (
@@ -73,21 +73,21 @@ export default function Footer() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-white max-w-[280px]">{contact.name}</p>
+                  <p className="max-w-[280px] text-white">{contact.name}</p>
                 )}
               </li>
             ))}
           </ul>
         </div>
-        <div className="footer_main-catalogue flex flex-col gap-4 lg:gap-6 w-full lg:w-auto">
-          <h4 className="footer_main-header text-white text-xl font-semibold">
+        <div className="footer_main-catalogue flex w-full flex-col gap-4 lg:w-auto lg:gap-6">
+          <h4 className="footer_main-header text-xl font-semibold text-white">
             {en.aboutUs}
           </h4>
-          <ul className="footer_main-nav_list flex gap-2 flex-col">
+          <ul className="footer_main-nav_list flex flex-col gap-2">
             {aboutLinks.map((link, index) => (
               <li className="list-item" key={index}>
                 <Link
-                  className="link text-white flex items-center gap-2"
+                  className="link flex items-center gap-2 text-white"
                   href={link.url}
                 >
                   <CaretRight className="text-secondary" />
@@ -97,8 +97,8 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="footer_main-instagram flex flex-col gap-4 lg:gap-6 w-full lg:w-auto">
-          <h4 className="footer_main-header text-white text-xl font-semibold">
+        <div className="footer_main-instagram flex w-full flex-col gap-4 lg:w-auto lg:gap-6">
+          <h4 className="footer_main-header text-xl font-semibold text-white">
             {en.instagram}
           </h4>
           <ul className="footer_main-instagram_list grid grid-cols-3 grid-rows-2 gap-4 lg:gap-6">
@@ -115,7 +115,7 @@ export default function Footer() {
                     alt="instagram post"
                     width={100}
                     height={100}
-                    className="rounded h-[100px] lg:h-[50px] w-full object-cover"
+                    className="h-[100px] w-full rounded object-cover lg:h-[50px]"
                   />
                 </Link>
               </li>
@@ -157,7 +157,7 @@ const contactList = [
     split: true,
   },
   {
-    name: en.address,
+    name: en.ourAddress,
     icon: <LocationIcon />,
   },
   {

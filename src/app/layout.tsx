@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/shared/Footer";
 
 // Import Swiper styles
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

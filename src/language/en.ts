@@ -39,7 +39,7 @@ const en = {
   instagram: "Instagram",
   telephone: "+234-812-929-8789",
   mobile: "+234-906-498-2292",
-  address: "1234 Street Name, City Name, United States",
+  ourAddress: "1234 Street Name, City Name, United States",
   openFrom: "Open from 9:00 AM to 5:00 PM (Monday to Friday)",
   pageNotFound: "Page Not Found",
   notFound: "Not Found",
@@ -228,6 +228,33 @@ const en = {
   filter: "Filter",
   noResults:
     "No Results found with the search term. Check out our other products",
+  stockistPageDescription:
+    "Join our network of trusted partners by becoming an authorized stockist of Amari Hair Care products. Our stockist program offers exclusive access to our premium, plant-based hair care products that combine cutting-edge technology with natural ingredients sourced from Africa. ",
+  newStockist: "New Stockist",
+  returningStockist: "Returning Stockist",
+  stockistMetaTitle: "Stockist | Amari Hair Care (Shop)",
+  stockistMetaDescription:
+    "Join the Amari Hair Care family and offer your customers the best in natural hair care. Fill out the form below to place an order and become an authorized stockist of our premium products.",
+  newStockistForm: "New Stockist Form",
+  companyName: "Company Name",
+  contactName: "Contact Name (Firstname Lastname)",
+  phone: "Phone",
+  stockistId: "Stockist ID",
+  comments: "Comments",
+  enterYourStockistId: "Enter your stockist ID",
+  enterYourComments: "Enter your comments",
+  enterYourCompanyName: "Enter your company name",
+  enterYourContactName: "Enter your contact name",
+  enterYourPhone: "Enter your phone number",
+  enterYourEmail: "Enter your email",
+  enterYourAddress: "Enter your address",
+  address: "Address",
+  continueToCheckout: "Continue to Checkout",
+  productCheckout: "Product Checkout",
+  inStock: "In Stock",
+  itemAdded: "Item(s) Added",
+  addProduct: "Add Product(s)",
+  placeOrder: "Place Order",
 };
 
 export default en;

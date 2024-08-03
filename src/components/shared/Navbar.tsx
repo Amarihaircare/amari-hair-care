@@ -15,8 +15,10 @@ import BurgerButton from "../ui/BurgerButton";
 import RoundedIconButton from "../ui/RoundedIconButton";
 import SearchSlide from "./SearchSlide";
 import SearchForm from "../ui/SearchForm";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
   const [searchKwd, setSearchKwd] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [dropdown, setDropdown] = useState("");
@@ -34,15 +36,14 @@ export default function Navbar() {
     {
       name: en.wishlists,
       icon: <HeartIcon />,
-      onClick: () => console.log("Wishlist"),
+      onClick: () => router.push("/wishlist"),
     },
     {
-      onClick: () => console.log("Cart"),
+      onClick: () => router.push("/stockist"),
       name: en.cart,
       icon: <ShoppingBasket />,
     },
   ];
-  console.log(showNav);
 
   function handleSearch(value: string) {
     if (!showSearch) {

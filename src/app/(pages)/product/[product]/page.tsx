@@ -44,11 +44,11 @@ export default function Product({ params }: { params: { product: string } }) {
   ];
 
   return (
-    <section className="w-full flex flex-col pb-10 lg:pb-20 pt-10 lg:pt-20  items-center justify-center bg-white">
-      <div className="flex flex-col md:max-w-screen-sm w-full lg:px-0 px-4 xl:max-w-[95%] 2xl:max-w-screen-xl gap-10">
-        <div className="w-full flex flex-col gap-10 lg:gap-0 lg:flex-row items-center justify-between">
+    <section className="flex w-full flex-col items-center justify-center bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
+      <div className="flex w-full flex-col gap-10 px-4 md:max-w-screen-sm lg:px-0 xl:max-w-[95%] 2xl:max-w-screen-xl">
+        <div className="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:gap-0">
           <ProductImageSlides images={product?.images ?? []} />
-          <div className="product-info lg:w-[46%] w-full flex flex-col gap-6">
+          <div className="product-info flex w-full flex-col gap-6 lg:w-[46%]">
             <div className="flex justify-between">
               <div className="flex flex-col gap-4">
                 <h2 className="text-2xl font-bold lg:text-4xl">
@@ -63,7 +63,7 @@ export default function Product({ params }: { params: { product: string } }) {
               </div>
               <RoundedIconButton
                 icon={<HeartIcon />}
-                className="bg-white border border-gray-200 shadow hover:bg-secondary hover:text-white transition-colors"
+                className="border border-gray-200 bg-white shadow transition-colors hover:bg-secondary hover:text-white"
               />
             </div>
             <p>{product?.shortDescription}</p>
@@ -72,7 +72,7 @@ export default function Product({ params }: { params: { product: string } }) {
               {formatCurrency(product?.price ?? 0, "NGN")}
             </p>
 
-            <AddToCartAction />
+            <AddToCartAction productSlug={product?.slug} />
             <ul className="flex flex-col gap-4">
               {productKeyTitle.map((item, index) => (
                 <li key={index} className="flex items-center gap-2">
