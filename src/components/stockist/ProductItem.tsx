@@ -15,7 +15,7 @@ interface ProductItemProps {
   slug: string;
   index: number;
   length: number;
-  addToCart: (slug: string) => void;
+  addToCart: (slug: string, count: number) => void;
   removeFromCart: (slug: string) => void;
 }
 
