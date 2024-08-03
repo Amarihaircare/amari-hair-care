@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image";
-import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
 import Rating from "../ui/Rating";
 import Link from "next/link";
 import { cn, formatCurrency } from "@/lib/utils";
 import en from "@/language/en";
 import { Button } from "../ui/button";
+import { ProductCardMenu } from "./ProductCardMenu";
+import AddToCartAction from "./AddToCartButton";
 
 interface ProductCardProps {
   image: StaticImageData;
@@ -24,40 +25,33 @@ export default function ProductCard({
   discount,
 }: ProductCardProps) {
   const discountedPrice = price - (price * (discount ?? 0)) / 100;
+
   return (
     <>
-      <div className="media w-full relative rounded overflow-hidden">
+      <div className="media relative w-full overflow-hidden rounded">
         <Image
           src={image}
           alt="media"
           width={320}
           height={220}
-          className="w-full h-[220px] rounded object-cover"
+          className="h-[220px] w-full rounded object-cover"
         />
         {discount && (
-          <div className="absolute w-10 h-10 top-4 right-4 rounded-full bg-green-700 flex items-center justify-center">
-            <p className="font-semibold text-white text-sm">-{discount}%</p>
+          <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-green-700">
+            <p className="text-sm font-semibold text-white">-{discount}%</p>
           </div>
         )}
 
-        <div className="overlay hidden lg:flex flex-col items-center justify-center absolute w-full h-full top-0 hover:bg-[#284721]/60 transition-all group">
-          <ul className="action flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
-            {productMenu.map((menu, index) => (
-              <li key={index} className="list-item">
-                <button className="w-10 h-10 rounded-full bg-white hover:bg-secondary flex items-center justify-center text-secondary hover:text-white">
-                  {menu.icon}
-                </button>
-              </li>
-            ))}
-          </ul>
+        <div className="overlay group absolute top-0 hidden h-full w-full flex-col items-center justify-center transition-all hover:bg-[#284721]/60 lg:flex">
+          <ProductCardMenu slug={slug} />
         </div>
       </div>
-      <div className="main flex flex-col gap-2 relative">
-        <div className="main_rating ">
+      <div className="main relative flex flex-col gap-2">
+        <div className="main_rating">
           <Rating value={rating} />
         </div>
         <Link
-          className="main_title max-w-[70%] lg:max-w-[90%] font-semibold text-black"
+          className="main_title max-w-[70%] font-semibold text-black lg:max-w-[90%]"
           href={`/product/${slug}`}
           rel="noopener norefferer"
         >
@@ -67,7 +61,7 @@ export default function ProductCard({
           {discount && (
             <p
               className={cn("price font-bold text-green-800", {
-                "line-through text-gray-400": discount,
+                "text-gray-400 line-through": discount,
               })}
             >
               {formatCurrency(price, "NGN")}
@@ -77,25 +71,8 @@ export default function ProductCard({
             {formatCurrency(discountedPrice, "NGN")}
           </p>
         </div>
-        <Button
-          variant={"secondary"}
-          className="font-semibold absolute self-end bottom-0 lg:hidden"
-        >
-          {en.addToCart}
-        </Button>
+        <AddToCartAction slug={slug} />
       </div>
     </>
   );
 }
-
-const productMenu = [
-  {
-    icon: <HeartIcon />,
-  },
-  {
-    icon: <ShoppingBasket />,
-  },
-  {
-    icon: <EyeIcon />,
-  },
-];

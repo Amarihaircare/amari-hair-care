@@ -12,12 +12,10 @@ interface IAddToCartActionProps {
 export default function AddToCartAction({
   productSlug,
 }: IAddToCartActionProps) {
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { cart } = useCart();
   const product = cart.find((item) => item.slug === productSlug);
   const { handleCount, count, handleAddToCart } = useManageCart({
     productSlug: productSlug!,
-    removeFromCart,
-    addToCart,
     ...(product && { quantity: product.quantity }),
   });
 
@@ -26,7 +24,7 @@ export default function AddToCartAction({
       <IncrementCart count={count} handleCount={handleCount} />
       {!product && (
         <Button
-          onClick={handleAddToCart}
+          onClick={() => handleAddToCart(count)}
           variant={"secondary"}
           className="py-6 font-semibold"
         >

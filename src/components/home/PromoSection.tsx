@@ -7,13 +7,13 @@ import promoProduct from "../../assets/images/collection.webp";
 export default function PromoSection() {
   const timeCards = [en.days, en.hours, en.mins, en.secs];
   return (
-    <section className="promo_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-background">
-      <div className="promo_container flex flex-col lg:flex-row justify-between items-center w-full overflow-hidden lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl gap-10">
-        <div className="wrapper max-w-[500px] flex flex-col items-center lg:items-start">
+    <section className="promo_section flex w-full flex-col items-center justify-center bg-background py-20 lg:py-40">
+      <div className="promo_container flex w-full flex-col items-center justify-between gap-10 overflow-hidden px-4 md:max-w-[95%] lg:flex-row lg:px-0 2xl:max-w-screen-xl">
+        <div className="wrapper flex max-w-[500px] flex-col items-center lg:items-start">
           <div className="promo_header mb-6">
             <Link
-              className="promo_header-title font-bold text-2xl text-center lg:text-left lg:text-4xl block mb-6"
-              href="product.html"
+              className="promo_header-title mb-6 block text-center text-2xl font-bold lg:text-left lg:text-4xl"
+              href="/catalogue"
               target="_blank"
               rel="noopener norefferer"
             >
@@ -23,7 +23,7 @@ export default function PromoSection() {
               {en.promoDescription}
             </p>
           </div>
-          <div className="promo_price flex lg:justify-start justify-center items-center gap-6 mb-6">
+          <div className="promo_price mb-6 flex items-center justify-center gap-6 lg:justify-start">
             <p className="price price--old text-3xl font-semibold text-gray-400">
               $48.97
             </p>
@@ -31,14 +31,14 @@ export default function PromoSection() {
               $27.97
             </p>
           </div>
-          <div className="promo_timer flex justify-center lg:justify-start gap-4 mb-6">
+          <div className="promo_timer mb-6 flex justify-center gap-4 lg:justify-start">
             {timeCards.map((time, index) => (
               <div
-                className="timer_block w-14 h-14 lg:w-20 lg:h-20 flex flex-col justify-center items-center border border-primary rounded "
+                className="timer_block flex h-14 w-14 flex-col items-center justify-center rounded border border-primary lg:h-20 lg:w-20"
                 key={index}
               >
                 <p
-                  className="timer_block-number text-green-800 font-semibold text-2xl"
+                  className="timer_block-number text-2xl font-semibold text-green-800"
                   id="seconds"
                 >
                   00
@@ -49,10 +49,10 @@ export default function PromoSection() {
           </div>
           <Button asChild>
             <Link
-              href="/stockist"
+              href="/catalogue"
               className={`${buttonVariants({
                 variant: "secondary",
-              })} mt-6 px-6 self-center lg:self-start font-semibold py-6 hover:bg-[#C6E749]/80`}
+              })} mt-6 self-center px-6 py-6 font-semibold hover:bg-[#C6E749]/80 lg:self-start`}
             >
               {en.shopNow}
             </Link>
@@ -64,7 +64,7 @@ export default function PromoSection() {
             alt="media"
             width={800}
             height={600}
-            className="w-full h-full"
+            className="h-full w-full"
           />
         </div>
       </div>

@@ -5,12 +5,10 @@ import { Button } from "../ui/button";
 import { useCart } from "@/hooks/useCart";
 
 export default function ProductCheckout() {
-  const { cart, addToCart, removeFromCart } = useCart();
-
-  console.log(cart, "rendering");
+  const { cart } = useCart();
 
   return (
-    <div className="flex w-full max-w-[500px] flex-col gap-4">
+    <div className="flex w-full max-w-[600px] flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">{en.productCheckout}</h1>
         <Link href="/catalogue" className="font-semibold text-green-700">
@@ -29,8 +27,6 @@ export default function ProductCheckout() {
             slug={product.slug}
             index={index}
             length={cart.length}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
           />
         ))}
       </div>

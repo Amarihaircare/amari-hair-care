@@ -16,8 +16,12 @@ import RoundedIconButton from "../ui/RoundedIconButton";
 import SearchSlide from "./SearchSlide";
 import SearchForm from "../ui/SearchForm";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/hooks/useCart";
 
 export default function Navbar() {
+  const { cart } = useCart();
+  console.log(cart, "navbar");
+
   const router = useRouter();
   const [searchKwd, setSearchKwd] = useState("");
   const [showSearch, setShowSearch] = useState(false);
@@ -166,15 +170,21 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 lg:gap-6">
             {userAction.map((action, index) => (
-              <RoundedIconButton
-                onClick={action.onClick}
-                className={cn({
-                  "lg:hidden": action.name.toLowerCase() === "search",
-                })}
-                key={index}
-                icon={action.icon}
-                data-search={action.name.toLowerCase() === "search"}
-              />
+              <div key={index} className="relative">
+                <RoundedIconButton
+                  onClick={action.onClick}
+                  className={cn({
+                    "lg:hidden": action.name.toLowerCase() === "search",
+                  })}
+                  icon={action.icon}
+                  data-search={action.name.toLowerCase() === "search"}
+                />
+                {action.name.toLowerCase() === "cart" && cart.length > 0 && (
+                  <p className="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#313133] text-[10px] font-medium text-white">
+                    {cart.length}
+                  </p>
+                )}
+              </div>
             ))}
           </div>
           <BurgerButton

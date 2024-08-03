@@ -1,20 +1,18 @@
 import { MINIMUM_QUANTITY } from "@/lib/constants";
 import { useState, useCallback, useEffect } from "react";
+import { useCart } from "./useCart";
 
 type TUseManageCart = {
   quantity?: number;
   productSlug: string;
-  addToCart(productSlug: string, count: number): void;
-  removeFromCart(productSlug: string): void;
 };
 
 export const useManageCart = ({
   quantity = MINIMUM_QUANTITY,
   productSlug,
-  addToCart,
-  removeFromCart,
 }: TUseManageCart) => {
   const [count, setCount] = useState(quantity);
+  const { addToCart, removeFromCart } = useCart();
 
   useEffect(() => {
     setCount(quantity);
@@ -30,9 +28,12 @@ export const useManageCart = ({
     [count, addToCart, productSlug],
   );
 
-  const handleAddToCart = useCallback(() => {
-    addToCart(productSlug, count);
-  }, [count, addToCart, productSlug]);
+  const handleAddToCart = useCallback(
+    (quantity = count) => {
+      addToCart(productSlug, quantity);
+    },
+    [addToCart, productSlug, count],
+  );
 
   const handleRemoveFromCart = useCallback(() => {
     removeFromCart(productSlug);

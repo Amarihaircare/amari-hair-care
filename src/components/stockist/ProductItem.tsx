@@ -15,8 +15,6 @@ interface ProductItemProps {
   slug: string;
   index: number;
   length: number;
-  addToCart: (slug: string, count: number) => void;
-  removeFromCart: (slug: string) => void;
 }
 
 export default function ProductItem({
@@ -46,7 +44,7 @@ export default function ProductItem({
         "border-b": index !== length - 1,
       })}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex justify-between">
         <div className="flex gap-4">
           <div className="h-[70px] w-[100px] lg:h-[100px]">
             <Image
@@ -57,12 +55,12 @@ export default function ProductItem({
               className="h-full w-full rounded object-cover"
             />
           </div>
-          <div>
+          <div className="flex max-w-[60%] flex-col gap-2">
             <h2 className="font-semibold lg:text-lg">{name}</h2>
             <p>{en.inStock}</p>
           </div>
         </div>
-        <div className="flex w-full flex-col items-end gap-2">
+        <div className="flex flex-col items-end gap-2">
           <p className="text-xl font-bold text-green-700">
             {formatCurrency(discountedPrice, "NGN")}
           </p>

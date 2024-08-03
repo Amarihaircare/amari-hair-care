@@ -3,7 +3,7 @@ import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TStockistValues } from "@/@types";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 type TNewStockistValues = Pick<
   TStockistValues,
@@ -15,14 +15,26 @@ interface TNewStockistForm {
 }
 
 export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
-  const [stockistData, setStockistData] = useState<TNewStockistValues>({
-    companyName: "",
-    contactName: "",
-    phone: "",
-    email: "",
-    address: "",
-    comments: "",
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<TNewStockistValues>({
+    defaultValues: {
+      address: "",
+      comments: "",
+      companyName: "",
+      contactName: "",
+      email: "",
+      phone: "",
+    },
   });
+
+  const onSubmit: SubmitHandler<TNewStockistValues> = (data) => {
+    localStorage.setItem("stockist", JSON.stringify(data));
+    setShowCheckout(true);
+  };
 
   useEffect(() => {
     // Ensure code only runs in the browser
@@ -30,7 +42,8 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
       const stockist = localStorage.getItem("stockist");
       if (stockist) {
         try {
-          setStockistData(JSON.parse(stockist) as TNewStockistValues);
+          const stockistData = JSON.parse(stockist) as TNewStockistValues;
+          reset(stockistData);
         } catch (error) {
           console.error(
             "Failed to parse stockist data from localStorage:",
@@ -39,22 +52,7 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
         }
       }
     }
-  }, []);
-  console.log(stockistData);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TNewStockistValues>({
-    defaultValues: stockistData,
-  });
-
-  const onSubmit: SubmitHandler<TNewStockistValues> = (data) => {
-    localStorage.setItem("stockist", JSON.stringify(data));
-    console.log(data);
-    setShowCheckout(true);
-  };
+  }, [reset]);
 
   return (
     <form

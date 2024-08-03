@@ -3,7 +3,7 @@ import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TStockistValues } from "@/@types";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 type TReturningStockistValues = Pick<
   TStockistValues,
@@ -17,10 +17,23 @@ interface TNewStockistForm {
 export default function ReturningStockist({
   setShowCheckout,
 }: TNewStockistForm) {
-  const [stockistData, setStockistData] = useState<TReturningStockistValues>({
-    email: "",
-    comments: "",
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<TReturningStockistValues>({
+    defaultValues: {
+      email: "",
+      comments: "",
+      stokistId: "",
+    },
   });
+
+  const onSubmit: SubmitHandler<TReturningStockistValues> = (data) => {
+    localStorage.setItem("stockist", JSON.stringify(data));
+    setShowCheckout(true);
+  };
 
   useEffect(() => {
     // Ensure code only runs in the browser
@@ -28,7 +41,8 @@ export default function ReturningStockist({
       const stockist = localStorage.getItem("stockist");
       if (stockist) {
         try {
-          setStockistData(JSON.parse(stockist) as TReturningStockistValues);
+          const stockistData = JSON.parse(stockist) as TReturningStockistValues;
+          reset(stockistData);
         } catch (error) {
           console.error(
             "Failed to parse stockist data from localStorage:",
@@ -37,20 +51,7 @@ export default function ReturningStockist({
         }
       }
     }
-  }, []);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TReturningStockistValues>({
-    defaultValues: stockistData,
-  });
-
-  const onSubmit: SubmitHandler<TReturningStockistValues> = (data) => {
-    localStorage.setItem("stockist", JSON.stringify(data));
-    setShowCheckout(true);
-  };
+  }, [reset]);
 
   return (
     <form
