@@ -21,7 +21,7 @@ export default function ContactList({ contactList }: ContactListProps) {
             {contact.name.map((item, index) =>
               contact?.link ? (
                 <Link
-                  href={item?.[index]}
+                  href={contact.link[index]}
                   key={index}
                   className="block text-inherit"
                 >
