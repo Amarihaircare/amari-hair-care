@@ -272,6 +272,18 @@ const en = {
   sendAMessage: "Send a Message",
   yourEmailAddres: "you@example.com",
   typeYourMessage: "Type Your Message",
+  faqPageMetaTitle: "FAQ | Amari Hair Care",
+  faqPageMetaDescription:
+    "Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.",
+  aboutPageDescription:
+    "Learn more about Amari Hair Care, our mission, and our commitment to providing premium, plant-based hair care products that promote healthy, beautiful hair.",
+  faqPageDescription:
+    "Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.",
+  generalQuestions: "General Questions",
+  orderingAndShopping: "Ordering and Shopping",
+  products: "Products",
+  stockists: "Stockists",
+  faqPageTitle: "Frequently Asked Questions",
 };
 
 export default en;
