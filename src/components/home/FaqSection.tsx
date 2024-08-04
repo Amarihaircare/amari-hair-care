@@ -1,15 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import faqMedia from "../../assets/images/instagram-four.webp";
 import en from "@/language/en";
-import { CaretDown } from "@/assets/icons";
-import { useState } from "react";
-import FaqDropDowns from "../shared/FaQDropdowns";
+import FaqDropDowns from "../shared/FaqDropdowns";
 
 export default function FaqSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(1);
-
   return (
     <section className="faq_section flex w-full flex-col items-center justify-center bg-white pb-20 lg:pb-40">
       <div className="faq_container flex w-full flex-col items-center justify-between gap-10 overflow-hidden px-4 md:max-w-[95%] lg:flex-row lg:gap-0 lg:px-0 2xl:max-w-screen-xl">

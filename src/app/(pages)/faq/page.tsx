@@ -1,4 +1,4 @@
-import FaqDropDowns from "@/components/shared/FaQDropdowns";
+import FaqDropDowns from "@/components/shared/FaqDropdowns";
 import en from "@/language/en";
 import type { Metadata } from "next";
 
