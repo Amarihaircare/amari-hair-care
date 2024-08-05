@@ -16,3 +16,20 @@ export const formatCurrency = (
     minimumFractionDigits: 2,
   });
 };
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Function to capitalize text based on sentence boundaries
+export function capitalize(text: string, locale = "en") {
+  const segmenter = new Intl.Segmenter(locale, { granularity: "sentence" });
+  const segments = segmenter.segment(text);
+
+  let capitalizedText = "";
+  for (const segment of segments) {
+    capitalizedText += capitalizeFirstLetter(segment.segment);
+  }
+
+  return capitalizedText;
+}

@@ -328,6 +328,92 @@ const en = {
     "Join us on our journey to revolutionize the hair care industry.",
   b2bOperations: "Business-to-Business (B2B) operations",
   reachUs: "Reach Us",
+  paasPageMetaTitle: "Platform as a Service | Amari Hair Care",
+  paasPageMetaDescription:
+    "Amari Hair Care offers a comprehensive Platform as a Service (PaaS) solution for businesses looking to streamline their operations and enhance their customer experience.",
+  paasPageDescription:
+    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers",
+  paasPageIntroduction: "Introduction to the àmàri PaaS initiative.",
+  paasPageDescriptionOne:
+    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.",
+  paasPageDescriptionTwo:
+    "Amari PaaS Initiative aims to Enhanced Customer Experience.",
+  paasPageDescriptionThree:
+    "The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.",
+  paas: "Platform as a Service",
+  paasKeyBenefitsHeading:
+    "Here are some key benefits for salons participating in the Amari PaaS program:",
+  paasBenefitTitleOne: "Diversification of Revenue:",
+  paasBenefitDescriptionOne:
+    "Amari PaaS provides salons with an additional revenue stream beyond traditional salon services. The initiative allows salons to generate income through the application of Amari Hair Care products, creating a more diversified financial portfolio.",
+  paasBenefitTitleTwo: "Increased Client Retention:",
+  paasBenefitDescriptionTwo:
+    "Satisfied clients are more likely to become repeat customers, leading to increased client retention for the salon.",
+  paasBenefitTitleThree: "Attracting New Clientele:",
+  paasBenefitDescriptionThree:
+    "The initiative can attract new clients who are interested in experiencing high-quality hair care products without committing to a full purchase. Word-of-mouth recommendations and positive experiences can draw in a broader clientele, expanding the salon's customer base.",
+  paasBenefitTitleFour: "Differentiation in the Market:",
+  paasBenefitDescriptionFour:
+    "Participating salons can differentiate themselves in a competitive market by aligning with Amari PaaS and its innovative approach. This differentiation gives the salons a competitive advantage.",
+  paasBenefitTitleFive: "Marketing and Promotion Opportunities:",
+  paasBenefitDescriptionFive:
+    "Salons within the Amari PaaS network can benefit from joint marketing efforts and promotions organized by Amari Hair Care. Collaborative marketing activities can increase the visibility of the salon and attract more clients.",
+  paasBenefitTitleSix: "Training and Support:",
+  paasBenefitDescriptionSix:
+    "Amari PaaS provides training and support to salon professionals, ensuring they are well-versed in the application of Amari Hair Care products.",
+  paasBenefitTitleSeven: "Community Engagement:",
+  paasBenefitDescriptionSeven:
+    "Participating salons become part of a community of like-minded professionals within the Amari PaaS network.",
+  customerBenefitsHeading: "Benefits to customers:",
+  customerBenefitTitleOne: "The Option of Professional Expertise:",
+  customerBenefitDescriptionOne:
+    "Customers can benefit from the expertise of salon professionals who are trained in the application of Amari Hair Care products. The professional touch ensures that products are applied correctly, maximizing their effectiveness.",
+  customerBenefitTitleTwo: "Personalized Hair Care:",
+  customerBenefitDescriptionTwo:
+    "Customized product combinations and application techniques cater to specific hair types, addressing unique concerns and goals.",
+  customerBenefitTitleThree: "Frequent and Targeted Treatments:",
+  customerBenefitDescriptionThree:
+    "Amari PaaS encourages customers to engage in recurring services, such as monthly protein treatments, ensuring consistent and targeted care for their hair. Regular treatments contribute to improved hair health, strength, and overall appearance.",
+  customerBenefitTitleFour: "Consistent and Lasting Results:",
+  customerBenefitDescriptionFour:
+    "Engaging in Amari PaaS services on a regular basis contributes to consistent and lasting results in terms of improved hair texture, health, and style. Customers experience ongoing benefits, reinforcing the value of the initiative in their hair care routine.",
+  servicesPageDescription:
+    "Discover the range of services offered by Amari Hair Care, designed to provide comprehensive solutions for your hair care needs. From consultations to product application, we are here to support you on your hair care journey.",
+  ourServices: "Our Services",
+  hairRenewalTherapy: "Amari Hair Renewal Therapy",
+  hairRenewalTherapyDescription:
+    "Introducing \"Amari Hair Renewal Therapy,\" an innovative in-salon treatment utilizing our proprietary products – Amari's Leave-In Protein Treatment and Amari's Natural Hair Moisturizer.",
+  keyFeaturesAndBenefits: "Key Features and Benefits:",
+  hairTherapyBenefitTitleOne: "Targeted Repair and Strengthening:",
+  hairTherapyBenefitDescriptionOne:
+    "The therapy actively targets damaged hair strands, working to repair and strengthen them. Effectively reduces breakage and split ends, promoting overall hair health.",
+  hairTherapyBenefitTitleTwo: "Length Retention:",
+  hairTherapyBenefitDescriptionTwo:
+    "Amari Hair Renewal Therapy is formulated to aid in length retention, allowing clients to enjoy longer, healthier hair.",
+  hairTherapyBenefitTitleThree: "Visible Results:",
+  hairTherapyBenefitDescriptionThree:
+    "Clients can expect visibly stronger and more resilient hair after each treatment session. The therapy enhances the overall appearance and texture of the hair.",
+  moistureTherapy: "Amari Moisture Therapy",
+  moistureTherapyDescription:
+    'Introducing "Amari Moisture Therapy," a luxurious in-salon experience centered around the exclusive use of Amari\'s Natural Hair Moisturizer. This service caters to individuals seeking deep hydration and nourishment for their hair, providing a spa-like experience within the salon setting.',
+  moistureTherapyBenefitTitleOne: "Deep Hydration and Nourishment:",
+  moistureTherapyBenefitDescriptionOne:
+    "Amari Moisture Therapy focuses on delivering deep hydration and nourishment using our Hair Moisturizer. Ideal for clients with dry, brittle, or chemically-treated natural hair in need of intense moisture.",
+  moistureTherapyBenefitTitleTwo: "Silky Smooth Results:",
+  moistureTherapyBenefitDescriptionTwo:
+    "Clients can expect silky-smooth results as the moisturizer works to soften and revitalize hair strands.",
+  moistureTherapyBenefitTitleThree: "Relaxing Salon Experience:",
+  moistureTherapyBenefitDescriptionThree:
+    "Clients indulge in a relaxing and pampering salon experience, elevating their overall satisfaction.",
+  scalpTherapy: "Amari Scalp Stimulating Therapy",
+  scalpTherapyDescription:
+    'Introducing the "Amari Scalp Stimulating Therapy," a comprehensive offering that uses our Hair Growth Serum for a specialized in-salon treatment. This therapy is designed to stimulate the scalp, creating an optimal environment for healthier and more resilient hair.',
+  scalpTherapyBenefitTitleOne: "Scalp Nourishment and Stimulation:",
+  scalpTherapyBenefitDescriptionOne:
+    "The therapy includes the application of the Hair Growth Serum, focusing on nourishing and stimulating the scalp to encourage optimal hair growth.",
+  scalpTherapyBenefitTitleTwo: "Enhanced Circulation for Hair Follicles:",
+  scalpTherapyBenefitDescriptionTwo:
+    "The therapy improves blood circulation in the scalp, ensuring that hair follicles receive an increased supply of nutrients for optimal growth.",
 };
 
 export default en;
