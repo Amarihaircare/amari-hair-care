@@ -71,6 +71,7 @@ export default function ReturningStockist({
           required={input.placeholder}
         />
       ))}
+      <input type="text" name="_honey" hidden />
 
       <Button
         type="submit"

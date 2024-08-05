@@ -414,6 +414,12 @@ const en = {
   scalpTherapyBenefitTitleTwo: "Enhanced Circulation for Hair Follicles:",
   scalpTherapyBenefitDescriptionTwo:
     "The therapy improves blood circulation in the scalp, ensuring that hair follicles receive an increased supply of nutrients for optimal growth.",
+  orderPlaced: "Order Placed",
+  orderPlacedDescription:
+    "Your order has been successfully placed. You will receive an email confirmation shortly. Thank you for shopping with us!",
+  somethingWentWrong: "Something Went Wrong",
+  somethingWentWrongDescription:
+    "We apologize for the inconvenience, but it seems something has gone wrong on our end!",
 };
 
 export default en;

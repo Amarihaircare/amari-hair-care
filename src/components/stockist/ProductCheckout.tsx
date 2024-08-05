@@ -3,9 +3,47 @@ import ProductItem from "./ProductItem";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useCart } from "@/hooks/useCart";
+import { sendEmail } from "@/api";
+import { toast } from "../ui/use-toast";
+import { useState } from "react";
+import { SpinnerIcon } from "@/assets/icons";
 
 export default function ProductCheckout() {
   const { cart } = useCart();
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function handlePlaceOrder() {
+    setIsLoading(true);
+    const formData = new FormData();
+    const stockist = localStorage.getItem("stockist");
+    const stockistData = stockist ? JSON.parse(stockist) : {};
+
+    for (const key in stockistData) {
+      formData.append(key, stockistData[key]);
+    }
+    formData.append("products", JSON.stringify(cart));
+    formData.append(
+      "_subject",
+      `New Order From ${stockistData.contactName || stockistData.stockistId}`,
+    );
+
+    await sendEmail(formData)
+      .then(() => {
+        toast({
+          title: en.orderPlaced,
+          description: en.orderPlacedDescription,
+        });
+      })
+      .catch(() => {
+        toast({
+          title: en.somethingWentWrong,
+          description: en.somethingWentWrongDescription,
+          variant: "destructive",
+        });
+      });
+
+    setIsLoading(false);
+  }
 
   return (
     <div className="flex w-full max-w-[600px] flex-col gap-4">
@@ -47,11 +85,13 @@ export default function ProductCheckout() {
         )}
       </div>
       <Button
+        onClick={handlePlaceOrder}
         type="button"
-        className="mt-10 rounded bg-primary py-5 text-white"
+        className="mt-10 gap-4 rounded bg-primary py-5 text-white"
         disabled={cart.length === 0} // Disable button if the cart is empty
       >
         {en.placeOrder}
+        {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </div>
   );

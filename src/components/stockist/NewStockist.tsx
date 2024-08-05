@@ -58,6 +58,7 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
     <form
       className="flex w-full max-w-[500px] flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
+      method="POST"
     >
       <h1 className="text-2xl font-semibold">{en.newStockistForm}</h1>
       {inputFieldset.map((input) => (
@@ -72,6 +73,7 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
           required={input.placeholder}
         />
       ))}
+      <input type="text" name="_honey" hidden />
 
       <Button
         type="submit"
