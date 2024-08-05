@@ -44,7 +44,6 @@ const generatePaginationLinks = (currentPage: number, lastPage: number) => {
 
 export default function Paginate({ currentPage, lastPage }: PaginateProps) {
   const links = generatePaginationLinks(currentPage, lastPage);
-  console.log(currentPage, lastPage, links);
 
   return (
     <Pagination>

@@ -16,7 +16,6 @@ export const ProductCardMenu = ({ slug }: ProductCardMenuProps) => {
     productSlug: slug!,
     ...(product && { quantity: product.quantity }),
   });
-  console.log(count);
 
   const productMenu = [
     {
