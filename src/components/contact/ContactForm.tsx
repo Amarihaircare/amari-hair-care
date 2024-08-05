@@ -63,6 +63,8 @@ export default function ContactForm() {
           textAreaStyles="h-60"
         />
       ))}
+      <input type="text" name="_honey" hidden />
+
       <Button
         type="submit"
         className="mt-10 gap-4 rounded bg-primary py-5 text-white"
