@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${montserrat.variable} flex flex-col items-center justify-center`}
+        className={`${nunito.variable} ${montserrat.variable} flex flex-col items-center justify-center overflow-hidden`}
       >
         <CartProvider>
           <Navbar />
