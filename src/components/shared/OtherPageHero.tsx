@@ -14,10 +14,13 @@ export default function OtherPageHero({ heading }: OtherPageHeroProps) {
   return (
     <section className="otherpages__hero relative flex w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat">
       <div className="flex flex-col items-center justify-center px-4 py-20">
-        <h1 className="mb-4 text-center text-4xl font-bold lg:text-6xl">
+        <h1
+          data-aos="fade-up"
+          className="mb-4 text-center text-4xl font-bold lg:text-6xl"
+        >
           {alternateHeading[name.toLowerCase()] || capitalize(name)}
         </h1>
-        <p className="max-w-[500px] text-center">
+        <p data-aos="fade-up" className="max-w-[500px] text-center">
           {descriptions[name.toLowerCase()]}
         </p>
       </div>

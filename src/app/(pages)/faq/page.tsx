@@ -13,7 +13,9 @@ export default function Faq() {
       <div className="flex w-full flex-col gap-10 px-4 md:max-w-screen-sm">
         {questionGroups.map((group, index) => (
           <div key={index} className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold lg:text-4xl">{group.title}</h2>
+            <h2 data-aos="fade-up" className="text-2xl font-bold lg:text-4xl">
+              {group.title}
+            </h2>
 
             <FaqDropDowns questions={group.questions} />
           </div>

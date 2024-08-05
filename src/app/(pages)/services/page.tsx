@@ -17,56 +17,73 @@ export default function Services() {
     <>
       <section className="flex w-full flex-col items-center justify-center bg-white pb-20 pt-10 lg:pb-40 lg:pt-20">
         <div className="flex w-full flex-col gap-20 px-4 md:max-w-[95%] lg:gap-40 lg:px-0 2xl:max-w-screen-xl">
-          {services.map((service) => (
-            <div
-              key={service.heading}
-              className={cn(
-                "flex flex-col-reverse items-center justify-between gap-10 lg:flex-row",
-                {
-                  "lg:flex-row-reverse": services.indexOf(service) % 2 === 1,
-                },
-              )}
-            >
-              <div className="flex flex-col gap-6 lg:w-[48%]">
-                <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
-                  {service.heading}
-                </h2>
+          {services.map((service, index) => {
+            const isFlipped = index % 2 === 1;
+            return (
+              <div
+                key={service.heading}
+                className={cn(
+                  "flex flex-col-reverse items-center justify-between gap-10 lg:flex-row",
+                  {
+                    "lg:flex-row-reverse": isFlipped,
+                  },
+                )}
+              >
+                <div className="flex flex-col gap-6 lg:w-[48%]">
+                  <h2
+                    data-aos={isFlipped ? "fade-left" : "fade-right"}
+                    className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
+                  >
+                    {service.heading}
+                  </h2>
 
-                <p className="text-center lg:text-left">
-                  {service.description}
-                </p>
-
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-2xl font-bold">
-                    {service.benefit.title}
-                  </h3>
+                  <p className="text-center lg:text-left" data-aos="fade-up">
+                    {service.description}
+                  </p>
 
                   <div className="flex flex-col gap-4">
-                    {service.benefit.benefits.map((benefit) => (
-                      <div
-                        key={benefit.title}
-                        className="flex items-center gap-4"
-                      >
-                        <div className="flex flex-col gap-2">
-                          <h3 className="font-bold">{benefit.title}</h3>
-                          <p>{benefit.description}</p>
+                    <h3
+                      className="text-2xl font-bold"
+                      data-aos={isFlipped ? "fade-left" : "fade-right"}
+                    >
+                      {service.benefit.title}
+                    </h3>
+
+                    <div className="flex flex-col gap-4">
+                      {service.benefit.benefits.map((benefit) => (
+                        <div
+                          key={benefit.title}
+                          className="flex items-center gap-4"
+                        >
+                          <div className="flex flex-col gap-2">
+                            <h3
+                              data-aos={isFlipped ? "fade-left" : "fade-right"}
+                              className="font-bold"
+                            >
+                              {benefit.title}
+                            </h3>
+                            <p data-aos="fade-up">{benefit.description}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
+                <div
+                  data-aos={isFlipped ? "fade-right" : "fade-left"}
+                  className="flex flex-col gap-6 lg:w-[48%]"
+                >
+                  <Image
+                    width={800}
+                    height={400}
+                    src={service.image}
+                    alt="women farming"
+                    className="w-full rounded lg:h-[600px]"
+                  />
+                </div>
               </div>
-              <div className="flex flex-col gap-6 lg:w-[48%]">
-                <Image
-                  width={800}
-                  height={400}
-                  src={service.image}
-                  alt="women farming"
-                  className="w-full rounded lg:h-[600px]"
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
       <NewsletterSection />

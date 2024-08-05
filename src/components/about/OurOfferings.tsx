@@ -12,13 +12,16 @@ export default function OurOfferings() {
     <div className="flex flex-col justify-center gap-10 pb-10 lg:flex-row lg:pb-20">
       <div className="grid gap-10 md:grid-cols-2 lg:w-[70%]">
         <div className="flex flex-col justify-center gap-3">
-          <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
+          <h2
+            data-aos="fade-up"
+            className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
+          >
             {en.amariProductOfferings}
           </h2>
-          <p className="text-center lg:text-left">
+          <p data-aos="fade-right" className="text-center lg:text-left">
             {en.amariProductOfferingsDescription}
           </p>
-          <Button asChild>
+          <Button data-aos="fade-up" asChild>
             <Link
               href="/catalogue"
               className={`${buttonVariants({
@@ -32,6 +35,7 @@ export default function OurOfferings() {
         {offerings.map((offering) => (
           <div
             className="group relative overflow-hidden rounded border border-background bg-white shadow"
+            data-aos="fade-up"
             key={offering.title}
           >
             <Image
@@ -54,7 +58,10 @@ export default function OurOfferings() {
           </div>
         ))}
       </div>
-      <div className="main_offering-bg flex flex-col items-center justify-center rounded p-4 py-40 lg:w-[28%]">
+      <div
+        data-aos="fade-left"
+        className="main_offering-bg flex flex-col items-center justify-center rounded p-4 py-40 lg:w-[28%]"
+      >
         <p className="mb-4 text-center">{en.growthAndExpansionDescription}</p>
         <p className="mb-8 text-center">{en.joinUsDescription}</p>
 

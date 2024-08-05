@@ -9,17 +9,24 @@ export default function Platform() {
       <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="flex flex-col gap-6 lg:w-[48%]">
-            <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
+            <h2
+              data-aos="fade-right"
+              className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
+            >
               {en.paasPageIntroduction}
             </h2>
 
             {paasPageDescriptions.map((description, index) => (
-              <p key={index} className="text-center lg:text-left">
+              <p
+                key={index}
+                data-aos="fade-up"
+                className="text-center lg:text-left"
+              >
                 {description}
               </p>
             ))}
           </div>
-          <div className="flex flex-col gap-6 lg:w-[48%]">
+          <div data-aos="fade-left" className="flex flex-col gap-6 lg:w-[48%]">
             <Image
               width={800}
               height={600}
@@ -30,7 +37,10 @@ export default function Platform() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-10 py-40">
-          <h2 className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl">
+          <h2
+            data-aos="fade-up"
+            className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl"
+          >
             {en.paasKeyBenefitsHeading}
           </h2>
 
@@ -38,6 +48,7 @@ export default function Platform() {
             {paasKeyBenefits.map((value, index) => (
               <div
                 key={index}
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                 className="flex flex-col items-center gap-4 lg:flex-row"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -57,13 +68,20 @@ export default function Platform() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-10 pb-40">
-          <h2 className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl">
+          <h2
+            data-aos="fade-up"
+            className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl"
+          >
             {en.customerBenefitsHeading}
           </h2>
 
           <div className="grid gap-10 lg:grid-cols-2">
             {customerBenefits.map((value, index) => (
-              <div key={index} className="flex flex-col items-center gap-4">
+              <div
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                key={index}
+                className="flex flex-col items-center gap-4"
+              >
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
                   <UsersIcon className="text-xl" />
                 </div>
