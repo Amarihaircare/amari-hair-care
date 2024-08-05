@@ -284,6 +284,50 @@ const en = {
   products: "Products",
   stockists: "Stockists",
   faqPageTitle: "Frequently Asked Questions",
+  aboutPageMetaTitle: "About Us | Amari Hair Care",
+  aboutPageMetaDescription:
+    "Learn more about Amari Hair Care, our mission, and our commitment to providing premium, plant-based hair care products that promote healthy, beautiful hair.",
+  aboutUsPageHeading:
+    "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
+  aboutUsPageDescription:
+    " Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, and to revolutionize the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.",
+  naturalPlantBasedIngredientesDescription:
+    "We differentiate ourselves by using natural, plant-based ingredients that nourish and protect hair without harmful chemicals like sulfates, parabens, and minerals.",
+  focusOnAfricanWomenDescription:
+    "Our commitment to meeting the specific needs of African women sets us apart. We empower our customers with products and services that enhance their natural beauty.",
+  comprehensiveServiceDescription:
+    "In addition to our product line, we offer workshops, training programs, and certifications to educate professionals and consumers alike on optimal hair care practices.",
+  socialResponsibilityDescription:
+    "We prioritize ethical practices, including eco-friendly packaging and fair labour standards, while supporting community initiatives.",
+  qualityAndInnovationDescription:
+    "Our products incorporate the latest advancements in hair care technology to deliver superior results and meet evolving consumer preferences.",
+  ourCoreValues: "Our Core Values",
+  ourCoreValuesDescription:
+    "At Amari Hair Care and Amari Scalp Care, we differentiate ourselves and uphold the following core values:",
+  customerSatisfactionDescription:
+    "We prioritize exceeding customer expectations through exceptional products and service.",
+  employeeSatisfactionDescription:
+    "We nurture a supportive and inclusive workplace where employees thrive and contribute to our success.",
+  communityAndEnvironmentalService: "Community and Environmental Service",
+  communityAndEnvironmentalServiceDescription:
+    "We are committed to giving back to the community and promoting sustainable practices in all aspects of our business.",
+  amariProductOfferings: "Amari Product Offerings",
+  amariProductOfferingsDescription:
+    "At Amari Hair Care and Amari Scalp Care, we simplify hair care routines with effective, minimalist products designed for scalp and hair health:",
+  scalpCareProducts: "Scalp Care Products",
+  scalpCareProductsDescription:
+    "Formulated to nourish and balance the scalp, promoting healthy hair growth and addressing common scalp concerns such as dryness and itchiness.",
+  hairCareProducts: "Hair Care Products",
+  hairCareProductsDescription:
+    "Designed to enhance hair texture, moisture retention, strength, and styling versatility. Our products cater to diverse hair types and goals, ensuring optimal hair health and manageability.",
+  ourFocusDescription:
+    "Currently, our focus is on business-to-business (B2B) operations, ensuring that professionals and businesses have access to our premium products and educational resources.",
+  growthAndExpansionDescription:
+    "As we continue to grow, we look forward to expanding our reach and impact, fostering a community where everyone can feel confident and beautiful in their own hair.",
+  joinUsDescription:
+    "Join us on our journey to revolutionize the hair care industry.",
+  b2bOperations: "Business-to-Business (B2B) operations",
+  reachUs: "Reach Us",
 };
 
 export default en;

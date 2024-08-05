@@ -79,7 +79,7 @@
 
   p {
     @apply text-secondary-foreground;
-    @apply text-base;
+    @apply text-sm;
   }
 }
 
@@ -87,7 +87,7 @@
   @layer base {
     p,
     a {
-      @apply text-sm;
+      @apply text-base;
     }
   }
 }
@@ -151,4 +151,9 @@
       103% 100%,
       -2% -5%;
   }
+}
+
+.main_offering-bg {
+  background-image: url('../assets/images/main-offering.png');
+  background-size: cover;
 }
