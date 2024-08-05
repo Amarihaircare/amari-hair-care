@@ -49,7 +49,7 @@ export default function About() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center gap-10 py-20 lg:py-40">
+          <div className="flex flex-col items-center justify-center gap-10 py-40">
             <div className="heading flex max-w-[500px] flex-col items-center justify-center gap-4">
               <h2 className="text-center text-2xl font-bold lg:text-4xl">
                 {en.ourCoreValues}
