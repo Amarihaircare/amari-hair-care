@@ -420,6 +420,9 @@ const en = {
   somethingWentWrong: "Something Went Wrong",
   somethingWentWrongDescription:
     "We apologize for the inconvenience, but it seems something has gone wrong on our end!",
+  messageSent: "Message Sent",
+  messageSentDescription:
+    "Your message has been successfully sent. We will get back to you shortly. Thank you for contacting us!",
 };
 
 export default en;

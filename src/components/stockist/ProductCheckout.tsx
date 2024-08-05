@@ -21,7 +21,15 @@ export default function ProductCheckout() {
     for (const key in stockistData) {
       formData.append(key, stockistData[key]);
     }
-    formData.append("products", JSON.stringify(cart));
+    formData.append(
+      "products",
+      JSON.stringify(
+        cart.map((product) => ({
+          name: product.name,
+          price: product.price,
+        })),
+      ),
+    );
     formData.append(
       "_subject",
       `New Order From ${stockistData.contactName || stockistData.stockistId}`,

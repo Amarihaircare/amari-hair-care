@@ -5,18 +5,43 @@ import InputFieldset from "../ui/InputFieldset";
 import en from "@/language/en";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { SpinnerIcon } from "@/assets/icons";
+import { sendEmail } from "@/api";
+import { toast } from "../ui/use-toast";
 
 type TContactFormValue = Pick<TFormValues, "email" | "name" | "message">;
 
 export default function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TContactFormValue>();
 
-  function onSubmit(data: TContactFormValue) {
-    console.log(data);
+  async function onSubmit(data: TContactFormValue) {
+    setIsLoading(true);
+    const formData = new FormData();
+    for (const key in data) {
+      // @ts-expect-error ignore
+      formData.append(key, data[key]);
+    }
+    await sendEmail(formData)
+      .then(() => {
+        toast({
+          title: en.messageSent,
+          description: en.messageSentDescription,
+        });
+      })
+      .catch(() => {
+        toast({
+          title: en.somethingWentWrong,
+          description: en.somethingWentWrongDescription,
+          variant: "destructive",
+        });
+      });
+    setIsLoading(false);
   }
 
   return (
@@ -40,9 +65,10 @@ export default function ContactForm() {
       ))}
       <Button
         type="submit"
-        className="mt-10 rounded bg-primary py-5 text-white"
+        className="mt-10 gap-4 rounded bg-primary py-5 text-white"
       >
         {en.sendAMessage}
+        {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </form>
   );
