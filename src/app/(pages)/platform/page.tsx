@@ -5,7 +5,7 @@ import { CheckIcon, UsersIcon } from "@/assets/icons";
 
 export default function Platform() {
   return (
-    <section className="flex w-full flex-col items-center justify-center bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
+    <section className="flex w-full flex-col items-center justify-center overflow-hidden bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
       <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="flex flex-col gap-6 lg:w-[48%]">

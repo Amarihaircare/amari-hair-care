@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <>
-      <section className="flex w-full flex-col items-center justify-center bg-white pb-20 pt-10 lg:pb-40 lg:pt-20">
+      <section className="flex w-full flex-col items-center justify-center overflow-hidden bg-white pb-20 pt-10 lg:pb-40 lg:pt-20">
         <div className="flex w-full flex-col gap-20 px-4 md:max-w-[95%] lg:gap-40 lg:px-0 2xl:max-w-screen-xl">
           {services.map((service, index) => {
             const isFlipped = index % 2 === 1;

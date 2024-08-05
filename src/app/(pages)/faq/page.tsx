@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Faq() {
   return (
-    <section className="flex w-full flex-col items-center justify-center bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
+    <section className="flex w-full flex-col items-center justify-center overflow-hidden bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
       <div className="flex w-full flex-col gap-10 px-4 md:max-w-screen-sm">
         {questionGroups.map((group, index) => (
           <div key={index} className="flex flex-col gap-4">
