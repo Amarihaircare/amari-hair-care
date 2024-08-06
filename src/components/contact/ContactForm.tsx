@@ -22,11 +22,17 @@ export default function ContactForm() {
 
   async function onSubmit(data: TContactFormValue) {
     setIsLoading(true);
+
     const formData = new FormData();
     for (const key in data) {
       // @ts-expect-error ignore
       formData.append(key, data[key]);
     }
+    formData.append(
+      "_subject",
+      `${data.name} is trying to reach amari hair care`,
+    );
+
     await sendEmail(formData)
       .then(() => {
         toast({

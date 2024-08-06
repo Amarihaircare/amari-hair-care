@@ -1,10 +1,6 @@
 export const sendEmail = (formData: FormData) => {
-  return fetch("https://formsubmit.co/ajax/0a575ddc45deae46842f14e8c019546c", {
+  return fetch("https://formsubmit.co/ajax/5f07c8c32b01de235ee73e84bd53c09f", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(formData),
+    body: formData,
   });
 };
