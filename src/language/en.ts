@@ -423,6 +423,17 @@ const en = {
   messageSent: "Message Sent",
   messageSentDescription:
     "Your message has been successfully sent. We will get back to you shortly. Thank you for contacting us!",
+  privacyPageMetaTitle: "Privacy Policy | Amari Hair Care",
+  privacyPageMetaDescription:
+    "Read our privacy policy to learn how we collect, use, and protect your personal information at Amari Hair Care.",
+  privacyPageDescription:
+    "At Amari Hair Care, we are committed to protecting your privacy and personal information. Our privacy policy outlines how we collect, use, and protect your data when you visit our website, interact with our services, or make a purchase.",
+  tosPageMetaTitle: "Terms of Service | Amari Hair Care",
+  tosPageMetaDescription:
+    "Read our terms and conditions to understand the guidelines for using Amari Hair Care's website and services.",
+  tosPageDescription:
+    "By using Amari Hair Care's website and services, you agree to abide by our terms and conditions. Read our terms of service to understand the guidelines for using our platform.",
+  tos: "Terms & Conditions",
 };
 
 export default en;

@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
+
 import en from "@/language/en";
 import paas from "@/assets/images/paas.png";
 import Image from "next/image";
 import { CheckIcon, UsersIcon } from "@/assets/icons";
+
+export const metadata: Metadata = {
+  title: en.paasPageMetaTitle,
+  description: en.paasPageMetaDescription,
+};
 
 export default function Platform() {
   return (

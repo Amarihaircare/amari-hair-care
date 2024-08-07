@@ -2,7 +2,6 @@
 import en from "@/language/en";
 import { capitalize } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { platform } from "os";
 
 interface OtherPageHeroProps {
   heading?: string;
@@ -32,6 +31,8 @@ const alternateHeading: Record<string, string> = {
   faq: en.faqPageTitle,
   platform: en.paas,
   service: en.ourServices,
+  privacy: en.privacyPolicy,
+  tos: en.tos,
 };
 
 const descriptions: Record<string, string> = {
@@ -44,4 +45,6 @@ const descriptions: Record<string, string> = {
   faq: en.faqPageDescription,
   platform: en.paasPageDescription,
   services: en.servicesPageDescription,
+  privacy: en.privacyPageDescription,
+  tos: en.tosPageDescription,
 };
