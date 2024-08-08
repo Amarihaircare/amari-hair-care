@@ -385,7 +385,8 @@ Changes to This Privacy Policy
 <br/>
 
 <p>
-    If you have any questions about this Privacy Policy or our data practices, please contact us at ${en.emailAddress}.
+    If you have any questions about this Privacy Policy or our data practices, please contact us at
+        <a href=mailto:${en.emailAddress}>${en.emailAddress}</a>.
 </p>
 
 `;

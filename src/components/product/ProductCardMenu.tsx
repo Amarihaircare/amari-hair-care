@@ -25,9 +25,6 @@ export const ProductCardMenu = ({ slug }: ProductCardMenuProps) => {
       onClick: () => handleAddToCart((product?.quantity ?? count - 1) + 1),
       icon: <DocumentIcon />,
     },
-    {
-      icon: <EyeIcon />,
-    },
   ];
 
   return (

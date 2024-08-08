@@ -212,6 +212,7 @@ export const tos = `
 <br/>
 
 <p>
-    If you have any questions or need further information, please contact us at ${en.emailAddress}.
+    If you have any questions or need further information, please contact us at 
+            <a href=mailto:${en.emailAddress}>${en.emailAddress}</a>.
 </p>
 `;
