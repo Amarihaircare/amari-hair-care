@@ -1,7 +1,6 @@
 "use client";
 
 import en from "@/language/en";
-import Image from "next/image";
 import avatarOne from "../../assets/images/avatar-one.png";
 import avatarTwo from "../../assets/images/avatar-two.png";
 import Rating from "../ui/Rating";
@@ -10,6 +9,7 @@ import { useRef, useState } from "react";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { Autoplay } from "swiper/modules";
 import SlidesPagination from "../ui/SlidesPagination";
+import { QuoteLeftIcon, QuoteRightIcon } from "@/assets/icons";
 
 export default function TestimonialsSection() {
   const slidesPerView = useSlidesPerView();
@@ -55,17 +55,12 @@ export default function TestimonialsSection() {
               key={index}
               className="reviews_slider-slide w-full rounded border border-gray-200 p-4 shadow lg:min-w-[420px] lg:p-10"
             >
-              <div className="reviews_slider-slide_wrapper flex h-full flex-col items-center justify-between gap-4">
-                <Image
-                  src={review.avatar}
-                  alt="avatar"
-                  width={100}
-                  height={100}
-                  className="mb-4 h-20 w-20 rounded-full object-cover"
-                />
+              <div className="reviews_slider-slide_wrapper relative flex h-full flex-col items-center justify-between gap-4">
+                <QuoteLeftIcon className="absolute -top-4 left-0 text-xl" />
                 <Rating value={review.rating} />
-                <p className="text-center">{review.review}</p>
+                <p className="flex flex-col text-center">{review.review}</p>
                 <h5 className="font-semibold">{review.name}</h5>
+                <QuoteRightIcon className="absolute -bottom-4 right-0 text-xl" />
               </div>
             </SwiperSlide>
           ))}
