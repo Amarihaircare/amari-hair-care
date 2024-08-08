@@ -433,6 +433,8 @@ const en = {
   qualityAndInnovation: "Quality and Innovation",
   environmentalSustainability: "Community & Environmental Sustainability",
   employeeSatisfaction: "Employee Satisfaction",
+  more: "More",
+  requestQuote: "Request Quote",
 };
 
 export default en;

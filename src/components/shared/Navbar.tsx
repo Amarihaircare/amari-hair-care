@@ -224,10 +224,10 @@ const navLinks = [
   },
   {
     name: en.PaaS,
-    url: "/paas",
+    url: "/PaaS",
   },
   {
-    name: en.pages,
+    name: en.more,
     url: "#",
     dropdown: [
       {

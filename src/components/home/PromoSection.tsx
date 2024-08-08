@@ -25,14 +25,6 @@ export default function PromoSection() {
               {en.promoDescription}
             </p>
           </div>
-          <div className="promo_price mb-6 flex items-center justify-center gap-6 lg:justify-start">
-            <p className="price price--old text-3xl font-semibold text-gray-400 line-through">
-              {formatCurrency(promo.price)}
-            </p>
-            <p className="price price--new text-3xl font-semibold text-green-800">
-              {formatCurrency(promo.discountedPrice)}
-            </p>
-          </div>
           <PromoTimer />
           <Button asChild>
             <Link

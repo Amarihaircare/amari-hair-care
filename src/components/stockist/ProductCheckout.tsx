@@ -97,7 +97,7 @@ export default function ProductCheckout() {
         className="mt-10 gap-4 rounded bg-primary py-5 text-white"
         disabled={cart.length === 0} // Disable button if the cart is empty
       >
-        {en.sendQuote}
+        {en.requestQuote}
         {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </div>

@@ -326,7 +326,7 @@ export const categories = [
     image: aloe,
   },
   {
-    name: "Serum",
+    name: "Serums",
     image: growthSerum,
   },
   {
