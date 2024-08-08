@@ -429,6 +429,10 @@ const en = {
   tosPageDescription:
     "By using Amari Hair Care's website and services, you agree to abide by our terms and conditions. Read our terms of service to understand the guidelines for using our platform.",
   tos: "Terms & Conditions",
+  customerSatifaction: "Customer Satisfaction",
+  qualityAndInnovation: "Quality and Innovation",
+  environmentalSustainability: "Community & Environmental Sustainability",
+  employeeSatisfaction: "Employee Satisfaction",
 };
 
 export default en;
