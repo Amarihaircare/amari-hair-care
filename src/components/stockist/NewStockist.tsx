@@ -79,7 +79,7 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
         type="submit"
         className="mt-10 rounded bg-primary py-5 text-white"
       >
-        {en.continueToCheckout}
+        {en.proceedToViewStock}
       </Button>
     </form>
   );

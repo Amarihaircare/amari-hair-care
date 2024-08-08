@@ -11,7 +11,6 @@ import { SpinnerIcon } from "@/assets/icons";
 export default function ProductCheckout() {
   const { cart } = useCart();
   const [isLoading, setIsLoading] = useState(false);
-
   async function handlePlaceOrder() {
     setIsLoading(true);
     const formData = new FormData();
@@ -79,13 +78,13 @@ export default function ProductCheckout() {
         ) : (
           <>
             <p className="max-w-[300px] px-4 text-center text-sm">
-              {en.emptyCart}
+              {en.emptyQuote}
             </p>
 
             <Link
               data-search="true"
               href="/catalogue"
-              className="items-center justify-between font-medium lg:p-4"
+              className="items-center justify-between border-b-2 border-primary font-medium hover:border-secondary lg:p-4"
             >
               {en.catalogue}
             </Link>
@@ -98,7 +97,7 @@ export default function ProductCheckout() {
         className="mt-10 gap-4 rounded bg-primary py-5 text-white"
         disabled={cart.length === 0} // Disable button if the cart is empty
       >
-        {en.placeOrder}
+        {en.sendQuote}
         {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </div>

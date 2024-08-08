@@ -1,5 +1,5 @@
 export const sendEmail = (formData: FormData) => {
-  return fetch("https://formsubmit.co/ajax/5f07c8c32b01de235ee73e84bd53c09f", {
+  return fetch("https://formsubmit.co/ajax/wholesale@amarihaircare.com", {
     method: "POST",
     body: formData,
   });
