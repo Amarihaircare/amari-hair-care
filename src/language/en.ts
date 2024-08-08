@@ -435,6 +435,7 @@ const en = {
   employeeSatisfaction: "Employee Satisfaction",
   more: "More",
   requestQuote: "Request Quote",
+  instagramLink: "https://www.instagram.com/amarihaircare",
 };
 
 export default en;

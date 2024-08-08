@@ -69,7 +69,7 @@ export default function Footer() {
               <li className="list-item" key={index}>
                 <Link
                   className="link"
-                  href="#"
+                  href={en.instagramLink}
                   target="_blank"
                   rel="noopener norefferer"
                 >
