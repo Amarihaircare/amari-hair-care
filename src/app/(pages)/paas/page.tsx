@@ -4,13 +4,14 @@ import en from "@/language/en";
 import paas from "@/assets/images/paas.png";
 import Image from "next/image";
 import { CheckIcon, UsersIcon } from "@/assets/icons";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: en.paasPageMetaTitle,
   description: en.paasPageMetaDescription,
 };
 
-export default function Platform() {
+export default function PaaS() {
   return (
     <section className="flex w-full flex-col items-center justify-center overflow-hidden bg-white pb-10 pt-10 lg:pb-20 lg:pt-20">
       <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
@@ -27,7 +28,9 @@ export default function Platform() {
               <p
                 key={index}
                 data-aos="fade-up"
-                className="text-center lg:text-left"
+                className={cn("text-center lg:text-left", {
+                  "font-bold": index === 1,
+                })}
               >
                 {description}
               </p>

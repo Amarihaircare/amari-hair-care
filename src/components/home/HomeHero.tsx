@@ -1,11 +1,13 @@
 "use client";
 import {
-  EmployeeIcon,
+  ClinicallyIcon,
   EnvironmentalIcon,
-  InnovationIcon,
+  OilDropIcon,
+  PlantIcon,
+  PositiveReviewsIcon,
 } from "@/assets/icons";
 import en from "@/language/en";
-import { Heart, CheckIcon } from "lucide-react";
+import { CheckIcon } from "lucide-react";
 import Image from "next/image";
 import moisturizer from "../../assets/images/natural-hair-mois.webp";
 import cleanser from "../../assets/images/ph-balance.webp";
@@ -50,7 +52,7 @@ export default function HomeHero() {
                 variant: "secondary",
               })} mb-14 mt-6 self-center px-6 py-6 font-semibold hover:bg-[#C6E749]/80 lg:self-start`}
             >
-              {en.becomeAStockist}
+              {en.heroCta}
             </Link>
           </Button>
 
@@ -60,7 +62,7 @@ export default function HomeHero() {
                 key={index}
                 className="wrapper flex flex-col items-center gap-4 lg:flex-row"
               >
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20 shadow">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20 text-2xl shadow">
                   {value.icon}
                 </span>
                 <h5 className="title font-semibold lg:max-w-[150px]">
@@ -184,7 +186,7 @@ const slides = [
     },
   },
   {
-    name: en.oil,
+    name: en.oils,
     image: oil,
     product: {
       name: en.aloeVeraExtractOil,
@@ -210,19 +212,19 @@ const slides = [
 
 const ourValues = [
   {
-    name: en.customerSatisfaction,
-    icon: <Heart />,
+    name: en.ourValueOne,
+    icon: <OilDropIcon />,
   },
   {
-    name: en.employeeSatisfaction,
-    icon: <EmployeeIcon className="text-2xl" />,
+    name: en.ourValueTwo,
+    icon: <PlantIcon />,
   },
   {
-    name: en.environmentalSustainability,
-    icon: <EnvironmentalIcon className="text-3xl" />,
+    name: en.ourValueThree,
+    icon: <ClinicallyIcon />,
   },
   {
-    name: en.qualityAndInnovation,
-    icon: <InnovationIcon className="text-2xl" />,
+    name: en.ourValueFour,
+    icon: <PositiveReviewsIcon />,
   },
 ];

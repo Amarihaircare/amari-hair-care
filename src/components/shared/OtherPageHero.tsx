@@ -29,8 +29,7 @@ export default function OtherPageHero({ heading }: OtherPageHeroProps) {
 
 const alternateHeading: Record<string, string> = {
   faq: en.faqPageTitle,
-  platform: en.paas,
-  service: en.ourServices,
+  "salon-services": en.salonServices,
   privacy: en.privacyPolicy,
   tos: en.tos,
 };
@@ -43,7 +42,7 @@ const descriptions: Record<string, string> = {
   contact: en.contactPageDescription,
   about: en.aboutPageDescription,
   faq: en.faqPageDescription,
-  platform: en.paasPageDescription,
+  paas: en.paasPageDescription,
   services: en.servicesPageDescription,
   privacy: en.privacyPageDescription,
   tos: en.tosPageDescription,

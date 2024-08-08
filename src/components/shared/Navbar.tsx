@@ -1,10 +1,10 @@
 "use client";
 
 import {
+  BookmarkIcon,
   CaretDown,
-  HeartIcon,
+  DocumentIcon,
   SearchIcon,
-  ShoppingBasket,
 } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -38,13 +38,13 @@ export default function Navbar() {
     },
     {
       name: en.wishlists,
-      icon: <HeartIcon />,
+      icon: <BookmarkIcon />,
       onClick: () => router.push("/wishlist"),
     },
     {
       onClick: () => router.push("/stockist"),
       name: en.cart,
-      icon: <ShoppingBasket />,
+      icon: <DocumentIcon />,
     },
   ];
 
@@ -223,8 +223,8 @@ const navLinks = [
     url: "/catalogue",
   },
   {
-    name: en.platform,
-    url: "/platform",
+    name: en.PaaS,
+    url: "/paas",
   },
   {
     name: en.pages,
@@ -243,8 +243,8 @@ const navLinks = [
         url: "/faq",
       },
       {
-        name: en.services,
-        url: "/services",
+        name: en.salonServices,
+        url: "/salon-services",
       },
       {
         name: en.privacyPolicy,

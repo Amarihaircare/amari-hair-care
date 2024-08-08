@@ -114,12 +114,12 @@ const marketDifferentiators = [
 
 const coreValues = [
   {
-    title: en.customerSatisfaction,
+    title: en.ourValueOne,
     description: en.customerSatisfactionDescription,
     icon: <HeartIconOutline className="text-3xl" />,
   },
   {
-    title: en.employeeSatisfaction,
+    title: en.ourValueTwo,
     description: en.employeeSatisfactionDescription,
     icon: <EmployeeIcon className="text-3xl" />,
   },
@@ -129,7 +129,7 @@ const coreValues = [
     icon: <EnvironmentalIcon className="text-5xl" />,
   },
   {
-    title: en.qualityAndInnovation,
+    title: en.ourValueFour,
     description: en.qualityAndInnovationDescription,
     icon: <InnovationIcon className="text-3xl" />,
   },

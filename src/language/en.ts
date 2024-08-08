@@ -15,20 +15,20 @@ const en = {
   ayurvedicHairTreatment: "Ayurvedic Hair Treatment",
   about: "About",
   search: "Search",
-  heroTitle: "Lead the Hair Care Revolution in Nigeria with AMARI",
-  heroDescription:
-    "Discover Premium, Plant-Based Products Made in Africa Oil Free, 100% Plant-Based Formulas Clinically Proven Active Ingredients 500+ Positive Reviews",
-  becomeAStockist: "Become a Stockist",
-  customerSatisfaction: "Customer Satisfaction",
-  employeeSatisfaction: "Employee Satisfaction",
-  environmentalSustainability: "Environmental Sustainability",
-  qualityAndInnovation: "Quality and Innovation",
+  heroTitle: "Lead the Hair Care Revolution with àmàri.",
+  heroDescription: "Discover Premium, Plant-Based Products Made In Africa.",
+  heroCta: "Request a Quote",
+  ourValueOne: "Oil Free Formulas",
+  ourValueTwo: "Plant-Based Formulas",
+  ourValueThree: "Clinically Proven Active Ingredient",
+  ourValueFour: "1000 + Positive Reviews",
   wishlists: "Wishlist",
   cart: "Cart",
   contact: "Contact",
   moisturizers: "Moisturizers",
   cleansers: "Cleansers",
   oil: "Oil",
+  oils: "Oils",
   serums: "Serums",
   treatments: "Treatments",
   shampoo: "Shampoo",
@@ -39,8 +39,8 @@ const en = {
   instagram: "Instagram",
   telephone: "+234-812-929-8789",
   mobile: "+234-906-498-2292",
-  ourAddress: "1234 Street Name",
-  ourCityState: "City Name, United States",
+  ourAddress: "23a Marine Road Apapa",
+  ourCityState: "GRA, Lagos Nigeria",
   openFromTime: "Open from 9:00 AM to 5:00 PM",
   openFromWeek: "(Monday to Friday)",
   pageNotFound: "Page Not Found",
@@ -50,27 +50,28 @@ const en = {
   popularProducts: "Popular Products",
   popularProductsDescription:
     "Our products are crafted with care to meet the highest standards, ensuring that your customers can achieve and maintain healthy, beautiful hair.",
-  promoTitle: "Vitamin E Serum: Hair Growth + Aloe Vera Extract Oil",
+  promoTitle:
+    "Free pH Balancing Cleanser: Caffeine Scalp Serum + Vitamin E Serum",
   promoDescription:
-    "Enhance your hair care routine with our special promotion! For the next 20 days, enjoy a 15% discount on two of our top products.  Stock up now and give your hair the care it deserves!",
+    "Enhance your product lineup and elevate your customers' scalp care experience with our special offer! For the next 90 days, receive 5 free pH Balancing Mists + Cleansers with every bulk purchase. Stock up now and provide your customers with the scalp care they deserve!",
   days: "Days",
   hours: "Hours",
   minutes: "Minutes",
   seconds: "Seconds",
   mins: "Mins",
   secs: "Secs",
-  shopNow: "Shop Now",
+  stockUpNow: "Stock Up Now",
   reviewHeader: "Your Trust is Our Top Concern",
   reviewDescription:
-    "Our dedication to transparency, integrity, and customer care means you can confidently rely on us for all your hair care needs.",
+    "Our dedication to transparency, integrity, and customer care means you can confidently rely on us for all your mission partner.",
   newsletterHeader: "Sign Up for Our Newsletter",
   newsletterDescription:
     "Stay in the loop with the latest updates, exclusive offers, and expert tips from Amari Hair Care that our monthly newsletter brings you.",
   email: "Email",
   send: "Send",
-  effectivenessFaq: "The effectiveness of amari health care products",
+  effectivenessFaq: "The effectiveness of amari hair care products",
   effectivenessFaqDescription:
-    "Our products are designed to work with your body’s natural chemistry to produce the best results. We use only the highest quality ingredients, sourced from Africa, to create products that are safe, effective, and gentle on your skin.",
+    "Our hair care products are designed to provide long-term benefits for the hair, not just short-term solutions. We use only the highest quality ingredients, sourced from Africa, to create products that are safe, effective, and gentle on the hair and scalp.",
   questionOne: "What makes Amari Hair Care products unique?",
   answerOne:
     "Our products are crafted with 100% plant-based, oil-free formulas and clinically proven active ingredients. We focus on promoting healthier and more beautiful hair with minimal effort. Our commitment to natural ingredients ensures that our products are gentle yet effective",
@@ -98,9 +99,9 @@ const en = {
   questionNine: "Are your products vegan and cruelty-free?",
   answerNine:
     "Yes, all Amari Hair Care products are 100% vegan and cruelty-free. We are committed to ethical practices and do not test on animals.",
-  questionTen: "Can I use your products if I have sensitive skin?",
+  questionTen: "Can Amari Hair Care products be used on kids?",
   answerTen:
-    "Our products are formulated to be gentle and suitable for most skin types, including sensitive skin. However, we recommend doing a patch test before using any new product to ensure you do not have any adverse reactions.",
+    "Amari Hair Care products are made with high-quality, natural ingredients but our premium products are highly concentrated and not recommended for children. For kids, it's best to use child-specific hair care products from around 6 months of age. For infants younger than 6 months, stick to products designed for babies. Always choose products free of fragrances and irritants, and perform a patch test first. Consult with a pediatrician if you have any concerns about specific products or ingredients.",
   questionEleven: "What ingredients do you use in your products?",
   answerEleven:
     "We use natural, plant-based ingredients in all our products. Each product page on our website lists the specific ingredients used. You can also find detailed ingredient information on the product packaging.",
@@ -122,7 +123,7 @@ const en = {
   moisturizersShortDescription:
     "The fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured",
   vitaminESerumShortDescription:
-    "carefully crafted with wax ester that closely resembles the sebum produced by the scalp,",
+    "Carefully crafted with wax ester that closely resembles the sebum produced by the scalp,",
   simmondsiaChinensis: "Simmondsia Chinensis (Jojoba) Seed Extract",
   tocopherylAcetate: "Tocopheryl Acetate",
   rosmarinusOfficinalis: "Rosmarinus Officinalis Leaf Oil",
@@ -152,7 +153,7 @@ const en = {
   benzylAlcohol: "Benzyl Alcohol",
   glycerin: "Glycerin (and) Sorbic Acid",
   backToHomePage: "Back to Home Page",
-  platform: "Platform",
+  PaaS: "PaaS",
   pages: "Pages",
   faq: "FAQ",
   services: "Services",
@@ -160,6 +161,7 @@ const en = {
   termsOfService: "Terms of Service",
   emailAddress: "wholesale@amarihaircare.com",
   aboutUs: "About Us",
+  whoWeAre: "Who We Are",
   becomeAnAffiliatePartner: "Become an Affiliate Partner",
   stockistTermsAndConditions: "Stockist Terms and Conditions",
   wholesale: "Wholesale",
@@ -177,7 +179,7 @@ const en = {
   errorPageDescription:
     "We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!",
   error: "Error",
-  addToCart: "Add to Cart",
+  addToQuote: "Add to Quote",
   category: "Category",
   size: "Size",
   tags: "Tags",
@@ -188,7 +190,7 @@ const en = {
   ingredients: "Ingredients",
   recommendedUsage: "Recommended Usage",
   cataloguePageDescription:
-    "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for today's needs.",
+    "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for the Hair’s Needs",
   searchByProducts: "Search by Products",
   productCategories: "Product Categories",
   onSale: "On Sale",
@@ -200,33 +202,26 @@ const en = {
   cataloguePageMoreInfoTitle:
     "Shop Premium Hair Care Products at Amari Hair Care",
   cataloguePageMoreInfoDescription:
-    "Discover a world of luxurious hair care products at Amari Hair Care, where innovation meets nature. Our products are crafted with advanced technology and natural ingredients sourced from Africa, offering you the best in plant-based hair care solutions.",
+    "Discover a world of luxurious hair care products at Amari Hair Care, where innovation meets nature. Our products are crafted with advanced technology and natural ingredients sourced from Africa, offering you the best in plant-based hair care solutions. We have a dedicated section for all your hair care needs, featuring a wide range of products from shampoos and conditioners to hair treatments and styling products.",
   whyChooseAmariHairCare: "Why Choose Amari Hair Care?",
   whyChooseAmariHairCareDescription:
     "In today's fast-paced world, your hair deserves the best care possible. At Amari Hair Care, we understand the importance of healthy, beautiful hair. Our mission is to empower you by promoting self-love and positive self-image through our innovative and comprehensive hair care products and services.",
-  wideRangeOfProducts: "Wide Range of Hair Products",
-  wideRangeOfProductsDescription:
-    "We have a dedicated section for all your hair care needs, featuring a wide range of products from shampoos and conditioners to hair treatments and styling products. Explore our collection to find the perfect products for your hair type and concerns.",
   topCategories: "Top Categories",
-  topCategoryShampoo:
-    "<b>Shampoos and Conditioners:</b> Nourish and hydrate your hair with our gentle and effective formulas.",
-  topCategoryMoisturizers:
-    "<b>Hair Treatments</b>: Strengthen and repair your hair with our intensive treatment masks and serums.",
-  topCategoryTreatments:
-    "<b>Hair Treatments:</b> Strengthen and repair your hair with our intensive treatment masks and serums.",
-  topCategorySerums:
-    "<b>Hair Treatments</b>: Strengthen and repair your hair with our intensive treatment masks and serums.",
-  premiumIngredients: "Premium Ingredients",
-  premiumIngredientsDescription:
-    "Our products are enriched with the finest natural ingredients like shea butter, baobab oil, moringa oil, and more. Each ingredient is carefully selected for its beneficial properties, ensuring your hair receives the best care.",
-  easyShoppingExperience: "Easy Shopping Experience",
-  easyShoppingExperienceDescription:
-    "Our website's user-friendly interface and filter options make it easy for you to find exactly what you need. Whether you are looking to revitalize your hair or maintain its natural beauty, we have the perfect product for you.",
-  unbeatablePrices: "Unbeatable Prices and Offers",
-  unbeatablePricesDescription:
-    "Enjoy our premium hair care products at the best prices with exclusive discounts, free and fast delivery, and a flexible return policy. Shop with confidence knowing that we are committed to providing you with the best shopping experience possible.",
+  topCategoryScalpCare:
+    "<b>Scalp Care:</b> Scalp Care Promote optimal scalp health with our specialized products, designed to address and maintain a healthy scalp condition.",
+  topCategoryHairCare:
+    "<b>Hair Care/Length Retention Products:</b> Strengthen and repair with our intensive masks and serums, formulated to support hair growth and length retention.",
+  topCategoryShampoosAndTreatments:
+    "<b>Shampoos and Deep Treatments</b>: Nourish and hydrate with our high-quality, gentle shampoos. Revitalize and rejuvenate with our range of deep conditioning treatments, designed for intensive care and repair",
+  premiumIngredients:
+    "<b>Premium Ingredients</b>: Our hair care products are enriched with the finest natural ingredients like shea butter, baobab oil, and aloe vera. Each ingredient is carefully selected for its beneficial properties, ensuring your customers receive top-quality hair care.",
+  streamlinedOrderingProcess:
+    "<b>Streamlined Ordering Process</b>: Our wholesale platform offers a user-friendly interface and advanced filter options, making it easy to find and order the hair care products you need. Whether you're looking to stock revitalizing",
+  competitivePricingAndExclusiveOffers:
+    "<b>Competitive Pricing and Exclusive Offers</b>: Benefit from our premium hair care products at unbeatable wholesale prices. Enjoy exclusive discounts, free and fast delivery on bulk orders, and a flexible return policy. Partner with us for a seamless and cost-effective shopping experience that supports your business growth.",
   exploreDescription:
-    "Explore our extensive collection of hair care products and transform your hair care routine with Amari Hair Care. Visit our website today and discover the best products for healthy, beautiful hair.",
+    "Explore our extensive collection of hair care products and elevate your product range with Amari Hair Care. Continue browsing our wholesale website to discover premium products that will help you offer your customers healthy, beautiful hair solutions.",
+
   filter: "Filter",
   noResults:
     "No Results found with the search term. Check out our other hair products",
@@ -321,12 +316,12 @@ const en = {
   hairCareProductsDescription:
     "Designed to enhance hair texture, moisture retention, strength, and styling versatility. Our products cater to diverse hair types and goals, ensuring optimal hair health and manageability.",
   ourFocusDescription:
-    "Currently, our focus is on business-to-business (B2B) operations, ensuring that professionals and businesses have access to our premium products and educational resources.",
+    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers",
   growthAndExpansionDescription:
     "As we continue to grow, we look forward to expanding our reach and impact, fostering a community where everyone can feel confident and beautiful in their own hair.",
   joinUsDescription:
     "Join us on our journey to revolutionize the hair care industry.",
-  b2bOperations: "Business-to-Business (B2B) operations",
+  paaSInitiative: "PaaS Initiative",
   reachUs: "Reach Us",
   paasPageMetaTitle: "Platform as a Service | Amari Hair Care",
   paasPageMetaDescription:
@@ -337,7 +332,7 @@ const en = {
   paasPageDescriptionOne:
     "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.",
   paasPageDescriptionTwo:
-    "Amari PaaS Initiative aims to Enhanced Customer Experience.",
+    "Amari PaaS Initiative aims to Enhance Customer Experience",
   paasPageDescriptionThree:
     "The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.",
   paas: "Platform as a Service",
@@ -379,7 +374,7 @@ const en = {
     "Engaging in Amari PaaS services on a regular basis contributes to consistent and lasting results in terms of improved hair texture, health, and style. Customers experience ongoing benefits, reinforcing the value of the initiative in their hair care routine.",
   servicesPageDescription:
     "Discover the range of services offered by Amari Hair Care, designed to provide comprehensive solutions for your hair care needs. From consultations to product application, we are here to support you on your hair care journey.",
-  ourServices: "Our Services",
+  salonServices: "Salon Services",
   hairRenewalTherapy: "Amari Hair Renewal Therapy",
   hairRenewalTherapyDescription:
     "Introducing \"Amari Hair Renewal Therapy,\" an innovative in-salon treatment utilizing our proprietary products – Amari's Leave-In Protein Treatment and Amari's Natural Hair Moisturizer.",

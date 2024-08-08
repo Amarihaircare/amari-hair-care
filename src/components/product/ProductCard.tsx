@@ -2,8 +2,6 @@ import Image, { StaticImageData } from "next/image";
 import Rating from "../ui/Rating";
 import Link from "next/link";
 import { cn, formatCurrency } from "@/lib/utils";
-import en from "@/language/en";
-import { Button } from "../ui/button";
 import { ProductCardMenu } from "./ProductCardMenu";
 import AddToCartAction from "./AddToCartButton";
 

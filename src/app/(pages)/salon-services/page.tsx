@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: en.paasPageMetaDescription,
 };
 
-export default function Services() {
+export default function SalonServices() {
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center overflow-hidden bg-white pb-20 pt-10 lg:pb-40 lg:pt-20">

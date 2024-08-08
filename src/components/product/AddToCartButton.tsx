@@ -23,7 +23,7 @@ export default function AddToCartAction({ slug }: IAddToCartActionProps) {
       variant={"secondary"}
       className="absolute bottom-0 self-end font-semibold lg:hidden"
     >
-      {en.addToCart}
+      {en.addToQuote}
     </Button>
   );
 }

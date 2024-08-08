@@ -28,7 +28,7 @@ export default function AddToCartAction({
           variant={"secondary"}
           className="py-6 font-semibold"
         >
-          {en.addToCart}
+          {en.addToQuote}
         </Button>
       )}
       {product && (

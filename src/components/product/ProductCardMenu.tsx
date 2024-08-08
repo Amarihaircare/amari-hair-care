@@ -2,7 +2,7 @@
 
 import { useCart } from "@/hooks/useCart";
 import { useManageCart } from "@/hooks/useManageCart";
-import { HeartIcon, ShoppingBasket, EyeIcon } from "@/assets/icons";
+import { BookmarkIcon, DocumentIcon, EyeIcon } from "@/assets/icons";
 
 interface ProductCardMenuProps {
   slug: string;
@@ -19,11 +19,11 @@ export const ProductCardMenu = ({ slug }: ProductCardMenuProps) => {
 
   const productMenu = [
     {
-      icon: <HeartIcon />,
+      icon: <BookmarkIcon />,
     },
     {
       onClick: () => handleAddToCart((product?.quantity ?? count - 1) + 1),
-      icon: <ShoppingBasket />,
+      icon: <DocumentIcon />,
     },
     {
       icon: <EyeIcon />,

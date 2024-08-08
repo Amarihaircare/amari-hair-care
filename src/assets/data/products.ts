@@ -322,7 +322,7 @@ export const categories = [
     image: cleanser,
   },
   {
-    name: "Oil",
+    name: "Oils",
     image: aloe,
   },
   {
@@ -338,3 +338,10 @@ export const categories = [
     image: shampoo,
   },
 ];
+
+export const promo = {
+  title: "Free pH Balancing Cleanser: Caffeine Scalp Serum + Vitamin E Serum",
+  price: 29000,
+  discountedPrice: 20000,
+  expires: "2024-12-31T00:00:00",
+};

@@ -108,23 +108,27 @@ const contactList = [
 
 const aboutLinks = [
   {
-    name: en.becomeAnAffiliatePartner,
+    name: en.whoWeAre,
+    url: "#",
+  },
+  {
+    name: en.findAStockist,
     url: "#",
   },
   {
     name: en.privacyPolicy,
-    url: "#",
+    url: "/privacy",
   },
   {
     name: en.stockistTermsAndConditions,
-    url: "#",
+    url: "/tos",
   },
   {
     name: en.wholesale,
     url: "#",
   },
   {
-    name: en.findAStockist,
+    name: en.becomeAnAffiliatePartner,
     url: "#",
   },
 ];

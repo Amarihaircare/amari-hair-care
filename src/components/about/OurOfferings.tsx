@@ -28,7 +28,7 @@ export default function OurOfferings() {
                 variant: "secondary",
               })} mb-14 mt-6 self-center px-6 py-6 font-semibold hover:bg-[#C6E749]/80 lg:self-start`}
             >
-              {en.becomeAStockist}
+              {en.heroCta}
             </Link>
           </Button>
         </div>
@@ -52,7 +52,7 @@ export default function OurOfferings() {
                 href={"/catalogue"}
                 className="inline-block self-start border-b-2 border-primary pb-3 font-bold"
               >
-                {en.shopNow}
+                {en.stockUpNow}
               </Link>
             </div>
           </div>
@@ -90,7 +90,7 @@ const offerings = [
     description: en.hairCareProductsDescription,
   },
   {
-    title: en.b2bOperations,
+    title: en.paaSInitiative,
     image: b2bProducts,
     description: en.ourFocusDescription,
   },

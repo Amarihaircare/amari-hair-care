@@ -23,11 +23,11 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="review_section py-20 lg:py-40 w-full flex-col flex items-center justify-center bg-white">
-      <div className="review_container flex flex-col items-center w-full overflow-hidden lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
-        <div className="reviews_header lg:max-w-[600px] flex flex-col items-center">
+    <section className="review_section flex w-full flex-col items-center justify-center bg-white py-20 lg:py-40">
+      <div className="review_container flex w-full flex-col items-center overflow-hidden px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
+        <div className="reviews_header flex flex-col items-center lg:max-w-[600px]">
           <h2
-            className="reviews_header-title text-2xl w-[220px] lg:w-auto lg:text-4xl text-center mb-6 font-bold"
+            className="reviews_header-title mb-6 w-[220px] text-center text-2xl font-bold lg:w-auto lg:text-4xl"
             data-aos="fade-up"
           >
             {en.reviewHeader}
@@ -48,20 +48,20 @@ export default function TestimonialsSection() {
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
-          className="mySwiper w-full my-12"
+          className="mySwiper my-12 w-full"
         >
           {reviews.map((review, index) => (
             <SwiperSlide
               key={index}
-              className="reviews_slider-slide w-full lg:min-w-[420px] p-4 lg:p-10 rounded border shadow border-gray-200"
+              className="reviews_slider-slide w-full rounded border border-gray-200 p-4 shadow lg:min-w-[420px] lg:p-10"
             >
-              <div className="reviews_slider-slide_wrapper flex flex-col h-full items-center gap-4 justify-between">
+              <div className="reviews_slider-slide_wrapper flex h-full flex-col items-center justify-between gap-4">
                 <Image
                   src={review.avatar}
                   alt="avatar"
                   width={100}
                   height={100}
-                  className="w-20 h-20 rounded-full object-cover mb-4"
+                  className="mb-4 h-20 w-20 rounded-full object-cover"
                 />
                 <Rating value={review.rating} />
                 <p className="text-center">{review.review}</p>

@@ -3,8 +3,8 @@ import PurifyDomClient from "./PurifyDomClient";
 
 export default function SeoText() {
   return (
-    <div className="py-20 flex flex-col gap-6">
-      <div className="grid lg:grid-cols-2 gap-10">
+    <div className="flex flex-col gap-6 py-20">
+      <div className="grid gap-10 lg:grid-cols-2">
         {seoText.map((text, index) => (
           <div key={index} className="flex flex-col gap-2">
             <h2 className="text-2xl font-bold">{text.title}</h2>
@@ -14,6 +14,7 @@ export default function SeoText() {
           </div>
         ))}
       </div>
+      <p className="text-sm">{en.cataloguePageMoreInfoDescription}</p>
       <p className="text-sm">{en.exploreDescription}</p>
     </div>
   );
@@ -21,36 +22,20 @@ export default function SeoText() {
 
 const seoText = [
   {
-    title: en.cataloguePageMoreInfoTitle,
-    description: [en.cataloguePageMoreInfoDescription],
-  },
-  {
     title: en.whyChooseAmariHairCare,
-    description: [en.whyChooseAmariHairCareDescription],
-  },
-  {
-    title: en.wideRangeOfProducts,
-    description: [en.wideRangeOfProductsDescription],
-  },
-  {
-    title: en.premiumIngredients,
-    description: [en.premiumIngredientsDescription],
-  },
-  {
-    title: en.easyShoppingExperience,
-    description: [en.easyShoppingExperienceDescription],
-  },
-  {
-    title: en.unbeatablePrices,
-    description: [en.unbeatablePricesDescription],
+    description: [
+      en.whyChooseAmariHairCareDescription,
+      en.premiumIngredients,
+      en.competitivePricingAndExclusiveOffers,
+      en.streamlinedOrderingProcess,
+    ],
   },
   {
     title: en.topCategories,
     description: [
-      en.topCategoryShampoo,
-      en.topCategoryMoisturizers,
-      en.topCategorySerums,
-      en.topCategoryTreatments,
+      en.topCategoryScalpCare,
+      en.topCategoryHairCare,
+      en.topCategoryShampoosAndTreatments,
     ],
   },
 ];

@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import promoProduct from "../../assets/images/collection.webp";
+import { promo } from "@/assets/data/products";
+import { formatCurrency } from "@/lib/utils";
+import PromoTimer from "./PromoTimer";
 
 export default function PromoSection() {
-  const timeCards = [en.days, en.hours, en.mins, en.secs];
   return (
     <section className="promo_section flex w-full flex-col items-center justify-center bg-background py-20 lg:py-40">
       <div className="promo_container flex w-full flex-col items-center justify-between gap-10 overflow-hidden px-4 md:max-w-[95%] lg:flex-row lg:px-0 2xl:max-w-screen-xl">
@@ -17,36 +19,21 @@ export default function PromoSection() {
               target="_blank"
               rel="noopener norefferer"
             >
-              {en.promoTitle}
+              {promo.title}
             </Link>
             <p className="promo_header-text text-center lg:text-left">
               {en.promoDescription}
             </p>
           </div>
           <div className="promo_price mb-6 flex items-center justify-center gap-6 lg:justify-start">
-            <p className="price price--old text-3xl font-semibold text-gray-400">
-              $48.97
+            <p className="price price--old text-3xl font-semibold text-gray-400 line-through">
+              {formatCurrency(promo.price)}
             </p>
             <p className="price price--new text-3xl font-semibold text-green-800">
-              $27.97
+              {formatCurrency(promo.discountedPrice)}
             </p>
           </div>
-          <div className="promo_timer mb-6 flex justify-center gap-4 lg:justify-start">
-            {timeCards.map((time, index) => (
-              <div
-                className="timer_block flex h-14 w-14 flex-col items-center justify-center rounded border border-primary lg:h-20 lg:w-20"
-                key={index}
-              >
-                <p
-                  className="timer_block-number text-2xl font-semibold text-green-800"
-                  id="seconds"
-                >
-                  00
-                </p>{" "}
-                <p>{time}</p>
-              </div>
-            ))}
-          </div>
+          <PromoTimer />
           <Button asChild>
             <Link
               href="/catalogue"
@@ -54,7 +41,7 @@ export default function PromoSection() {
                 variant: "secondary",
               })} mt-6 self-center px-6 py-6 font-semibold hover:bg-[#C6E749]/80 lg:self-start`}
             >
-              {en.shopNow}
+              {en.stockUpNow}
             </Link>
           </Button>
         </div>
