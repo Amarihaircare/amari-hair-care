@@ -15,5 +15,5 @@ export default function PurifiedHtml({ html }: { html: string }) {
 
   if (!sanitizedHtml) return <></>;
 
-  return <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }}></div>;
+  return <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
 }

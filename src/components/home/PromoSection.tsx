@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import promoProduct from "../../assets/images/collection.webp";
 import { promo } from "@/assets/data/products";
-import { formatCurrency } from "@/lib/utils";
 import PromoTimer from "./PromoTimer";
 
 export default function PromoSection() {

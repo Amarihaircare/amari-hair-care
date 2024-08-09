@@ -90,7 +90,6 @@ export const products = [
     name: "pH Balancing Mist + Cleanser",
     slug: "ph-balancing-mist-and-cleanser",
     rating: 4.2,
-    discount: 10,
     reviews: [
       {
         name: "John Doe",
@@ -110,7 +109,7 @@ export const products = [
     ],
     shortDescription:
       "This product is designed to help you achieve the perfect pH balance for the hair. By providing a healthy balance of acidity and alkalinity, this formula ensures that the hair is at its strongest and healthiest.",
-    price: 10000,
+    price: 5000,
     category: "oil",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
@@ -160,7 +159,6 @@ export const products = [
   {
     name: "Leave-in Protein Treatment",
     slug: "leave-in-protein-treatment",
-    discount: 15,
     rating: 3.5,
     reviews: [
       {
@@ -343,5 +341,5 @@ export const promo = {
   title: "Free pH Balancing Cleanser: Caffeine Scalp Serum + Vitamin E Serum",
   price: 29000,
   discountedPrice: 20000,
-  expires: "2024-12-31T00:00:00",
+  expires: "2024-11-07T00:00:00",
 };

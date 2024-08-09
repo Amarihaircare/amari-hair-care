@@ -14,6 +14,7 @@ import "swiper/css/thumbs";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import en from "@/language/en";
 import { CartProvider } from "@/components/context/CartProvider";
+import { ModalProvider } from "@/components/context/ModalProvider";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -39,12 +40,14 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${montserrat.variable} flex flex-col items-center justify-center`}
       >
-        <CartProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
-        </CartProvider>
+        <ModalProvider>
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+          </CartProvider>
+        </ModalProvider>
       </body>
     </html>
   );

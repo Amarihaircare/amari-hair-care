@@ -25,10 +25,10 @@ export default function PromoTimer() {
   ];
 
   return (
-    <div className="promo_timer mb-6 flex justify-center gap-4 lg:justify-start">
+    <div className="promo_timer mb-6 grid w-full grid-cols-4 justify-center gap-4 lg:w-[75%] lg:justify-start">
       {timeCards.map((time, index) => (
         <div
-          className="timer_block flex h-14 w-14 flex-col items-center justify-center rounded border border-primary lg:h-20 lg:w-20"
+          className="timer_block flex h-[70px] flex-col items-center justify-center rounded border border-primary shadow lg:h-20"
           key={index}
         >
           <p

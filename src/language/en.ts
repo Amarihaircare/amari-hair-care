@@ -179,7 +179,7 @@ const en = {
   errorPageDescription:
     "We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!",
   error: "Error",
-  addToQuote: "Add to Quote",
+  requestQuote: "Request Quote",
   category: "Category",
   size: "Size",
   tags: "Tags",
@@ -285,7 +285,7 @@ const en = {
   aboutUsPageHeading:
     "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
   aboutUsPageDescription:
-    " Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, and to revolutionize the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.",
+    " Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, that revolutionizes the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.",
   naturalPlantBasedIngredientesDescription:
     "We differentiate ourselves by using natural, plant-based ingredients that nourish and protect hair without harmful chemicals like sulfates, parabens, and minerals.",
   focusOnAfricanWomenDescription:
@@ -434,8 +434,17 @@ const en = {
   environmentalSustainability: "Community & Environmental Sustainability",
   employeeSatisfaction: "Employee Satisfaction",
   more: "More",
-  requestQuote: "Request Quote",
   instagramLink: "https://www.instagram.com/amarihaircare",
+  returningStockistForm: "Returning Stockist Form",
+  continue: "Continue",
+  orderReceivedDescription:
+    '<p style="text-align:center;">We have received your inquiry and will get back to you via email shortly. If you have any additional questions or need further assistance in the meantime, please feel free to reach out to us at <a style="font-weight:500" href=mailto:support@amarihaircare.com>support@amarihaircare.com</a> or <a style="font-weight:500" href=mailto:wholesale@amarihaircare.com>wholesale@amarihaircare.com</a>.</p>',
+  thankYou: "Thank you!",
+  orderReceived: "Order Placed Successfully",
+  orderReceivedDescriptionBeforeId: "Your stockist id is",
+  orderReceivedDescriptionAfterId:
+    "Use this id to reference and to make future orders",
+  copied: "Copied",
 };
 
 export default en;

@@ -39,7 +39,6 @@ export default function Navbar() {
     {
       name: en.wishlists,
       icon: <BookmarkIcon />,
-      onClick: () => router.push("/wishlist"),
     },
     {
       onClick: () => router.push("/stockist"),
