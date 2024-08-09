@@ -445,6 +445,7 @@ const en = {
   orderReceivedDescriptionAfterId:
     "Use this id to reference and to make future orders",
   copied: "Copied",
+  noReviews: "No reviews yet",
 };
 
 export default en;

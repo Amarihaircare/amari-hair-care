@@ -38,3 +38,12 @@ export function capitalize(text: string, locale = "en") {
 export const generateId = (length = 10) => {
   return nanoid(length);
 };
+
+export const returnRandomSlice = <T>(array: T[], length: number) => {
+  const randomArray = [...array];
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return randomArray.slice(0, length);
+};
