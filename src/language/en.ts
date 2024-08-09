@@ -173,11 +173,10 @@ const en = {
   catalogueMetaDescription:
     "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for today's needs.",
   errorPage: "Error Page",
-
   productPageDescription:
-    "Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.",
+    '<p style="text-align:center">Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.</p>',
   errorPageDescription:
-    "We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!",
+    '<p "style=text-align:center">We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!</p>',
   error: "Error",
   requestQuote: "Request Quote",
   category: "Category",
@@ -190,7 +189,7 @@ const en = {
   ingredients: "Ingredients",
   recommendedUsage: "Recommended Usage",
   cataloguePageDescription:
-    "Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for the Hair’s Needs",
+    '<p style="text-align:center">Explore our top hair products, where we blend advanced technology with natural African-sourced ingredients to craft premium, plant-based hair care solutions tailored for the Hair’s Needs. <br /><br/> All prices stated are retail prices only. Request a quote to get wholesale prices or Contact us for samples.</p>',
   searchByProducts: "Search by Products",
   productCategories: "Product Categories",
   onSale: "On Sale",
@@ -226,7 +225,7 @@ const en = {
   noResults:
     "No Results found with the search term. Check out our other hair products",
   stockistPageDescription:
-    "Join our network of trusted partners by becoming an authorized stockist of Amari Hair Care products. Our stockist program offers exclusive access to our premium, plant-based hair care products that combine cutting-edge technology with natural ingredients sourced from Africa. ",
+    '<p style="text-align:center">Join our network of trusted partners by becoming an authorized stockist of Amari Hair Care products. Our stockist program offers exclusive access to our premium, plant-based hair care products that combine cutting-edge technology with natural ingredients sourced from Africa. </p>',
   newStockist: "New Stockist",
   returningStockist: "Returning Stockist",
   stockistMetaTitle: "Stockist | Amari Hair Care (Shop)",
@@ -260,7 +259,7 @@ const en = {
   contactPageMetaDescription:
     "Contact Amari Hair Care for any inquiries, feedback, or support. Our team is here to assist you with all your hair care needs.",
   contactPageDescription:
-    "Contact Amari Hair Care for any inquiries, feedback, or support. Our team is here to assist you with all your hair care needs.",
+    '<p style="text-align:center">Contact Amari Hair Care for any inquiries, feedback, or support. Our team is here to assist you with all your hair care needs.</p>',
   yourName: "Your Name",
   yourEmail: "Your Email",
   message: "Message",
@@ -269,11 +268,11 @@ const en = {
   typeYourMessage: "Type Your Message",
   faqPageMetaTitle: "FAQ | Amari Hair Care",
   faqPageMetaDescription:
-    "Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.",
+    '<p style="text-align:center">Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.</p>',
   aboutPageDescription:
     "Learn more about Amari Hair Care, our mission, and our commitment to providing premium, plant-based hair care products that promote healthy, beautiful hair.",
   faqPageDescription:
-    "Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.",
+    '<p style="text-align:center">Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.</p>',
   generalQuestions: "General Questions",
   orderingAndShopping: "Ordering and Shopping",
   products: "Products",
@@ -285,7 +284,7 @@ const en = {
   aboutUsPageHeading:
     "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
   aboutUsPageDescription:
-    " Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, that revolutionizes the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.",
+    '<p style="text-align:center">Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, that revolutionizes the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.</p>',
   naturalPlantBasedIngredientesDescription:
     "We differentiate ourselves by using natural, plant-based ingredients that nourish and protect hair without harmful chemicals like sulfates, parabens, and minerals.",
   focusOnAfricanWomenDescription:
@@ -327,14 +326,14 @@ const en = {
   paasPageMetaDescription:
     "Amari Hair Care offers a comprehensive Platform as a Service (PaaS) solution for businesses looking to streamline their operations and enhance their customer experience.",
   paasPageDescription:
-    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers",
+    '<p style="text-align:center">Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers</p>',
   paasPageIntroduction: "Introduction to the àmàri PaaS initiative.",
   paasPageDescriptionOne:
-    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.",
+    '<p style="text-align:center">Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.</p>',
   paasPageDescriptionTwo:
-    "Amari PaaS Initiative aims to Enhance Customer Experience",
+    '<p style="text-align:center">Amari PaaS Initiative aims to Enhance Customer Experience</p>',
   paasPageDescriptionThree:
-    "The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.",
+    '<p style="text-align:center">The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.</p>',
   paas: "Platform as a Service",
   paasKeyBenefitsHeading:
     "Here are some key benefits for salons participating in the Amari PaaS program:",
@@ -373,7 +372,7 @@ const en = {
   customerBenefitDescriptionFour:
     "Engaging in Amari PaaS services on a regular basis contributes to consistent and lasting results in terms of improved hair texture, health, and style. Customers experience ongoing benefits, reinforcing the value of the initiative in their hair care routine.",
   servicesPageDescription:
-    "Discover the range of services offered by Amari Hair Care, designed to provide comprehensive solutions for your hair care needs. From consultations to product application, we are here to support you on your hair care journey.",
+    '<p style="text-align:center">Discover the range of services offered by Amari Hair Care, designed to provide comprehensive solutions for your hair care needs. From consultations to product application, we are here to support you on your hair care journey.</p>',
   salonServices: "Salon Services",
   hairRenewalTherapy: "Amari Hair Renewal Therapy",
   hairRenewalTherapyDescription:
@@ -422,12 +421,12 @@ const en = {
   privacyPageMetaDescription:
     "Read our privacy policy to learn how we collect, use, and protect your personal information at Amari Hair Care.",
   privacyPageDescription:
-    "At Amari Hair Care, we are committed to protecting your privacy and personal information. Our privacy policy outlines how we collect, use, and protect your data when you visit our website, interact with our services, or make a purchase.",
+    '<p style="text-align:center">At Amari Hair Care, we are committed to protecting your privacy and personal information. Our privacy policy outlines how we collect, use, and protect your data when you visit our website, interact with our services, or make a purchase.</p>',
   tosPageMetaTitle: "Terms of Service | Amari Hair Care",
   tosPageMetaDescription:
     "Read our terms and conditions to understand the guidelines for using Amari Hair Care's website and services.",
   tosPageDescription:
-    "By using Amari Hair Care's website and services, you agree to abide by our terms and conditions. Read our terms of service to understand the guidelines for using our platform.",
+    '<p style="text-align:center">By using Amari Hair Care\'s website and services, you agree to abide by our terms and conditions. Read our terms of service to understand the guidelines for using our platform.</p>',
   tos: "Terms & Conditions",
   customerSatifaction: "Customer Satisfaction",
   qualityAndInnovation: "Quality and Innovation",
