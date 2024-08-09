@@ -1,13 +1,8 @@
+const EMAIL_ID = process.env.NEXT_PUBLIC_EMAIL_ID;
+
 export const sendEmail = (formData: FormData) => {
-  return fetch("https://formsubmit.co/ajax/0a575ddc45deae46842f14e8c019546c", {
+  return fetch(`https://formsubmit.co/ajax/${EMAIL_ID}`, {
     method: "POST",
     body: formData,
   });
 };
-
-// export const sendEmail = (formData: FormData) => {
-//   return fetch("https://formsubmit.co/ajax/support@amarihaircare.com", {
-//     method: "POST",
-//     body: formData,
-//   });
-// };

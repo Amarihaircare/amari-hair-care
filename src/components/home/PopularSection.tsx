@@ -21,10 +21,10 @@ export default function PopularSection() {
   };
 
   return (
-    <section className="popular_section bg-white pb-20 lg:pb-40 w-full flex-col flex items-center justify-center">
-      <div className=" w-full overflow-hidden lg:px-0 px-4 md:max-w-[95%] 2xl:max-w-screen-xl">
+    <section className="popular_section flex w-full flex-col items-center justify-center bg-white pb-20 lg:pb-40">
+      <div className="w-full overflow-hidden px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
         <div className="popular_header flex flex-col items-center gap-4">
-          <h2 className="popular_header-title text-2xl lg:text-4xl font-bold text-center">
+          <h2 className="popular_header-title text-center text-2xl font-bold lg:text-4xl">
             {en.popularProducts}
           </h2>
           <p className="popular_header-text max-w-[620px] text-center">
@@ -51,7 +51,6 @@ export default function PopularSection() {
                 image={product.images[0]}
                 price={product.price}
                 rating={product.rating}
-                discount={product?.discount}
                 slug={product.slug}
               />
             </SwiperSlide>

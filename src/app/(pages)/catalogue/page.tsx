@@ -38,7 +38,6 @@ export default function Catalogue({
                     price={product.price}
                     rating={product.rating}
                     slug={product.slug}
-                    discount={product?.discount}
                   />
                 </div>
               ))}
