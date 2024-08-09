@@ -53,7 +53,6 @@ export default function TestimonialsSection() {
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
-          enabled={false}
           className="mySwiper my-12 h-[300px] w-full"
         >
           {testimonials.map((review, index) => (
