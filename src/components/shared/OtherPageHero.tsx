@@ -9,7 +9,7 @@ interface OtherPageHeroProps {
 }
 export default function OtherPageHero({ heading }: OtherPageHeroProps) {
   const pathname = usePathname();
-  const name = heading ? heading : pathname.split("/")[1].replace(/-/g, " ");
+  const name = heading ? heading : pathname.split("/")[1];
 
   return (
     <section className="otherpages__hero relative flex w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat">
@@ -39,7 +39,7 @@ const descriptions: Record<string, string> = {
   about: en.aboutPageDescription,
   faq: en.faqPageDescription,
   paas: en.paasPageDescription,
-  services: en.servicesPageDescription,
+  "salon-services": en.servicesPageDescription,
   privacy: en.privacyPageDescription,
   tos: en.tosPageDescription,
 };
