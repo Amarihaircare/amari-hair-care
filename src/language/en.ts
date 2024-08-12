@@ -269,8 +269,7 @@ const en = {
   faqPageMetaTitle: "FAQ | Amari Hair Care",
   faqPageMetaDescription:
     '<p style="text-align:center">Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.</p>',
-  aboutPageDescription:
-    "Learn more about Amari Hair Care, our mission, and our commitment to providing premium, plant-based hair care products that promote healthy, beautiful hair.",
+  aboutPageDescription: `<p style="text-align:center">Learn more about Amari Hair Care, our mission, and our commitment to providing premium, plant-based hair care products that promote healthy, beautiful hair.</p>`,
   faqPageDescription:
     '<p style="text-align:center">Find answers to frequently asked questions about Amari Hair Care products, stockist program, and more. If you have any other questions, feel free to contact us.</p>',
   generalQuestions: "General Questions",
@@ -284,7 +283,7 @@ const en = {
   aboutUsPageHeading:
     "Amari Hair Care and Amari Scalp Care integrate cutting-edge technology with natural ingredients sourced from Africa, offering premium, plant-based hair care products tailored for the 21st century.",
   aboutUsPageDescription:
-    '<p style="text-align:center">Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, that revolutionizes the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.</p>',
+    "Our mission is to empower individuals by promoting self-love and positive self-image through innovative products and comprehensive services, that revolutionizes the African hair care industry. We aim to achieve this by providing high-quality, innovative solutions—from consultation and product manufacturing to styling services, training, and beyond. We strive to build a community where individuals take pride in their natural hair, feel confident, and celebrate their unique beauty.",
   naturalPlantBasedIngredientesDescription:
     "We differentiate ourselves by using natural, plant-based ingredients that nourish and protect hair without harmful chemicals like sulfates, parabens, and minerals.",
   focusOnAfricanWomenDescription:
@@ -329,11 +328,11 @@ const en = {
     '<p style="text-align:center">Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers</p>',
   paasPageIntroduction: "Introduction to the àmàri PaaS initiative.",
   paasPageDescriptionOne:
-    '<p style="text-align:center">Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.</p>',
+    "Amari PaaS (Products as a Service) Initiative is a strategic program within Amari Hair Care designed to elevate the overall hair care experience by partnering with salons to offer products as services to customers. This initiative recognizes that many clients prefer professionals to apply hair products, taking the responsibility of hair care out of their hands.",
   paasPageDescriptionTwo:
-    '<p style="text-align:center">Amari PaaS Initiative aims to Enhance Customer Experience</p>',
+    "Amari PaaS Initiative aims to Enhance Customer Experience",
   paasPageDescriptionThree:
-    '<p style="text-align:center">The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.</p>',
+    "The Amari PaaS (Products as a Service) Initiative can bring several benefits to partnering salons, enhancing their services and contributing to increased revenue streams.",
   paas: "Platform as a Service",
   paasKeyBenefitsHeading:
     "Here are some key benefits for salons participating in the Amari PaaS program:",

@@ -17,17 +17,13 @@ export default function PaaS() {
       <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           <div className="flex flex-col gap-6 lg:w-[48%]">
-            <h2
-              data-aos="fade-right"
-              className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
-            >
+            <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
               {en.paasPageIntroduction}
             </h2>
 
             {paasPageDescriptions.map((description, index) => (
               <p
                 key={index}
-                data-aos="fade-up"
                 className={cn("text-center lg:text-left", {
                   "font-bold": index === 1,
                 })}
