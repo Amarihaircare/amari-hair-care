@@ -16,7 +16,6 @@ export default function FaqDropDowns({ questions }: FaqDropDownsProps) {
           className="accordion_component rounded-3xl border-gray-200 shadow"
           id="accordionComponent"
           key={index}
-          data-aos="fade-up"
         >
           <div className="accordion_component-item">
             <button

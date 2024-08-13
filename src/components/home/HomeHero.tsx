@@ -1,7 +1,6 @@
 "use client";
 import {
   ClinicallyIcon,
-  EnvironmentalIcon,
   OilDropIcon,
   PlantIcon,
   PositiveReviewsIcon,
@@ -9,10 +8,6 @@ import {
 import en from "@/language/en";
 import { CheckIcon } from "lucide-react";
 import Image from "next/image";
-import moisturizer from "../../assets/images/natural-hair-mois.webp";
-import cleanser from "../../assets/images/ph-balance.webp";
-import serum from "../../assets/images/hair-serum.webp";
-import oil from "../../assets/images/aloe-vera-extract-oil.webp";
 import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
@@ -21,6 +16,7 @@ import { useRef, useState } from "react";
 // import required modules
 import { Autoplay } from "swiper/modules";
 import { cn } from "@/lib/utils";
+import { slides } from "@/assets/data/products";
 
 export default function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -129,7 +125,7 @@ export default function HomeHero() {
               )}
             </ul>
             <Link
-              href="/catalog/caffeine-scalp-serum"
+              href={`/product/${slides[activeSlide]?.slug?.toLowerCase()}`}
               className="mt-6 self-center rounded-none border-b-2 border-secondary bg-transparent py-2 font-semibold text-secondary lg:self-start"
             >
               {en.aboutProduct}
@@ -156,59 +152,6 @@ export default function HomeHero() {
     </section>
   );
 }
-
-const slides = [
-  {
-    name: en.moisturizers,
-    image: moisturizer,
-    product: {
-      name: en.moisturizers,
-      description: en.moisturizersShortDescription,
-      ingredients: [
-        en.sodiumLactate,
-        en.butyrospermumParkii,
-        en.butyleneGlycol,
-      ],
-    },
-  },
-  {
-    name: en.cleansers,
-    image: cleanser,
-    product: {
-      name: en.phBalancingMistAndCleanser,
-      description: en.phBalancingMistAndCleanserShortDescription,
-      ingredients: [
-        en.lavenderExtract,
-        en.salicylicAcid,
-        en.angelicaExtract,
-        en.vitexExtract,
-      ],
-    },
-  },
-  {
-    name: en.oils,
-    image: oil,
-    product: {
-      name: en.aloeVeraExtractOil,
-      description: en.aloeVeraExtractOilShortDescription,
-      ingredients: [en.aloeBarbadensis],
-    },
-  },
-  {
-    name: en.serums,
-    image: serum,
-    product: {
-      name: en.vitaminESerum,
-      description: en.vitaminESerumShortDescription,
-      ingredients: [
-        en.simmondsiaChinensis,
-        en.tocopherylAcetate,
-        en.rosmarinusOfficinalis,
-        en.astaxanthinOil,
-      ],
-    },
-  },
-];
 
 const ourValues = [
   {

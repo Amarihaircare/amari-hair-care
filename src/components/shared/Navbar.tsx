@@ -37,10 +37,6 @@ export default function Navbar() {
       onClick: () => setShowSearch(!showSearch),
     },
     {
-      name: en.wishlists,
-      icon: <BookmarkIcon />,
-    },
-    {
       onClick: () => router.push("/stockist"),
       name: en.cart,
       icon: <DocumentIcon />,

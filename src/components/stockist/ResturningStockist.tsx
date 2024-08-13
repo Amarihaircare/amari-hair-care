@@ -3,57 +3,74 @@ import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TFormValues } from "@/@types";
-import { useEffect } from "react";
+import { useState } from "react";
+import { useCart } from "@/hooks/useCart";
+import { SpinnerIcon } from "@/assets/icons";
+import { sendEmail } from "@/api";
+import { useModal } from "@/hooks/useModal";
+import { toast } from "../ui/use-toast";
+import OrderSuccess from "./OrderSuccess";
 
 type TReturningStockistValues = Pick<
   TFormValues,
-  "email" | "comments" | "stokistId"
+  "email" | "comments" | "stockistId"
 >;
 
-interface TNewStockistForm {
-  setShowCheckout: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export default function ReturningStockist() {
+  const { cart } = useCart();
+  const { setModal } = useModal();
+  const [stockistId, setStockistId] = useState("");
 
-export default function ReturningStockist({
-  setShowCheckout,
-}: TNewStockistForm) {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<TReturningStockistValues>({
-    defaultValues: {
-      email: "",
-      comments: "",
-      stokistId: "",
-    },
-  });
+  } = useForm<TReturningStockistValues>();
 
-  const onSubmit: SubmitHandler<TReturningStockistValues> = (data) => {
-    localStorage.setItem("stockist", JSON.stringify(data));
-    setShowCheckout(true);
+  const onSubmit: SubmitHandler<TReturningStockistValues> = async (data) => {
+    const formData = new FormData();
+    setIsLoading(true);
+
+    for (const key in data) {
+      // @ts-expect-error
+      formData.append(key, data[key]);
+    }
+
+    formData.append(
+      "products",
+      JSON.stringify(
+        cart.map((product) => ({
+          name: product.name,
+          price: product.price,
+        })),
+      ),
+    );
+    formData.append("_subject", `New Order From ${data.stockistId}`);
+
+    await sendEmail(formData)
+      .then(() => {
+        setModal({
+          description: en.orderReceivedDescription,
+          title: en.thankYou,
+          variant: "success",
+        });
+        setStockistId(data.stockistId!);
+      })
+      .catch(() => {
+        toast({
+          title: en.somethingWentWrong,
+          description: en.somethingWentWrongDescription,
+          variant: "destructive",
+        });
+      });
+
+    setIsLoading(false);
   };
 
-  useEffect(() => {
-    // Ensure code only runs in the browser
-    if (typeof window !== "undefined") {
-      const stockist = localStorage.getItem("stockist");
-      if (stockist) {
-        try {
-          const stockistData = JSON.parse(stockist) as TReturningStockistValues;
-          reset(stockistData);
-        } catch (error) {
-          console.error(
-            "Failed to parse stockist data from localStorage:",
-            error,
-          );
-        }
-      }
-    }
-  }, [reset]);
-
-  return (
+  return stockistId.length > 0 ? (
+    <OrderSuccess stockistId={stockistId} />
+  ) : (
     <form
       className="flex w-full max-w-[500px] flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
@@ -68,16 +85,17 @@ export default function ReturningStockist({
           placeholder={input.placeholder}
           error={errors[input.name]?.message}
           register={register}
-          required={input.placeholder}
+          required={input.required}
         />
       ))}
       <input type="text" name="_honey" hidden />
 
       <Button
         type="submit"
-        className="mt-10 rounded bg-primary py-5 text-white"
+        className="mt-10 gap-4 rounded bg-primary py-5 text-white"
       >
-        {en.proceedToViewStock}
+        {en.requestQuote}
+        {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </form>
   );
@@ -88,17 +106,26 @@ const inputFieldset: {
   label: string;
   type: string;
   placeholder: string;
+  required?: string;
 }[] = [
   {
-    name: "stokistId",
+    name: "stockistId",
     label: en.stockistId,
     type: "text",
     placeholder: en.enterYourStockistId,
+    required: en.enterYourStockistId,
   },
   {
     name: "email",
     label: en.email,
     type: "email",
     placeholder: en.enterYourEmail,
+    required: en.enterYourEmail,
+  },
+  {
+    name: "comments",
+    label: en.comments,
+    type: "textarea",
+    placeholder: en.enterYourComments,
   },
 ];

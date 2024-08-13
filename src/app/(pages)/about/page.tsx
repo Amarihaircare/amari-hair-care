@@ -1,7 +1,7 @@
 import en from "@/language/en";
 import type { Metadata } from "next";
 import Image from "next/image";
-import amariProcess from "../../../assets/images/amari-process.jpg";
+import amariProcess from "../../../assets/images/amari-process.webp";
 import {
   CaretRight,
   EmployeeIcon,
@@ -24,32 +24,22 @@ export default function About() {
         <div className="flex w-full flex-col px-4 md:max-w-[95%] lg:px-0 2xl:max-w-screen-xl">
           <div className="flex flex-col justify-between gap-10 lg:flex-row">
             <div className="flex flex-col gap-6 lg:w-[48%]">
-              <h2
-                data-aos="fade-up"
-                className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
-              >
+              <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
                 {en.aboutUsPageHeading}
               </h2>
-              <p data-aos="fade-left" className="text-center lg:text-left">
+              <p className="text-center lg:text-left">
                 {en.aboutUsPageDescription}
               </p>
               <div className="flex flex-col gap-4">
                 {marketDifferentiators.map((differentiator, index) => (
-                  <div
-                    data-aos="fade-right"
-                    key={index}
-                    className="flex items-center gap-2"
-                  >
+                  <div key={index} className="flex items-center gap-2">
                     <CaretRight />
                     <p className="text-center lg:text-left">{differentiator}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div
-              data-aos="fade-left"
-              className="flex flex-col gap-6 lg:w-[48%]"
-            >
+            <div className="flex flex-col gap-6 lg:w-[48%]">
               <Image
                 width={800}
                 height={600}
@@ -61,15 +51,10 @@ export default function About() {
           </div>
           <div className="flex flex-col items-center justify-center gap-10 py-40">
             <div className="heading flex max-w-[500px] flex-col items-center justify-center gap-4">
-              <h2
-                data-aos="fade-up"
-                className="text-center text-2xl font-bold lg:text-4xl"
-              >
+              <h2 className="text-center text-2xl font-bold lg:text-4xl">
                 {en.ourCoreValues}
               </h2>
-              <p data-aos="fade-left" className="text-center">
-                {en.ourCoreValuesDescription}
-              </p>
+              <p className="text-center">{en.ourCoreValuesDescription}</p>
             </div>
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
               {coreValues.map((value, index) => (
@@ -77,21 +62,13 @@ export default function About() {
                   key={index}
                   className="flex flex-col items-center justify-between gap-4"
                 >
-                  <div
-                    data-aos="fade-up"
-                    className="flex h-24 w-24 items-center justify-center rounded-full border border-gray-200 bg-background shadow hover:bg-primary hover:text-white"
-                  >
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gray-200 bg-background shadow hover:bg-primary hover:text-white">
                     {value.icon}
                   </div>
-                  <h4
-                    data-aos="fade-up"
-                    className="text-center text-xl font-bold"
-                  >
+                  <h4 className="text-center text-xl font-bold">
                     {value.title}
                   </h4>
-                  <p data-aos="fade-left" className="text-center">
-                    {value.description}
-                  </p>
+                  <p className="text-center">{value.description}</p>
                 </div>
               ))}
             </div>

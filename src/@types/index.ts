@@ -15,7 +15,7 @@ export type TFormValues = {
   phone?: string;
   address?: string;
   comments?: string;
-  stokistId?: string;
+  stockistId?: string;
   name?: string;
   email?: string;
   message?: string;

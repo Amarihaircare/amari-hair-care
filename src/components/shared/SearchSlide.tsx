@@ -72,7 +72,7 @@ export default function SearchSlide({
               {result.name}
             </Link>
           ))
-        ) : (
+        ) : searchKwd.length > 0 ? (
           <>
             <p className="max-w-[300px] px-4 text-center text-sm">
               {en.noResults}
@@ -89,6 +89,10 @@ export default function SearchSlide({
               {en.catalogue}
             </Link>
           </>
+        ) : (
+          <p className="max-w-[300px] px-4 text-center text-sm text-gray-500">
+            {en.searchPlaceholder}
+          </p>
         )}
       </div>
     </div>

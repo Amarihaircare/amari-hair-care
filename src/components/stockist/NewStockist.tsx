@@ -3,58 +3,77 @@ import InputFieldset from "../ui/InputFieldset";
 import { Button } from "../ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TFormValues } from "@/@types";
-import { useEffect } from "react";
+import { useState } from "react";
+import { SpinnerIcon } from "@/assets/icons";
+import { generateId } from "@/lib/utils";
+import { useCart } from "@/hooks/useCart";
+import { sendEmail } from "@/api";
+import { useModal } from "@/hooks/useModal";
+import OrderSuccess from "./OrderSuccess";
+import { toast } from "../ui/use-toast";
 
 type TNewStockistValues = Pick<
   TFormValues,
   "companyName" | "contactName" | "phone" | "email" | "address" | "comments"
 >;
 
-interface TNewStockistForm {
-  setShowCheckout: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export default function NewStockist() {
+  const [isLoading, setIsLoading] = useState(false);
+  const { cart } = useCart();
+  const { setModal } = useModal();
+  const [stockistId, setStockistId] = useState("");
 
-export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<TNewStockistValues>({
-    defaultValues: {
-      address: "",
-      comments: "",
-      companyName: "",
-      contactName: "",
-      email: "",
-      phone: "",
-    },
-  });
+  } = useForm<TNewStockistValues>();
 
-  const onSubmit: SubmitHandler<TNewStockistValues> = (data) => {
-    localStorage.setItem("stockist", JSON.stringify(data));
-    setShowCheckout(true);
+  const onSubmit: SubmitHandler<TNewStockistValues> = async (data) => {
+    const formData = new FormData();
+    const stockistId = generateId();
+    setIsLoading(true);
+
+    for (const key in data) {
+      // @ts-expect-error
+      formData.append(key, data[key]);
+    }
+    formData.append("stockistId", stockistId);
+
+    formData.append(
+      "products",
+      JSON.stringify(
+        cart.map((product) => ({
+          name: product.name,
+          price: product.price,
+        })),
+      ),
+    );
+    formData.append("_subject", `New Order From ${data.contactName}`);
+
+    await sendEmail(formData)
+      .then(() => {
+        setModal({
+          description: en.orderReceivedDescription,
+          title: en.thankYou,
+          variant: "success",
+        });
+        setStockistId(stockistId);
+      })
+      .catch(() => {
+        toast({
+          title: en.somethingWentWrong,
+          description: en.somethingWentWrongDescription,
+          variant: "destructive",
+        });
+      });
+
+    setIsLoading(false);
   };
 
-  useEffect(() => {
-    // Ensure code only runs in the browser
-    if (typeof window !== "undefined") {
-      const stockist = localStorage.getItem("stockist");
-      if (stockist) {
-        try {
-          const stockistData = JSON.parse(stockist) as TNewStockistValues;
-          reset(stockistData);
-        } catch (error) {
-          console.error(
-            "Failed to parse stockist data from localStorage:",
-            error,
-          );
-        }
-      }
-    }
-  }, [reset]);
-
-  return (
+  return stockistId.length > 0 ? (
+    <OrderSuccess stockistId={stockistId} />
+  ) : (
     <form
       className="flex w-full max-w-[500px] flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
@@ -70,16 +89,17 @@ export default function NewStockist({ setShowCheckout }: TNewStockistForm) {
           placeholder={input.placeholder}
           error={errors[input.name]?.message}
           register={register}
-          required={input.placeholder}
+          required={input.required}
         />
       ))}
       <input type="text" name="_honey" hidden />
 
       <Button
         type="submit"
-        className="mt-10 rounded bg-primary py-5 text-white"
+        className="mt-10 gap-4 rounded bg-primary py-5 text-white"
       >
-        {en.proceedToViewStock}
+        {en.requestQuote}
+        {isLoading && <SpinnerIcon className="animate-spin" />}
       </Button>
     </form>
   );
@@ -90,36 +110,42 @@ const inputFieldset: {
   label: string;
   type: string;
   placeholder: string;
+  required?: string;
 }[] = [
   {
     name: "companyName",
     label: en.companyName,
     type: "text",
     placeholder: en.enterYourCompanyName,
+    required: en.enterYourCompanyName,
   },
   {
     name: "contactName",
     label: en.contactName,
     type: "text",
     placeholder: en.enterYourContactName,
+    required: en.enterYourContactName,
   },
   {
     name: "phone",
     label: en.phone,
     type: "tel",
     placeholder: en.enterYourPhone,
+    required: en.enterYourPhone,
   },
   {
     name: "email",
     label: en.email,
     type: "email",
     placeholder: en.enterYourEmail,
+    required: en.enterYourEmail,
   },
   {
     name: "address",
     label: en.address,
     type: "textarea",
     placeholder: en.enterYourAddress,
+    required: en.enterYourAddress,
   },
   {
     name: "comments",

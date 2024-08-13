@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import en from "@/language/en";
-import paas from "@/assets/images/paas.png";
+import paas from "@/assets/images/paas.webp";
 import Image from "next/image";
 import { CheckIcon, UsersIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,7 @@ export default function PaaS() {
               </p>
             ))}
           </div>
-          <div data-aos="fade-left" className="flex flex-col gap-6 lg:w-[48%]">
+          <div className="flex flex-col gap-6 lg:w-[48%]">
             <Image
               width={800}
               height={600}
@@ -43,10 +43,7 @@ export default function PaaS() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-10 py-40">
-          <h2
-            data-aos="fade-up"
-            className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl"
-          >
+          <h2 className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl">
             {en.paasKeyBenefitsHeading}
           </h2>
 
@@ -54,7 +51,6 @@ export default function PaaS() {
             {paasKeyBenefits.map((value, index) => (
               <div
                 key={index}
-                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                 className="flex flex-col items-center gap-4 lg:flex-row"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -74,20 +70,13 @@ export default function PaaS() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-10 pb-40">
-          <h2
-            data-aos="fade-up"
-            className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl"
-          >
+          <h2 className="max-w-[600px] text-center text-2xl font-bold lg:text-4xl">
             {en.customerBenefitsHeading}
           </h2>
 
           <div className="grid gap-10 lg:grid-cols-2">
             {customerBenefits.map((value, index) => (
-              <div
-                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-                key={index}
-                className="flex flex-col items-center gap-4"
-              >
+              <div key={index} className="flex flex-col items-center gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
                   <UsersIcon className="text-xl" />
                 </div>

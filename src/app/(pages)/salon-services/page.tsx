@@ -1,9 +1,9 @@
 import en from "@/language/en";
 import type { Metadata } from "next";
 import Image from "next/image";
-import hairRenewalTherapy from "@/assets/images/hair-therapy.png";
-import moistureTherapy from "@/assets/images/moisture-therapy.png";
-import scalpTherapy from "@/assets/images/scalp-therapy.png";
+import hairRenewalTherapy from "@/assets/images/hair-therapy.webp";
+import moistureTherapy from "@/assets/images/moisture-therapy.webp";
+import scalpTherapy from "@/assets/images/scalp-therapy.webp";
 import { cn } from "@/lib/utils";
 import NewsletterSection from "@/components/home/NewsletterSection";
 
@@ -30,22 +30,16 @@ export default function SalonServices() {
                 )}
               >
                 <div className="flex flex-col gap-6 lg:w-[48%]">
-                  <h2
-                    data-aos={isFlipped ? "fade-left" : "fade-right"}
-                    className="text-center text-2xl font-bold lg:text-left lg:text-4xl"
-                  >
+                  <h2 className="text-center text-2xl font-bold lg:text-left lg:text-4xl">
                     {service.heading}
                   </h2>
 
-                  <p className="text-center lg:text-left" data-aos="fade-up">
+                  <p className="text-center lg:text-left">
                     {service.description}
                   </p>
 
                   <div className="flex flex-col gap-4">
-                    <h3
-                      className="text-2xl font-bold"
-                      data-aos={isFlipped ? "fade-left" : "fade-right"}
-                    >
+                    <h3 className="text-2xl font-bold">
                       {service.benefit.title}
                     </h3>
 
@@ -56,23 +50,15 @@ export default function SalonServices() {
                           className="flex items-center gap-4"
                         >
                           <div className="flex flex-col gap-2">
-                            <h3
-                              data-aos={isFlipped ? "fade-left" : "fade-right"}
-                              className="font-bold"
-                            >
-                              {benefit.title}
-                            </h3>
-                            <p data-aos="fade-up">{benefit.description}</p>
+                            <h3 className="font-bold">{benefit.title}</h3>
+                            <p>{benefit.description}</p>
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-                <div
-                  data-aos={isFlipped ? "fade-right" : "fade-left"}
-                  className="flex flex-col gap-6 lg:w-[48%]"
-                >
+                <div className="flex flex-col gap-6 lg:w-[48%]">
                   <Image
                     width={800}
                     height={400}

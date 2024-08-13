@@ -1,4 +1,9 @@
-import Facebook, { Instagram, WhatsApp, XTwitter } from "@/assets/icons";
+import Facebook, {
+  Instagram,
+  LinkedIn,
+  WhatsApp,
+  XTwitter,
+} from "@/assets/icons";
 import Link from "next/link";
 
 export default function Socials() {
@@ -23,22 +28,22 @@ export default function Socials() {
 export const socials = [
   {
     name: "facebook",
-    url: "#",
+    url: "https://www.facebook.com/share/4aY5vvkqbUGZwp1A/?mibextid=LQQJ4d",
     icon: <Facebook />,
   },
   {
     name: "instagram",
-    url: "#",
+    url: "https://www.instagram.com/amarihaircare?igsh=OXk3ZXQ0dzd3aTc1",
     icon: <Instagram />,
   },
   {
-    name: "twitter",
-    url: "#",
-    icon: <XTwitter />,
+    name: "linkedin",
+    url: "https://www.linkedin.com/company/amari-hair-care",
+    icon: <LinkedIn />,
   },
   {
     name: "whatsapp",
-    url: "#",
+    url: "http://dm.wa.link/4e02ip",
     icon: <WhatsApp />,
   },
 ];

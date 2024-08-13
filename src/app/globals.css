@@ -122,20 +122,20 @@
 }
 
 .newsletter_container {
-  background-image: url('../assets/images/flower.png'),
-    url('../assets/images/flower-2.png');
+  background-image: url('../assets/images/flower.webp'),
+    url('../assets/images/flower-2.webp');
   background-position:
     120% 300%,
     -20% -150%;
 }
 
 .otherpages__hero {
-  background-image: url('../assets/images/mobile-hero.png');
+  background-image: url('../assets/images/mobile-hero.webp');
 }
 
 @media (min-width: 768px) {
   .otherpages__hero {
-    background-image: url('../assets/images/tablet-hero.png');
+    background-image: url('../assets/images/tablet-hero.webp');
   }
 }
 
@@ -154,6 +154,6 @@
 }
 
 .main_offering-bg {
-  background-image: url('../assets/images/main-offering.png');
+  background-image: url('../assets/images/main-offering.webp');
   background-size: cover;
 }

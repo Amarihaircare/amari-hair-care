@@ -61,15 +61,16 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         setCart(newCart);
         localStorage.setItem("cart", JSON.stringify(newCart));
         toast({
-          title: "Added to cart",
+          title: "Quote Requested",
           description:
-            "Product added to cart successfully, view cart to checkout",
+            "Product added to list, Fill stockist form at check out to view list and complete request",
         });
       } catch (error) {
         console.error("Failed to update cart in localStorage:", error);
         toast({
-          title: "Failed to add to cart",
-          description: "Failed to add product to cart, please try again later.",
+          title: "Failed to add to product",
+          description:
+            "Failed to add product to quote, please try again later.",
           variant: "destructive",
         });
       }

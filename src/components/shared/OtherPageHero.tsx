@@ -13,7 +13,7 @@ export default function OtherPageHero({ heading }: OtherPageHeroProps) {
 
   return (
     <section className="otherpages__hero relative flex w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat">
-      <div className="flex max-w-[500px] flex-col items-center justify-center px-4 py-20">
+      <div className="flex max-w-[600px] flex-col items-center justify-center px-4 py-20">
         <h1 className="mb-4 text-center text-4xl font-bold lg:text-6xl">
           {alternateHeading[name.toLowerCase()] || capitalize(name)}
         </h1>
@@ -28,6 +28,8 @@ const alternateHeading: Record<string, string> = {
   "salon-services": en.salonServices,
   privacy: en.privacyPolicy,
   tos: en.tos,
+  "find-a-stockist": en.findAStockist,
+  "become-an-affiliate-partner": en.becomeAnAffiliatePartner,
 };
 
 const descriptions: Record<string, string> = {
@@ -40,6 +42,8 @@ const descriptions: Record<string, string> = {
   faq: en.faqPageDescription,
   paas: en.paasPageDescription,
   "salon-services": en.servicesPageDescription,
+  "find-a-stockist": en.findAStockistPageDescription,
+  "become-an-affiliate-partner": en.becomeAnAffiliatePartnerPageDescription,
   privacy: en.privacyPageDescription,
   tos: en.tosPageDescription,
 };

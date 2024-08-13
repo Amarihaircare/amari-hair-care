@@ -1,5 +1,5 @@
 const en = {
-  amariHaircare: "Amari Haircare",
+  amariHaircare: "Amari Hair care",
   home: "Home",
   catalogue: "Catalogue",
   caffeineScalpSerum: "Caffeine Scalp Serum",
@@ -53,7 +53,7 @@ const en = {
   promoTitle:
     "Free pH Balancing Cleanser: Caffeine Scalp Serum + Vitamin E Serum",
   promoDescription:
-    "Enhance your product lineup and elevate your customers' scalp care experience with our special offer! For the next 90 days, receive 5 free pH Balancing Mists + Cleansers with every bulk purchase. Stock up now and provide your customers with the scalp care they deserve!",
+    "Enhance your product lineup and elevate your customer's scalp care experience with our special offer! For the next 90 days, receive 5 free pH Balancing Mists + Cleansers with every bulk purchase. Stock up now and provide your customers with the scalp care they deserve!",
   days: "Days",
   hours: "Hours",
   minutes: "Minutes",
@@ -63,7 +63,7 @@ const en = {
   stockUpNow: "Stock Up Now",
   reviewHeader: "Your Trust is Our Top Concern",
   reviewDescription:
-    "Our dedication to transparency, integrity, and customer care means you can confidently rely on us for all your mission partner.",
+    "Our dedication to transparency, integrity, and customer care means you can confidently rely on us as your mission partner",
   newsletterHeader: "Sign Up for Our Newsletter",
   newsletterDescription:
     "Stay in the loop with the latest updates, exclusive offers, and expert tips from Amari Hair Care that our monthly newsletter brings you.",
@@ -121,9 +121,9 @@ const en = {
   caffeineScalpSerumShortDescription:
     "The Caffeine Scalp Serum, addresses hair loss by stimulating follicle growth",
   moisturizersShortDescription:
-    "The fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured",
+    "The fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured.",
   vitaminESerumShortDescription:
-    "Carefully crafted with wax ester that closely resembles the sebum produced by the scalp,",
+    "Carefully crafted with wax ester that closely resembles the sebum produced by the scalp.",
   simmondsiaChinensis: "Simmondsia Chinensis (Jojoba) Seed Extract",
   tocopherylAcetate: "Tocopheryl Acetate",
   rosmarinusOfficinalis: "Rosmarinus Officinalis Leaf Oil",
@@ -176,7 +176,7 @@ const en = {
   productPageDescription:
     '<p style="text-align:center">Our hair products, are designed to meet the highest standards of quality and effectiveness, offers unparalleled benefits for your needs.</p>',
   errorPageDescription:
-    '<p "style=text-align:center">We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!</p>',
+    '<p style="text-align:center">We apologize for the inconvenience, but it seems something has gone wrong on our end. Let us guide you back!</p>',
   error: "Error",
   requestQuote: "Request Quote",
   category: "Category",
@@ -245,13 +245,14 @@ const en = {
   enterYourEmail: "Enter your email",
   enterYourAddress: "Enter your address",
   address: "Address",
-  proceedToViewStock: "Proceed to view stock",
+  proceedToForm: "Proceed to form",
   productCheckout: "Product Checkout",
   inStock: "In Stock",
   itemAdded: "Item(s) Added",
   addProduct: "Add Product(s)",
   sendQuote: "Send Quote",
-  emptyQuote: "Your quote is empty. Checkout our premium hair products",
+  emptyQuote:
+    "There are no products on your list, Add products to get a quote for your wholesale order",
   haveAnyQuestion: "Have any question?",
   contactDescription:
     "We are here to help you with any inquiries you may have. Feel free to reach out to us via phone, email, or visit our office during business hours.",
@@ -306,7 +307,7 @@ const en = {
     "We are committed to giving back to the community and promoting sustainable practices in all aspects of our business.",
   amariProductOfferings: "Amari Product Offerings",
   amariProductOfferingsDescription:
-    "At Amari Hair Care and Amari Scalp Care, we simplify hair care routines with effective, minimalist products designed for scalp and hair health:",
+    "At Amari Hair Care and Amari Scalp Care, we simplify hair care routines with effective, minimalist products designed for scalp and hair health.",
   scalpCareProducts: "Scalp Care Products",
   scalpCareProductsDescription:
     "Formulated to nourish and balance the scalp, promoting healthy hair growth and addressing common scalp concerns such as dryness and itchiness.",
@@ -372,6 +373,10 @@ const en = {
     "Engaging in Amari PaaS services on a regular basis contributes to consistent and lasting results in terms of improved hair texture, health, and style. Customers experience ongoing benefits, reinforcing the value of the initiative in their hair care routine.",
   servicesPageDescription:
     '<p style="text-align:center">Discover the range of services offered by Amari Hair Care, designed to provide comprehensive solutions for your hair care needs. From consultations to product application, we are here to support you on your hair care journey.</p>',
+  findAStockistPageDescription:
+    '<p style="text-align:center">Find an authorized Amari Hair Care stockist near you to purchase our premium, plant-based hair care products. Our stockists offer a wide range of products designed to meet your hair care needs.</p>',
+  becomeAnAffiliatePartnerPageDescription:
+    '<p style="text-align:center">Join the Amari Hair Care affiliate program and earn commissions by promoting our premium, plant-based hair care products. As an affiliate partner, you can help spread the word about our products and earn money for each sale you refer.</p>',
   salonServices: "Salon Services",
   hairRenewalTherapy: "Amari Hair Renewal Therapy",
   hairRenewalTherapyDescription:
@@ -444,6 +449,16 @@ const en = {
     "Use this id to reference and to make future orders",
   copied: "Copied",
   noReviews: "No reviews yet",
+  moqDescription: "Minimum of 10 units per product",
+  searchPlaceholder: "Search for products",
+  checkoutOurProducts: "Checkout our premium hair products",
+  findAStockistPageMetaTitle: "Find a Stockist | Amari Hair Care",
+  findAStockistPageMetaDescription:
+    "Find an authorized Amari Hair Care stockist near you to purchase our premium hair care products. Enter your location to discover the nearest stockists.",
+  becomeAnAffiliatePartnerPageMetaTitle:
+    "Become an Affiliate Partner | Amari Hair Care",
+  becomeAnAffiliatePartnerPageMetaDescription:
+    "Join the Amari Hair Care affiliate program and earn commissions by promoting our premium hair care products. Sign up today to become an affiliate partner.",
 };
 
 export default en;

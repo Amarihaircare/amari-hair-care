@@ -49,28 +49,24 @@ export default function Product({ params }: { params: { product: string } }) {
         <div className="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:gap-0">
           <ProductImageSlides images={product?.images ?? []} />
           <div className="product-info flex w-full flex-col gap-6 lg:w-[46%]">
-            <div className="flex justify-between">
-              <div className="flex flex-col gap-4">
-                <h2 className="text-2xl font-bold lg:text-4xl">
-                  {product?.name}
-                </h2>
-                <div className="flex items-center gap-2">
-                  <Rating value={product?.rating ?? 0} />
-                  <p className="text-sm">
-                    ({product?.reviews?.length ?? 0} customer reviews)
-                  </p>
-                </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-2xl font-bold lg:text-4xl">
+                {product?.name}
+              </h2>
+              <div className="flex items-center gap-2">
+                <Rating value={product?.rating ?? 0} />
+                <p className="text-sm">
+                  ({product?.reviews?.length ?? 0} customer reviews)
+                </p>
               </div>
-              <RoundedIconButton
-                icon={<HeartIcon />}
-                className="border border-gray-200 bg-white shadow transition-colors hover:bg-secondary hover:text-white"
-              />
             </div>
             <p>{product?.shortDescription}</p>
 
             <p className="text-2xl font-bold lg:text-4xl">
               {formatCurrency(product?.price ?? 0, "NGN")}
             </p>
+
+            <p>{en.moqDescription}</p>
 
             <AddToCartAction productSlug={product?.slug} />
             <ul className="flex flex-col gap-4">

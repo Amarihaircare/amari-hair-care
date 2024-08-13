@@ -14,6 +14,7 @@ export default function AddToCartAction({
 }: IAddToCartActionProps) {
   const { cart } = useCart();
   const product = cart.find((item) => item.slug === productSlug);
+
   const { handleCount, count, handleAddToCart } = useManageCart({
     productSlug: productSlug!,
     ...(product && { quantity: product.quantity }),

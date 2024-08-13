@@ -109,11 +109,11 @@ const contactList = [
 const aboutLinks = [
   {
     name: en.whoWeAre,
-    url: "#",
+    url: "/about",
   },
   {
     name: en.findAStockist,
-    url: "#",
+    url: "/find-a-stockist",
   },
   {
     name: en.privacyPolicy,
@@ -125,11 +125,11 @@ const aboutLinks = [
   },
   {
     name: en.wholesale,
-    url: "#",
+    url: "/catalogue",
   },
   {
     name: en.becomeAnAffiliatePartner,
-    url: "#",
+    url: "become-an-affiliate-partner",
   },
 ];
 

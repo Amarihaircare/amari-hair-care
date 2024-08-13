@@ -16,14 +16,14 @@ export default function ProductsFilter() {
     <div className="flex flex-col gap-8 lg:w-[20%]">
       <button
         onClick={() => setShowFilter(!showFilter)}
-        className="w-full flex items-center lg:hidden gap-2 border border-gray-200 py-3 justify-center rounded-full font-semibold"
+        className="flex w-full items-center justify-center gap-2 rounded-full border border-gray-200 py-3 font-semibold lg:hidden"
       >
         {en.filter}
         {!showFilter ? <CaretDown /> : <CaretUp />}
       </button>
       {showFilter && (
         <>
-          <div className="lg:flex flex-col gap-4 hidden">
+          <div className="hidden flex-col gap-4 lg:flex">
             <div className="flex items-center gap-4">
               <Image src={aloeIcon} width={24} height={24} alt="brand logo" />
               <h4 className="text-xl font-bold">{en.searchByProducts}</h4>
@@ -31,15 +31,15 @@ export default function ProductsFilter() {
             <form
               action="#"
               data-type="searchForm"
-              className="relative w-full md:flex items-center hidden"
+              className="relative hidden w-full items-center md:flex"
             >
               <Input
                 placeholder={`${en.search}...`}
                 type="search"
-                className="rounded-full w-full py-5"
+                className="w-full rounded-full py-5"
               />
               <button
-                className="header_user-search_btn px-4 font-medium flex absolute right-0 bg-secondary bottom-0 top-0 rounded-full items-center justify-center"
+                className="header_user-search_btn absolute bottom-0 right-0 top-0 flex items-center justify-center rounded-full bg-secondary px-4 font-medium"
                 type="submit"
                 data-trigger="search"
               >
@@ -57,7 +57,7 @@ export default function ProductsFilter() {
               {categories.map((category, index) => (
                 <li key={index}>
                   <label htmlFor={category} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-gray-200 flex items-center justify-center">
+                    <div className="flex h-4 w-4 items-center justify-center rounded-full bg-gray-200">
                       <input
                         type="radio"
                         id={category}
@@ -65,7 +65,7 @@ export default function ProductsFilter() {
                         className="peer"
                         name="category"
                       />
-                      <div className="w-2 h-2 rounded-full peer-checked:bg-primary" />
+                      <div className="h-2 w-2 rounded-full peer-checked:bg-primary" />
                     </div>
 
                     {category}
@@ -85,13 +85,14 @@ export default function ProductsFilter() {
                 <li key={index}>
                   <button
                     className={cn(
-                      "py-3 px-5 rounded-lg border border-gray-200",
+                      "rounded-lg border border-gray-200 px-5 py-3",
                       {
                         "bg-primary text-white": weight === 5,
                       },
                     )}
                   >
-                    {weight}g
+                    {weight}
+                    {weight < 50 ? "g" : "ml"}
                   </button>
                 </li>
               ))}
@@ -104,7 +105,7 @@ export default function ProductsFilter() {
               <h4 className="text-xl font-bold">{en.filterByPrice}</h4>
             </div>
             <div className="flex items-center justify-between">
-              {[1000, 100000].map((price) => (
+              {[1000, 50000].map((price) => (
                 <p key={price} className="font-medium">
                   {formatCurrency(price, "NGN")}
                 </p>
@@ -118,14 +119,6 @@ export default function ProductsFilter() {
   );
 }
 
-const categories = [
-  en.onSale,
-  en.oil,
-  en.moisturizers,
-  en.spray,
-  en.conditioner,
-  en.shampoo,
-  en.treatment,
-];
+const categories = [en.hairCare, en.scalpCare];
 
-const weights = [1, 3.5, 5, 7, 14, 28];
+const weights = [10, 15, 30, 50, 100, 200, 400];

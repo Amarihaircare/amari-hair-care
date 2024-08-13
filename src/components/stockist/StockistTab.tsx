@@ -8,11 +8,15 @@ import ProductCheckout from "./ProductCheckout";
 
 export default function StockistTab() {
   const [activeTab, setActiveTab] = useState(0);
-  const [showCheckout, setShowCheckout] = useState(false);
+  const [showCheckout, setShowCheckout] = useState(true);
   const tabs = [en.newStockist, en.returningStockist];
 
   function handleTabClick(index: number) {
     setActiveTab(index);
+    setShowCheckout(false);
+  }
+
+  function handleNext() {
     setShowCheckout(false);
   }
 
@@ -35,13 +39,9 @@ export default function StockistTab() {
         ))}
       </div>
       <div className="flex w-full flex-col items-center py-10 lg:py-20">
-        {activeTab === 0 && !showCheckout && (
-          <NewStockist setShowCheckout={setShowCheckout} />
-        )}
-        {activeTab === 1 && !showCheckout && (
-          <ReturningStockist setShowCheckout={setShowCheckout} />
-        )}
-        {showCheckout && <ProductCheckout />}
+        {activeTab === 0 && !showCheckout && <NewStockist />}
+        {activeTab === 1 && !showCheckout && <ReturningStockist />}
+        {showCheckout && <ProductCheckout handleNext={handleNext} />}
       </div>
     </>
   );

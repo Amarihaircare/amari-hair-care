@@ -13,6 +13,13 @@ import ap from "../images/instagram-four.webp";
 import moisturizer2 from "../images/moisturizer-two.webp";
 import vpg from "../images/vpg.webp";
 import aloeTwo from "../images/aloe-vera-two.webp";
+import en from "@/language/en";
+
+// transparent images
+import tMoisturizer from "../../assets/images/natural-hair-mois.webp";
+import tCleanser from "../../assets/images/ph-balance.webp";
+import tSerum from "../../assets/images/vitamin-e.webp";
+import tOil from "../../assets/images/aloe-vera-extract-oil.webp";
 
 export const products = [
   {
@@ -80,7 +87,7 @@ export const products = [
     shortDescription:
       "Our flagship product, The Caffeine Scalp Serum, addresses hair loss by stimulating follicle growth, prolonging the hair growth phase, and mitigating the effects of DHT. Unlike traditional treatments, like minoxidil and finasteride, scientific studies show it is a natural alternative with minimal side effects, suitable for sensitive scalp.",
     price: 10000,
-    category: "oil",
+    category: "Scalp Care",
     size: "1.7 oz",
     tags: ["caffeine", "hair", "growth"],
     images: [growthSerum, vpg, instagramFive],
@@ -117,7 +124,7 @@ export const products = [
     shortDescription:
       "Our Vitamin E serum is carefully crafted with wax ester that closely resembles the sebum produced by the scalp, making it an excellent choice for moisturizing the scalp.",
     price: 10000,
-    category: "oil",
+    category: "Scalp Care",
     size: "1.7 oz",
     tags: ["hair", "growth"],
     images: [vitaminE2, vpg],
@@ -145,7 +152,7 @@ export const products = [
     shortDescription:
       "This product is designed to help you achieve the perfect pH balance for the hair. By providing a healthy balance of acidity and alkalinity, this formula ensures that the hair is at its strongest and healthiest.",
     price: 5000,
-    category: "oil",
+    category: "Scalp Care",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
     images: [cleanser, pla, ap],
@@ -189,7 +196,7 @@ export const products = [
     shortDescription:
       "This fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured, without the need for the time-consuming LOC/LCO method. ",
     price: 15000,
-    category: "jelly",
+    category: "Hair Care",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
     images: [moisturizer, aloeTwo, moisturizer2],
@@ -225,7 +232,7 @@ export const products = [
     shortDescription:
       "The Leave-in-Protein Treatment works by temporarily filling in the cracks and gaps in damaged hair cuticles, providing a stronger barrier against breakage. Unlike other protein treatments, our protein treatment is leave-in.",
     price: 7500,
-    category: "oil",
+    category: "Hair Care",
     size: "1.7 oz",
     tags: ["hair", "growth", "cleanse"],
     images: [protein, pla],
@@ -244,10 +251,10 @@ export const products = [
     shortDescription:
       "This oil is extracted from the Aloe Vera plant. It is a lightweight oil that can be used to improve hydration by sealing in moisture",
     price: 10200,
-    category: "oil",
+    category: "Hair Care",
     size: "1.7 oz",
     tags: ["hair", "growth", "hydration"],
-    images: [aloeTwo, pla, ap, aloe],
+    images: [aloe, aloeTwo, pla, ap],
     description:
       "This oil is extracted from the Aloe Vera plant. It is a lightweight oil that can be used to improve hydration by sealing in moisture as well as add strength and shine to the hair by diminishing the look of frizzy unruly hair. By diminishing the look of frizzy and unruly hair, Aloe vera extract oil helps to create a smoother and shiny hair texture.",
     ingredients: "Aloe Vera Extract",
@@ -271,7 +278,7 @@ export const products = [
     shortDescription:
       "By effectively cleansing the hair, the shampoo helps to maintain a healthy scalp environment. It can soothe and balance the scalp, reducing dryness, and itchiness.",
     price: 3000,
-    category: "soap",
+    category: "Scalp Care",
     size: "1.7 oz",
     tags: ["hair", "growth", "treatment"],
     images: [shampoo],
@@ -300,10 +307,10 @@ export const products = [
     shortDescription:
       "The synergistic blend of nourishing oils works to strengthen your strands from within, promoting resilience, increasing elasticity and reducing breakage.",
     price: 6000,
-    category: "oil",
+    category: "Hair Care",
     size: "250g",
     tags: ["hair", "growth", "treatment"],
-    images: [ayurvedic, treatment],
+    images: [treatment, ayurvedic],
     description:
       "The synergistic blend of nourishing oils works to strengthen your strands from within, promoting resilience, increasing elasticity and reducing breakage.",
     ingredients:
@@ -347,7 +354,7 @@ export const categories = [
     image: treatment,
   },
   {
-    name: "Shampoo",
+    name: "Shampoos",
     image: shampoo,
   },
 ];
@@ -358,3 +365,60 @@ export const promo = {
   discountedPrice: 20000,
   expires: "2024-11-07T00:00:00",
 };
+
+export const slides = [
+  {
+    name: en.moisturizers,
+    slug: products[3].slug,
+    image: tMoisturizer,
+    product: {
+      name: en.moisturizers,
+      description: en.moisturizersShortDescription,
+      ingredients: [
+        en.sodiumLactate,
+        en.butyrospermumParkii,
+        en.butyleneGlycol,
+      ],
+    },
+  },
+  {
+    name: en.cleansers,
+    image: tCleanser,
+    slug: products[2].slug,
+    product: {
+      name: en.cleansers,
+      description: en.phBalancingMistAndCleanserShortDescription,
+      ingredients: [
+        en.lavenderExtract,
+        en.salicylicAcid,
+        en.angelicaExtract,
+        en.vitexExtract,
+      ],
+    },
+  },
+  {
+    name: en.oils,
+    image: tOil,
+    slug: products[4].slug,
+    product: {
+      name: en.aloeVeraExtractOil,
+      description: en.aloeVeraExtractOilShortDescription,
+      ingredients: [en.aloeBarbadensis],
+    },
+  },
+  {
+    name: en.serums,
+    image: tSerum,
+    slug: products[1].slug,
+    product: {
+      name: en.vitaminESerum,
+      description: en.vitaminESerumShortDescription,
+      ingredients: [
+        en.simmondsiaChinensis,
+        en.tocopherylAcetate,
+        en.rosmarinusOfficinalis,
+        en.astaxanthinOil,
+      ],
+    },
+  },
+];
