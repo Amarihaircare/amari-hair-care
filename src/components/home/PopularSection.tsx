@@ -49,7 +49,7 @@ export default function PopularSection() {
               <ProductCard
                 name={product.name}
                 image={product.images[0]}
-                price={product.price}
+                prices={product.prices}
                 rating={product.rating}
                 slug={product.slug}
               />

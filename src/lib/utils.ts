@@ -6,15 +6,19 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const formatCurrency = (
-  amount: number,
+export const formatCurrency = ({
+  amount,
   currency = "NGN",
-  locale?: Intl.LocalesArgument,
-) => {
-  return amount.toLocaleString(locale ?? "en-NG", {
+  locale = "en-NG",
+}: {
+  amount: number;
+  currency?: string;
+  locale?: string;
+}) => {
+  return amount.toLocaleString(locale, {
     style: "currency",
     currency,
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 0,
   });
 };
 

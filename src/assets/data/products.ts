@@ -86,7 +86,24 @@ export const products = [
     ],
     shortDescription:
       "Our flagship product, The Caffeine Scalp Serum, addresses hair loss by stimulating follicle growth, prolonging the hair growth phase, and mitigating the effects of DHT. Unlike traditional treatments, like minoxidil and finasteride, scientific studies show it is a natural alternative with minimal side effects, suitable for sensitive scalp.",
-    price: 10000,
+    prices: [
+      {
+        amount: 10000,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 7,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 5,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
+
     category: "Scalp Care",
     size: "1.7 oz",
     weight: "50ml",
@@ -124,7 +141,23 @@ export const products = [
     ],
     shortDescription:
       "Our Vitamin E serum is carefully crafted with wax ester that closely resembles the sebum produced by the scalp, making it an excellent choice for moisturizing the scalp.",
-    price: 10000,
+    prices: [
+      {
+        amount: 10000,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 7,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 5,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
     category: "Scalp Care",
     size: "1.7 oz",
     weight: "50ml",
@@ -154,7 +187,24 @@ export const products = [
     ],
     shortDescription:
       "This product is designed to help you achieve the perfect pH balance for the hair. By providing a healthy balance of acidity and alkalinity, this formula ensures that the hair is at its strongest and healthiest.",
-    price: 5000,
+    prices: [
+      {
+        amount: 15000,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 3.1,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 2.5,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
+
     category: "Scalp Care",
     size: "1.7 oz",
     weight: "100ml",
@@ -199,7 +249,24 @@ export const products = [
     ],
     shortDescription:
       "This fast-absorbing formula ensures that your hair is left feeling silky, smooth, and textured, without the need for the time-consuming LOC/LCO method. ",
-    price: 15000,
+    prices: [
+      {
+        amount: 15000,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 9.5,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 7.3,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
+
     category: "Hair Care",
     size: "1.7 oz",
     weight: "400ml",
@@ -236,7 +303,24 @@ export const products = [
     ],
     shortDescription:
       "The Leave-in-Protein Treatment works by temporarily filling in the cracks and gaps in damaged hair cuticles, providing a stronger barrier against breakage. Unlike other protein treatments, our protein treatment is leave-in.",
-    price: 7500,
+    prices: [
+      {
+        amount: 7500,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 4.7,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 3.7,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
+
     category: "Hair Care",
     size: "1.7 oz",
     weight: "200ml",
@@ -256,7 +340,21 @@ export const products = [
     reviews: [],
     shortDescription:
       "This oil is extracted from the Aloe Vera plant. It is a lightweight oil that can be used to improve hydration by sealing in moisture",
-    price: 10200,
+    prices: [
+      {
+        amount: 10200,
+        currency: "NGN",
+      },
+      {
+        amount: 6.4,
+        currency: "USD",
+      },
+      {
+        amount: 5,
+        currency: "GBP",
+      },
+    ],
+
     category: "Hair Care",
     size: "1.7 oz",
     weight: "200g",
@@ -284,13 +382,25 @@ export const products = [
     ],
     shortDescription:
       "By effectively cleansing the hair, the shampoo helps to maintain a healthy scalp environment. It can soothe and balance the scalp, reducing dryness, and itchiness.",
-    price: 3000,
+    prices: [
+      {
+        amount: 3000,
+        currency: "NGN",
+      },
+      {
+        amount: 2,
+        currency: "USD",
+      },
+      {
+        amount: 1.5,
+        currency: "GBP",
+      },
+    ],
     category: "Scalp Care",
     size: "1.7 oz",
     weight: "100g",
     tags: ["hair", "growth", "treatment"],
     images: [shampoo],
-
     description:
       "By effectively cleansing the hair, the shampoo helps to maintain a healthy scalp environment. It can soothe and balance the scalp, reducing dryness, and itchiness.",
     ingredients:
@@ -314,7 +424,24 @@ export const products = [
     ],
     shortDescription:
       "The synergistic blend of nourishing oils works to strengthen your strands from within, promoting resilience, increasing elasticity and reducing breakage.",
-    price: 6000,
+    prices: [
+      {
+        amount: 6000,
+        currency: "NGN",
+        locale: "en-NG",
+      },
+      {
+        amount: 10,
+        currency: "USD",
+        locale: "en-US",
+      },
+      {
+        amount: 9,
+        currency: "GBP",
+        locale: "en-GB",
+      },
+    ],
+
     category: "Hair Care",
     size: "250g",
     weight: "300ml",

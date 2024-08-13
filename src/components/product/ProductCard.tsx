@@ -1,14 +1,17 @@
 import Image, { StaticImageData } from "next/image";
 import Rating from "../ui/Rating";
 import Link from "next/link";
-import { cn, formatCurrency } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
 import { ProductCardMenu } from "./ProductCardMenu";
 import AddToCartAction from "./AddToCartButton";
 
 interface ProductCardProps {
   image: StaticImageData;
   rating: number;
-  price: number;
+  prices: {
+    currency: string;
+    amount: number;
+  }[];
   slug: string;
   name: string;
   discount?: number;
@@ -17,13 +20,11 @@ interface ProductCardProps {
 export default function ProductCard({
   image,
   rating,
-  price,
+  prices,
   slug,
   name,
   discount,
 }: ProductCardProps) {
-  const discountedPrice = price - (price * (discount ?? 0)) / 100;
-
   return (
     <>
       <div className="media relative w-full overflow-hidden rounded">
@@ -55,19 +56,17 @@ export default function ProductCard({
         >
           {name}
         </Link>
-        <div className="main_price flex items-center gap-4">
-          {discount && (
-            <p
-              className={cn("price font-bold text-green-800", {
-                "text-gray-400 line-through": discount,
-              })}
-            >
-              {formatCurrency(price, "NGN")}
+        <div className="flex items-center gap-2">
+          {prices.map((price, index) => (
+            <p key={price.currency} className="price font-bold text-green-800">
+              {formatCurrency({
+                amount: price.amount,
+                currency: price.currency,
+                locale: price.locale,
+              })}{" "}
+              {index < prices.length - 1 ? "||" : ""}
             </p>
-          )}
-          <p className="price font-bold text-green-800">
-            {formatCurrency(discountedPrice, "NGN")}
-          </p>
+          ))}
         </div>
         <AddToCartAction slug={slug} />
       </div>

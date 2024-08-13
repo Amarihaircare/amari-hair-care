@@ -62,9 +62,21 @@ export default function Product({ params }: { params: { product: string } }) {
             </div>
             <p>{product?.shortDescription}</p>
 
-            <p className="text-2xl font-bold lg:text-4xl">
-              {formatCurrency(product?.price ?? 0, "NGN")}
-            </p>
+            <div className="flex items-center gap-2">
+              {product?.prices.map((price, index) => (
+                <p
+                  key={price.currency}
+                  className="text-2xl font-bold lg:text-4xl"
+                >
+                  {formatCurrency({
+                    amount: price.amount,
+                    currency: price.currency,
+                    locale: price.locale,
+                  })}{" "}
+                  {index < product.prices.length - 1 ? "||" : ""}
+                </p>
+              ))}
+            </div>
 
             <AddToCartAction productSlug={product?.slug} />
 

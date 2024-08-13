@@ -123,7 +123,10 @@ export default function ProductsFilter({
             <div className="flex items-center justify-between">
               {[1000, 50000].map((price) => (
                 <p key={price} className="font-medium">
-                  {formatCurrency(price, "NGN")}
+                  {formatCurrency({
+                    amount: price,
+                    currency: "NGN",
+                  })}
                 </p>
               ))}
             </div>

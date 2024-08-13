@@ -33,7 +33,7 @@ export default function ProductSection({ currentPage }: ProductSectionProps) {
         normalizePrice({
           min: 1000,
           max: 50000,
-          value: product.price,
+          value: product.prices[0].amount,
         }) *
           100 <=
         v,
@@ -79,7 +79,7 @@ export default function ProductSection({ currentPage }: ProductSectionProps) {
                 <ProductCard
                   name={product.name}
                   image={product.images[0]}
-                  price={product.price}
+                  prices={product.prices}
                   rating={product.rating}
                   slug={product.slug}
                 />
