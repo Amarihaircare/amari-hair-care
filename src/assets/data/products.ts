@@ -189,7 +189,7 @@ export const products = [
       "This product is designed to help you achieve the perfect pH balance for the hair. By providing a healthy balance of acidity and alkalinity, this formula ensures that the hair is at its strongest and healthiest.",
     prices: [
       {
-        amount: 15000,
+        amount: 5000,
         currency: "NGN",
         locale: "en-NG",
       },
