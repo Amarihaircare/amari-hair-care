@@ -56,6 +56,7 @@ export default function ReturningStockist() {
           variant: "success",
         });
         setStockistId(data.stockistId!);
+        setIsLoading(false);
       })
       .catch(() => {
         toast({
@@ -63,9 +64,8 @@ export default function ReturningStockist() {
           description: en.somethingWentWrongDescription,
           variant: "destructive",
         });
+        setIsLoading(false);
       });
-
-    setIsLoading(false);
   };
 
   return stockistId.length > 0 ? (
