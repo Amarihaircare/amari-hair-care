@@ -30,10 +30,6 @@ export default function Product({ params }: { params: { product: string } }) {
       key: en.weight,
       title: product?.weight,
     },
-    {
-      key: en.tags,
-      title: product?.tags.join(", "),
-    },
   ];
 
   const additionalInformation = [
