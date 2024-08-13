@@ -450,7 +450,7 @@ const en = {
     "Use this id to reference and to make future orders",
   copied: "Copied",
   noReviews: "No reviews yet",
-  moqDescription: "Minimum of 10 units per product",
+  moq: "MOQ:",
   searchPlaceholder: "Search for products",
   checkoutOurProducts: "Checkout our premium hair products",
   findAStockistPageMetaTitle: "Find a Stockist | Amari Hair Care",

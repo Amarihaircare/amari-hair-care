@@ -6,6 +6,7 @@ import en from "@/language/en";
 import { formatCurrency } from "@/lib/utils";
 import AddToCartAction from "@/components/ui/AddToCartAction";
 import ProductDetails from "@/components/product/ProductDetails";
+import { MINIMUM_QUANTITY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: en.productMetaTitle,
@@ -16,6 +17,11 @@ export default function Product({ params }: { params: { product: string } }) {
   const product = findProduct(params.product);
 
   const productKeyTitle = [
+    {
+      key: en.moq,
+      title: MINIMUM_QUANTITY,
+    },
+
     {
       key: en.category,
       title: product?.category,
@@ -64,9 +70,8 @@ export default function Product({ params }: { params: { product: string } }) {
               {formatCurrency(product?.price ?? 0, "NGN")}
             </p>
 
-            <p>{en.moqDescription}</p>
-
             <AddToCartAction productSlug={product?.slug} />
+
             <ul className="flex flex-col gap-4">
               {productKeyTitle.map((item, index) => (
                 <li key={index} className="flex items-center gap-2">
