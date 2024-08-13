@@ -56,13 +56,18 @@ export default function ProductItem({
         </div>
         <div className="flex flex-col items-end lg:gap-2">
           {prices?.map((price, index) => (
-            <p className="font-bold text-green-700" key={price.currency}>
-              {formatCurrency({
-                amount: price.amount,
-                currency: price.currency,
-                locale: price.locale,
-              })}{" "}
-              {index < prices.length - 1 ? "||" : ""}
+            <p
+              className="flex gap-2 font-bold text-green-700"
+              key={price.currency}
+            >
+              <span>
+                {formatCurrency({
+                  amount: price.amount,
+                  currency: price.currency,
+                  locale: price.locale,
+                })}
+              </span>
+              <span>{index < prices.length - 1 ? "||" : ""}</span>
             </p>
           ))}
         </div>

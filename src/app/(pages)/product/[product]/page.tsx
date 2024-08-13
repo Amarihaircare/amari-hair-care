@@ -66,14 +66,16 @@ export default function Product({ params }: { params: { product: string } }) {
               {product?.prices.map((price, index) => (
                 <p
                   key={price.currency}
-                  className="text-2xl font-bold lg:text-4xl"
+                  className="flex items-center gap-2 text-2xl font-bold lg:text-4xl"
                 >
-                  {formatCurrency({
-                    amount: price.amount,
-                    currency: price.currency,
-                    locale: price.locale,
-                  })}{" "}
-                  {index < product.prices.length - 1 ? "||" : ""}
+                  <span>
+                    {formatCurrency({
+                      amount: price.amount,
+                      currency: price.currency,
+                      locale: price.locale,
+                    })}
+                  </span>
+                  <span>{index < product.prices.length - 1 ? "||" : ""}</span>
                 </p>
               ))}
             </div>

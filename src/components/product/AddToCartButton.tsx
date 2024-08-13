@@ -1,8 +1,8 @@
 "use client";
-import en from "@/language/en";
 import { Button } from "../ui/button";
 import { useManageCart } from "@/hooks/useManageCart";
 import { useCart } from "@/hooks/useCart";
+import { DocumentIcon } from "@/assets/icons";
 
 interface IAddToCartActionProps {
   slug?: string;
@@ -21,9 +21,9 @@ export default function AddToCartAction({ slug }: IAddToCartActionProps) {
     <Button
       onClick={() => handleAddToCart((product?.quantity ?? count - 1) + 1)}
       variant={"secondary"}
-      className="absolute bottom-0 self-end font-semibold lg:hidden"
+      className="absolute bottom-0 flex h-10 w-10 items-center justify-center self-end p-0 font-semibold lg:hidden"
     >
-      {en.requestQuote}
+      <DocumentIcon />
     </Button>
   );
 }

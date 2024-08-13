@@ -54,15 +54,20 @@ export default function ProductCard({
         >
           {name}
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex max-w-[70%] items-center gap-2">
           {prices.map((price, index) => (
-            <p key={price.currency} className="price font-bold text-green-800">
-              {formatCurrency({
-                amount: price.amount,
-                currency: price.currency,
-                locale: price.locale,
-              })}{" "}
-              {index < prices.length - 1 ? "||" : ""}
+            <p
+              key={price.currency}
+              className="price flex items-center gap-2 font-bold text-green-800"
+            >
+              <span>
+                {formatCurrency({
+                  amount: price.amount,
+                  currency: price.currency,
+                  locale: price.locale,
+                })}
+              </span>
+              <span>{index < prices.length - 1 ? "||" : ""}</span>
             </p>
           ))}
         </div>
