@@ -344,14 +344,17 @@ export const products = [
       {
         amount: 10200,
         currency: "NGN",
+        locale: "en-NG",
       },
       {
         amount: 6.4,
         currency: "USD",
+        locale: "en-US",
       },
       {
         amount: 5,
         currency: "GBP",
+        locale: "en-GB",
       },
     ],
 
