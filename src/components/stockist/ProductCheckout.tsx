@@ -26,8 +26,7 @@ export default function ProductCheckout({ handleNext }: ProductCheckoutProps) {
               key={product.slug}
               name={product.name}
               image={product.image}
-              price={product.price}
-              discount={product.discount}
+              prices={product.prices}
               quantity={product.quantity}
               slug={product.slug}
               index={index}

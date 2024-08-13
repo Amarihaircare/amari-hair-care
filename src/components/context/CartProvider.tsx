@@ -41,7 +41,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
       const newProduct = {
         name: product.name,
-        price: product.price,
+        prices: product.prices,
         image: product.images[0],
         quantity: count,
         slug: productSlug,

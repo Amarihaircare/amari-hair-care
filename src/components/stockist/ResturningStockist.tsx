@@ -42,7 +42,7 @@ export default function ReturningStockist() {
       JSON.stringify(
         cart.map((product) => ({
           name: product.name,
-          price: product.price,
+          price: product.prices,
         })),
       ),
     );

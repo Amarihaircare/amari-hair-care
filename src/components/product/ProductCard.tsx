@@ -4,14 +4,12 @@ import Link from "next/link";
 import { formatCurrency } from "@/lib/utils";
 import { ProductCardMenu } from "./ProductCardMenu";
 import AddToCartAction from "./AddToCartButton";
+import { TProduct } from "@/assets/data/products";
 
 interface ProductCardProps {
   image: StaticImageData;
   rating: number;
-  prices: {
-    currency: string;
-    amount: number;
-  }[];
+  prices: TProduct["prices"];
   slug: string;
   name: string;
   discount?: number;

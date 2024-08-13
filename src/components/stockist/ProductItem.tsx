@@ -5,12 +5,12 @@ import IncrementCart from "../ui/IncrementCart";
 import { useManageCart } from "@/hooks/useManageCart";
 import { Button } from "../ui/button";
 import { DeleteIcon } from "@/assets/icons";
+import { TProduct } from "@/assets/data/products";
 
 interface ProductItemProps {
   name: string;
   image: StaticImageData;
-  price: number;
-  discount?: number;
+  prices: TProduct["prices"];
   quantity: number;
   slug: string;
   index: number;
@@ -20,8 +20,7 @@ interface ProductItemProps {
 export default function ProductItem({
   name,
   image,
-  price,
-  discount,
+  prices,
   quantity,
   slug,
   index,
@@ -31,7 +30,6 @@ export default function ProductItem({
     productSlug: slug,
     quantity,
   });
-  const discountedPrice = price - (price * (discount ?? 0)) / 100;
 
   return (
     <div
@@ -56,20 +54,17 @@ export default function ProductItem({
             <p>{en.inStock}</p>
           </div>
         </div>
-        <div className="flex flex-col items-end gap-2">
-          <p className="text-xl font-bold text-green-700">
-            {formatCurrency(discountedPrice, "NGN")}
-          </p>
-          {discount && (
-            <div className="flex items-center gap-1">
-              <p className="text-xl font-bold text-gray-400 line-through">
-                {formatCurrency(price, "NGN")}
-              </p>
-              <p className="rounded bg-red-200 p-1 text-xs text-red-400">
-                -{discount}%
-              </p>
-            </div>
-          )}
+        <div className="flex flex-col items-end lg:gap-2">
+          {prices?.map((price, index) => (
+            <p className="font-bold text-green-700" key={price.currency}>
+              {formatCurrency({
+                amount: price.amount,
+                currency: price.currency,
+                locale: price.locale,
+              })}{" "}
+              {index < prices.length - 1 ? "||" : ""}
+            </p>
+          ))}
         </div>
       </div>
       <div className="flex items-center justify-between">

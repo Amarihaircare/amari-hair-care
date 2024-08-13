@@ -3,8 +3,11 @@ import { StaticImageData } from "next/image";
 export type TLocalProduct = {
   name: string;
   slug: string;
-  price: number;
-  discount?: number;
+  prices: {
+    amount: number;
+    currency: string;
+    locale: string;
+  }[];
   quantity: number;
   image: StaticImageData;
 };

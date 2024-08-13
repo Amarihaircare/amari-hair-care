@@ -45,7 +45,7 @@ export default function NewStockist() {
       JSON.stringify(
         cart.map((product) => ({
           name: product.name,
-          price: product.price,
+          price: product.prices,
         })),
       ),
     );

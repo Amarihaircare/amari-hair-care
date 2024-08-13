@@ -389,14 +389,17 @@ export const products = [
       {
         amount: 3000,
         currency: "NGN",
+        locale: "en-NG",
       },
       {
         amount: 2,
         currency: "USD",
+        locale: "en-US",
       },
       {
         amount: 1.5,
         currency: "GBP",
+        locale: "en-GB",
       },
     ],
     category: "Scalp Care",
