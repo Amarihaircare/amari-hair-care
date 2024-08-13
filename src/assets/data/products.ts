@@ -89,6 +89,7 @@ export const products = [
     price: 10000,
     category: "Scalp Care",
     size: "1.7 oz",
+    weight: "50ml",
     tags: ["caffeine", "hair", "growth"],
     images: [growthSerum, vpg, instagramFive],
 
@@ -126,6 +127,8 @@ export const products = [
     price: 10000,
     category: "Scalp Care",
     size: "1.7 oz",
+    weight: "50ml",
+
     tags: ["hair", "growth"],
     images: [vitaminE2, vpg],
     description:
@@ -154,6 +157,7 @@ export const products = [
     price: 5000,
     category: "Scalp Care",
     size: "1.7 oz",
+    weight: "100ml",
     tags: ["hair", "growth", "cleanse"],
     images: [cleanser, pla, ap],
     description:
@@ -198,6 +202,7 @@ export const products = [
     price: 15000,
     category: "Hair Care",
     size: "1.7 oz",
+    weight: "400ml",
     tags: ["hair", "growth", "cleanse"],
     images: [moisturizer, aloeTwo, moisturizer2],
     description:
@@ -234,6 +239,7 @@ export const products = [
     price: 7500,
     category: "Hair Care",
     size: "1.7 oz",
+    weight: "200ml",
     tags: ["hair", "growth", "cleanse"],
     images: [protein, pla],
     description:
@@ -253,6 +259,7 @@ export const products = [
     price: 10200,
     category: "Hair Care",
     size: "1.7 oz",
+    weight: "200g",
     tags: ["hair", "growth", "hydration"],
     images: [aloe, aloeTwo, pla, ap],
     description:
@@ -280,6 +287,7 @@ export const products = [
     price: 3000,
     category: "Scalp Care",
     size: "1.7 oz",
+    weight: "100g",
     tags: ["hair", "growth", "treatment"],
     images: [shampoo],
 
@@ -309,6 +317,7 @@ export const products = [
     price: 6000,
     category: "Hair Care",
     size: "250g",
+    weight: "300ml",
     tags: ["hair", "growth", "treatment"],
     images: [treatment, ayurvedic],
     description:

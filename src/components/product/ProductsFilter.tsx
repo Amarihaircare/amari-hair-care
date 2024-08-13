@@ -1,4 +1,3 @@
-"use client";
 import { CaretDown, CaretUp } from "@/assets/icons";
 import en from "@/language/en";
 import Image from "next/image";
@@ -8,7 +7,21 @@ import aloeIcon from "@/assets/icons/aloe-icon.png";
 import { Slider } from "../ui/slider";
 import { cn, formatCurrency } from "@/lib/utils";
 
-export default function ProductsFilter() {
+interface ProductsFilterProps {
+  handleSearch: (v: string) => void;
+  handleSlide: (v: number) => void;
+  handleWeight: (v: string) => void;
+  handleCategory: (v: string) => void;
+  currentWeight?: string;
+}
+
+export default function ProductsFilter({
+  handleSlide,
+  handleSearch,
+  handleWeight,
+  handleCategory,
+  currentWeight,
+}: ProductsFilterProps) {
   const [showFilter, setShowFilter] = useState(
     typeof window === "undefined" ? true : window.innerWidth > 1024,
   );
@@ -37,11 +50,13 @@ export default function ProductsFilter() {
                 placeholder={`${en.search}...`}
                 type="search"
                 className="w-full rounded-full py-5"
+                onChange={(e) => handleSearch(e.target.value)}
               />
               <button
                 className="header_user-search_btn absolute bottom-0 right-0 top-0 flex items-center justify-center rounded-full bg-secondary px-4 font-medium"
                 type="submit"
                 data-trigger="search"
+                disabled
               >
                 {en.search}
               </button>
@@ -64,6 +79,7 @@ export default function ProductsFilter() {
                         hidden
                         className="peer"
                         name="category"
+                        onChange={() => handleCategory(category)}
                       />
                       <div className="h-2 w-2 rounded-full peer-checked:bg-primary" />
                     </div>
@@ -85,14 +101,14 @@ export default function ProductsFilter() {
                 <li key={index}>
                   <button
                     className={cn(
-                      "rounded-lg border border-gray-200 px-5 py-3",
+                      "rounded-lg border border-gray-200 px-3 py-3 text-sm",
                       {
-                        "bg-primary text-white": weight === 5,
+                        "bg-primary text-white": weight === currentWeight,
                       },
                     )}
+                    onClick={() => handleWeight(weight)}
                   >
                     {weight}
-                    {weight < 50 ? "g" : "ml"}
                   </button>
                 </li>
               ))}
@@ -111,7 +127,12 @@ export default function ProductsFilter() {
                 </p>
               ))}
             </div>
-            <Slider defaultValue={[50]} max={100} step={1} />
+            <Slider
+              defaultValue={[50]}
+              max={100}
+              step={1}
+              onValueChange={(v) => handleSlide(v[0])}
+            />
           </div>
         </>
       )}
@@ -119,6 +140,6 @@ export default function ProductsFilter() {
   );
 }
 
-const categories = [en.hairCare, en.scalpCare];
+const categories = [en.all, en.hairCare, en.scalpCare];
 
-const weights = [10, 15, 30, 50, 100, 200, 400];
+const weights = ["All", "10ml", "15ml", "30ml", "50ml", "100g", "200g", "400g"];

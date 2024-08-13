@@ -1,5 +1,6 @@
 const en = {
   amariHaircare: "Amari Hair care",
+  all: "All",
   home: "Home",
   catalogue: "Catalogue",
   caffeineScalpSerum: "Caffeine Scalp Serum",

@@ -47,3 +47,31 @@ export const returnRandomSlice = <T>(array: T[], length: number) => {
   }
   return randomArray.slice(0, length);
 };
+
+export const convertToGram = (weight: string) => {
+  const units: Record<string, number> = {
+    g: 1,
+    kg: 1000,
+    mg: 0.001,
+    ml: 1,
+  };
+
+  const [value, unit] = weight
+    .trim()
+    .match(/^(\d+(?:\.\d+)?)([a-zA-Z]+)$/)
+    ?.slice(1) ?? ["0", "g"];
+
+  return parseFloat(value) * (units[unit] ?? 1);
+};
+
+export const normalizePrice = ({
+  min,
+  max,
+  value,
+}: {
+  min: number;
+  max: number;
+  value: number;
+}) => {
+  return Math.abs((value - min) / (max - min));
+};

@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { findProduct } from "@/assets/data/products";
 import ProductImageSlides from "@/components/product/ProductImageSlides";
 import Rating from "@/components/ui/Rating";
-import RoundedIconButton from "@/components/ui/RoundedIconButton";
 import en from "@/language/en";
-import { HeartIcon } from "@/assets/icons";
 import { formatCurrency } from "@/lib/utils";
 import AddToCartAction from "@/components/ui/AddToCartAction";
 import ProductDetails from "@/components/product/ProductDetails";
@@ -23,8 +21,8 @@ export default function Product({ params }: { params: { product: string } }) {
       title: product?.category,
     },
     {
-      key: en.size,
-      title: product?.size,
+      key: en.weight,
+      title: product?.weight,
     },
     {
       key: en.tags,
