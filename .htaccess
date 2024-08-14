@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect non-www to www for both HTTP and HTTPS
+RewriteCond %{HTTP_HOST} ^amarihaircare\.com [NC]
+RewriteRule ^(.*)$ https://www.amarihaircare.com/$1 [R=301,L]
+
+# Ensure index.html is served correctly without further processing
+RewriteRule ^index\.html$ - [L]
+
+# Redirect all non-existent files/directories/links to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+
+# Add CORS headers to resolve CORS policy issues
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "https://www.amarihaircare.com"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "X-Requested-With, Content-Type, Origin, Authorization"
+</IfModule>
+
