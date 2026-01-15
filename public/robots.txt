@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://amarihaircare.com
+
+# Sitemaps
+Sitemap: https://amarihaircare.com/sitemap.xml
